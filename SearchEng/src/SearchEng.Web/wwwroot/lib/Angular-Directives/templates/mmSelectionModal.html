@@ -1,0 +1,95 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmSelectionModal</div>
+        </div>
+        <div class="panel-body">
+
+            <!--#region mmSelectionModal  -->
+            <div class="tab-pane" id="mmSelectionModal">
+                <div class="note note-info">
+                    <h2>restrict: 'A'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>itemssource</td>
+                                <td>object</td>
+                                <td>itemsource for selection Modal</td>
+                            </tr>
+                            <tr>
+                                <td>columns</td>
+                                <td></td>
+                                <td>shown colomns on the Modal</td>
+                            </tr>
+                            <tr>
+                                <td>valuefield</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>textfield</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ngModel</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>message</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>title</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>filter-template</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>filter</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-group">
+                    <label>ProductSubcategoryID</label>
+                    <div class="input-group">
+                        <select class="form-control" ng-model="ProductSubcategoryID" data-ng-options="c.ProductSubcategoryID as c.Name  for c in subCategories" required></select>
+                        <div class="input-group-btn">
+                            <mm-selection-modal ng-model="ProductSubcategoryID" itemssource="subCategories" columns="['Name','CategoryName']" valuefield="ProductSubcategoryID" textfield="Name">
+                                <div class="filter-template">
+                                    <div class="form-group"><input type="text" class="form-control" ng-model="filter.Name" placeholder="CompanyName"></div>
+                                </div>
+                            </mm-selection-modal>
+                        </div>
+                    </div>
+                </div>
+                <pre>&lt;div class="input-group-btn"&gt;<br />&nbsp; &lt;mm-selection-modal ng-model="ProductSubcategoryID" itemssource="subCategories" columns="['Name','CategoryName']" valuefield="ProductSubcategoryID" textfield="Name"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="filter-template"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="form-group"&gt;&lt;input type="text" class="form-control" ng-model="filter.Name" placeholder="CompanyName"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp; &lt;/mm-selection-modal&gt;<br />&lt;/div&gt;</pre>
+                <pre><span>$scope.ProductSubcategoryID = 0;</span><br /><span>$scope.subCategories = [{ "ProductSubcategoryID": 1, "ProductCategoryID": 1, "Name": "Mountain Bikes", "CategoryName": "Bikes" }, { "ProductSubcategoryID": 2, "ProductCategoryID": 1, "Name": "Road Bikes", "CategoryName": "Bikes" }, { "ProductSubcategoryID": 3, "ProductCategoryID": 1, "Name": "Touring Bikes", "CategoryName": "Bikes" }, { "ProductSubcategoryID": 4, "ProductCategoryID": 2, "Name": "Handlebars", "CategoryName": "Components" }, { "ProductSubcategoryID": 5, "ProductCategoryID": 2, "Name": "Bottom Brackets", "CategoryName": "Components" }, { "ProductSubcategoryID": 6, "ProductCategoryID": 2, "Name": "Brakes", "CategoryName": "Components" }, { "ProductSubcategoryID": 7, "ProductCategoryID": 2, "Name": "Chains", "CategoryName": "Components" }, { "ProductSubcategoryID": 8, "ProductCategoryID": 2, "Name": "Cranksets", "CategoryName": "Components" }, { "ProductSubcategoryID": 9, "ProductCategoryID": 2, "Name": "Derailleurs", "CategoryName": "Components" }, { "ProductSubcategoryID": 10, "ProductCategoryID": 2, "Name": "Forks", "CategoryName": "Components" }, { "ProductSubcategoryID": 11, "ProductCategoryID": 2, "Name": "Headsets", "CategoryName": "Components" }, { "ProductSubcategoryID": 12, "ProductCategoryID": 2, "Name": "Mountain Frames", "CategoryName": "Components" }, { "ProductSubcategoryID": 13, "ProductCategoryID": 2, "Name": "Pedals", "CategoryName": "Components" }, { "ProductSubcategoryID": 14, "ProductCategoryID": 2, "Name": "Road Frames", "CategoryName": "Components" }, { "ProductSubcategoryID": 15, "ProductCategoryID": 2, "Name": "Saddles", "CategoryName": "Components" }, { "ProductSubcategoryID": 16, "ProductCategoryID": 2, "Name": "Touring Frames", "CategoryName": "Components" }, { "ProductSubcategoryID": 17, "ProductCategoryID": 2, "Name": "Wheels", "CategoryName": "Components" }, { "ProductSubcategoryID": 18, "ProductCategoryID": 3, "Name": "Bib-Shorts", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 19, "ProductCategoryID": 3, "Name": "Caps", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 20, "ProductCategoryID": 3, "Name": "Gloves", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 21, "ProductCategoryID": 3, "Name": "Jerseys", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 22, "ProductCategoryID": 3, "Name": "Shorts", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 23, "ProductCategoryID": 3, "Name": "Socks", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 24, "ProductCategoryID": 3, "Name": "Tights", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 25, "ProductCategoryID": 3, "Name": "Vests", "CategoryName": "Clothing" }, { "ProductSubcategoryID": 26, "ProductCategoryID": 4, "Name": "Bike Racks", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 27, "ProductCategoryID": 4, "Name": "Bike Stands", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 28, "ProductCategoryID": 4, "Name": "Bottles and Cages", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 29, "ProductCategoryID": 4, "Name": "Cleaners", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 30, "ProductCategoryID": 4, "Name": "Fenders", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 31, "ProductCategoryID": 4, "Name": "Helmets", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 32, "ProductCategoryID": 4, "Name": "Hydration Packs", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 33, "ProductCategoryID": 4, "Name": "Lights", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 34, "ProductCategoryID": 4, "Name": "Locks", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 35, "ProductCategoryID": 4, "Name": "Panniers", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 36, "ProductCategoryID": 4, "Name": "Pumps", "CategoryName": "Accessories" }, { "ProductSubcategoryID": 37, "ProductCategoryID": 4, "Name": "Tires and Tubes", "CategoryName": "Accessories" }];</span>
+                   </pre>
+            </div>
+            <!--#endregion -->
+
+        </div>
+    </div>
+</div>

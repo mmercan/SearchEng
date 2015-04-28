@@ -1,0 +1,1154 @@
+﻿<!--<div class="panel">
+   <div class="panel-body">-->
+<ul id="uidemo-tabs-default-demo" class="nav nav-tabs">
+    <li class="active"><a data-target="#tables" data-toggle="tab">tables</a></li>
+    <li><a data-target="#widgets" data-toggle="tab">Widgets</a></li>
+    <li><a data-target="#statpanels" data-toggle="tab">Stat Panels</a></li>
+    <li><a data-target="#mainmenudemo" data-toggle="tab">Profile</a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active fade in" id="tables">
+        <div class="page-header"><h1>Tables</h1></div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Default tables</span>
+                    </div>
+                    <div class="panel-body">
+                        <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Bordered tables</span>
+                    </div>
+                    <div class="panel-body">
+                        <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Hover row tables</span>
+                    </div>
+                    <div class="panel-body">
+                        <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <!-- /7. $HOVER_ROW_TABLES -->
+
+            </div>
+            <div class="col-sm-6">
+
+                <!-- 8. $STRIPED_TABLES ============================================================================
+
+                                Striped tables
+                -->
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Striped tables</span>
+                    </div>
+                    <div class="panel-body">
+                        <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <!-- /8. $STRIPED_TABLES -->
+                <!-- 9. $CONDENSED_TABLES ==========================================================================
+
+                                Condensed tables
+                -->
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Condensed tables</span>
+                    </div>
+                    <div class="panel-body">
+                        <table data-mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Table variations</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="table-light">
+                                    <div class="table-header">
+                                        <div class="table-caption">
+                                            Light Table
+                                        </div>
+                                    </div>
+                                    <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="table-footer">
+                                        Footer
+                                    </div>
+                                </div>
+                                <div class="table-success">
+                                    <div class="table-header">
+                                        <div class="table-caption">
+                                            Success Table
+                                        </div>
+                                    </div>
+                                    <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="table-footer">
+                                        Footer
+                                    </div>
+                                </div>
+                                <div class="table-warning">
+                                    <div class="table-header">
+                                        <div class="table-caption">
+                                            Warning Table
+                                        </div>
+                                    </div>
+                                    <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="table-footer">
+                                        Footer
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="table-primary">
+                                    <div class="table-header">
+                                        <div class="table-caption">
+                                            Primary Table
+                                        </div>
+                                    </div>
+                                    <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="table-footer">
+                                        Footer
+                                    </div>
+                                </div>
+                                <div class="table-danger">
+                                    <div class="table-header">
+                                        <div class="table-caption">
+                                            Danger Table
+                                        </div>
+                                    </div>
+                                    <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="table-footer">
+                                        Footer
+                                    </div>
+                                </div>
+                                <div class="table-info">
+                                    <div class="table-header">
+                                        <div class="table-caption">
+                                            Info Table
+                                        </div>
+                                    </div>
+                                    <table mm-table itemssource="lessUsers" columns="['id','firstName','lastName','username']" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Username</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div class="table-footer">
+                                        Footer
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">jQuery Data Tables</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-primary">
+                            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Rendering engine</th>
+                                        <th>Browser</th>
+                                        <th>Platform(s)</th>
+                                        <th>Engine version</th>
+                                        <th>CSS grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <td>Trident</td>
+                                        <td>
+                                            Internet
+                                            Explorer 4.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td class="center"> 4</td>
+                                        <td class="center">X</td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>Trident</td>
+                                        <td>
+                                            Internet
+                                            Explorer 5.0
+                                        </td>
+                                        <td>Win 95+</td>
+                                        <td class="center">5</td>
+                                        <td class="center">C</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade in" id="widgets">
+        <div class="page-header"><h1><i class="fa fa-th-large page-header-icon"></i>&nbsp;&nbsp;Widgets</h1> </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-success panel-dark widget-profile">
+                    <div class="panel-heading">
+                        <div class="widget-profile-bg-icon"><i class="fa fa-flask"></i></div>
+                        <img src="/assets/demo/avatars/2.jpg" alt="" class="widget-profile-avatar">
+                        <div class="widget-profile-header">
+                            <span>Robert Jang</span><br>
+                            email@@example.com
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item"><i class="fa fa-envelope-o list-group-icon"></i>Inbox messages<span class="badge badge-info">14</span></a>
+                        <a href="#" class="list-group-item"><i class="fa fa-tasks list-group-icon"></i>Uncompleted tasks<span class="badge badge-warning">7</span></a>
+                        <a href="#" class="list-group-item"><i class="fa fa-bell-o list-group-icon"></i>New notifications<span class="badge badge-danger">11</span></a>
+                        <a href="#" class="list-group-item">Account settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info panel-dark widget-profile">
+                    <div class="panel-heading">
+                        <div class="widget-profile-bg-icon"><i class="fa fa-twitter"></i></div>
+                        <img src="/assets/demo/avatars/3.jpg" alt="" class="widget-profile-avatar">
+                        <div class="widget-profile-header">
+                            <span>Michelle Bortz</span><br>
+                            <a href="https://twitter.com/test">https://twitter.com/test</a>
+                        </div>
+                    </div>
+                    <div class="widget-profile-counters">
+                        <div class="col-xs-4"><span>131</span><br>TWEETS</div>
+                        <div class="col-xs-4"><span>230</span><br>FOLLOWERS</div>
+                        <div class="col-xs-4"><span>56</span><br>FOLLOWING</div>
+                    </div>
+                    <input type="text" placeholder="Write your tweet" class="form-control input-lg widget-profile-input">
+                    <div class="widget-profile-text">
+                        Lorem ipsum dolor sit amet
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-danger panel-dark panel-body-colorful widget-profile widget-profile-centered">
+                    <div class="panel-heading">
+                        <img src="/assets/demo/avatars/1.jpg" alt="" class="widget-profile-avatar">
+                        <div class="widget-profile-header">
+                            <span>John Doe</span><br>
+                            <a href="https://twitter.com/test">https://twitter.com/test</a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="widget-profile-text" style="padding: 0;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel widget-messages-alt">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-envelope"></i>Alt Messages List</span>
+                    </div>
+                    <div class="panel-body padding-sm mm-scroll" height="380">
+                        <div class="messages-list">
+                            <div ng-repeat="item in users" class="message">
+                                <img ng-src="{{item.image}}" alt="" class="message-avatar">
+                                <a href="#" class="message-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                                <div class="message-description">
+                                    from <a href="#">{{item.fullname}}</a>&nbsp;&nbsp;·&nbsp;&nbsp;2h ago
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="messages-link">MORE MESSAGES</a>
+                    </div>
+                </div>
+
+                <div class="panel widget-messages">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-envelope-o"></i>Messages</span>
+                    </div> <!-- / .panel-heading -->
+                    <div class="panel-body">
+                        <div ng-repeat="item in users" ng-class="{unread:item.messageSelected}" class="message">
+                            <div class="action-checkbox">
+                                <label class="px-single"><input type="checkbox" name="" value="" ng-checked="item.messageSelected" class="px" checked="checked"><span class="lbl"></span></label>
+                            </div>
+                            <a href="#" title="" class="from">{{item.fullname}}</a>
+                            <a href="#" title="" class="title"><i ng-show="item.messageAttached" class="message-title-icon fa fa-paperclip"></i>{{item.messagetitle}}</a>
+                            <div class="date">18 jan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel widget-support-tickets">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-bullhorn"></i>Support Tickets</span>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-repeat="item in supportTickets" class="ticket">
+                            <span class="label  ticket-label" ng-class="{'label-success':item.status=='Completed','label-warning':item.status=='Pending','label-info':item.status=='In progress','label-danger':item.status=='Rejected'}">{{item.status}}</span>
+                            <a href="#" title="" class="ticket-title">
+                                <i ng-show="item.isCritical" class="fa fa-warning text-danger"></i>
+                                {{item.title}}<span>[#{{item.ticketNumber}}]</span>
+                            </a>
+                            <span class="ticket-info">
+                                Opened by <a href="#" title="">{{item.username}}</a> {{item.date}}
+                            </span>
+                        </div> <!-- / .ticket -->
+                    </div>
+                </div>
+                <div class="panel widget-threads">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comments-o"></i>Last threads</span>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-repeat="item in lessUsers" class="thread">
+                            <img ng-src="{{item.image}}" alt="" class="thread-avatar">
+                            <div class="thread-body">
+                                <span class="thread-time">14h</span>
+                                <a href="#" class="thread-title">Lorem ipsum dolor sit amet</a>
+                                <div class="thread-info">started by <a href="#" title="">{{item.fullname}}</a> in <a href="#" title="">Forum name</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel widget-chat">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comments-o"></i>Chat</span>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-repeat="item in chat" class="message" ng-class="{right:!item.isme}">
+                            <img ng-src="{{item.image}}" alt="" class=" message-avatar">
+                            <div class="message-body">
+                                <div class="message-heading">
+                                    <a href="#" title="">{{item.username}}</a> says:
+                                    <span class="pull-right">{{item.time}}</span>
+                                </div>
+                                <div class="message-text">
+                                    {{item.body}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="panel-footer chat-controls">
+                        <div class="chat-controls-input">
+                            <textarea rows="1" class="form-control"></textarea>
+                        </div>
+                        <button class="btn btn-primary chat-controls-btn">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel widget-notifications">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-fire"></i>Notifications</span>
+                    </div>
+                    <div class="panel-body padding-sm">
+                        <div class="notifications-list">
+                            <div ng-repeat="item in notifications" class="notification">
+                                <div class="notification-title text-{{item.color}}">{{item.title}}</div>
+                                <div class="notification-description"><span mm-html="item.body"></span> </div>
+                                <div class="notification-ago">12h ago</div>
+                                <div class="notification-icon fa {{item.icon}} bg-{{item.color}}"></div>
+                            </div> <!-- / .notification -->
+                        </div>
+                        <a href="#" class="notifications-link">MORE NOTIFICATIONS</a>
+                    </div>
+                </div>
+
+
+                <div class="panel widget-tasks">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-tasks"></i>Tasks</span>
+                    </div> <!-- / .panel-heading -->
+                    <div class="panel-body mmSortable" itemssource="tasks">
+
+                        <div ng-repeat=" item in tasks" class="task" ng-class="{completed:item.completed}">
+                            <span ng-show="item.priority=='high'" class="label label-warning pull-right">High</span>
+                            <span ng-show="item.priority=='low'" class="label pull-right">Low</span>
+                            <div class="fa fa-arrows-v task-sort-icon"></div>
+                            <div class="action-checkbox">
+                                <label class="px-single"><input type="checkbox" ng-checked="item.completed" name="" value="" class="px"><span class="lbl"></span></label>
+                            </div>
+                            <a href="#" class="task-title">{{item.title}}<span>{{item.due}}</span></a>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer clearfix">
+                        <div class="pull-right">
+                            <button class="btn btn-xs" id="clear-completed-tasks"><i class="fa fa-eraser text-success"></i> Clear completed tasks</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="panel widget-tasks">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-star-o"></i>Rating</span>
+                    </div> <!-- / .panel-heading -->
+                    <div class="panel-body">
+                        <span class="mmRating" ng-model="rating" disabled="true"></span>&nbsp;&nbsp;&nbsp;
+                        <span class="mmRating" ng-model="rating"></span>&nbsp;&nbsp;&nbsp;
+                        Current rating: <strong id="current-rating-example">{{rating}}</strong>&nbsp;&nbsp;&nbsp;
+                        Your rating: <strong id="your-rating-example">0</strong><br><br>
+                        <button ng-click="rating=2.3" id=" set-rating-example" class="btn btn-xs">Set current rating = 2.3</button>
+                    </div> <!-- / .panel-body -->
+                </div> <!-- / .panel -->
+                <!-- /15. $RATING -->
+                <!-- 16. $COMMENTS =================================================================================
+
+                    Comments
+                    -->
+                <div class="panel widget-comments">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>Last comments</span>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-repeat="item in lessUsers" class="comment">
+                            <img ng-src="{{item.image}}" alt="" class="comment-avatar">
+                            <div class="comment-body">
+                                <div class="comment-by">
+                                    <a href="#" title="">Denise Steiner</a> commented on <a href="#" title="">Article Name</a>
+                                </div>
+                                <div class="comment-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                </div>
+                                <div class="comment-actions">
+                                    <a href="#"><i class="fa fa-pencil"></i>Edit</a>
+                                    <a href="#"><i class="fa fa-times"></i>Remove</a>
+                                    <span class="pull-right">2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/ng-template" id="categoryTree">
+                    <img ng-src="{{comment.images}}" alt="" class="comment-avatar">
+                    <div class="comment-body">
+                        <div class="comment-text">
+                            <div class="comment-heading">
+                                <a href="#" title="">{{comment.name}}</a><span>14 hours ago</span>
+                            </div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                        </div>
+                        <div class="comment-footer">
+                            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                            &nbsp;&nbsp;·&nbsp;&nbsp;
+                            <a href="#">Reply</a>
+                        </div>
+                    </div> <!-- / .comment-body -->
+                    <div class="comment" ng-repeat="comment in comment.comments" ng-include="'categoryTree'"></div>
+                </script>
+                <div class="panel widget-article-comments">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comment"></i>Article comments</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="comment" ng-repeat="comment in comments" ng-include="'categoryTree'"></div>
+                    </div>
+                    <div class="panel-footer clearfix">
+                        <div class="article-comments-add">
+                            <textarea rows="1" class="form-control input-sm"></textarea>
+                            <div class="expanding-input-hidden" style="margin-top: 10px;">
+                                <button class="btn btn-sm btn-primary pull-right">Post comment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel widget-followers">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-check"></i>Followers</span>
+                    </div> <!-- / .panel-heading -->
+                    <div class="panel-body">
+
+                        <div ng-repeat="item in lessUsers" class="follower">
+                            <img ng-src="{{item.image}}" alt="" class="follower-avatar">
+                            <div class="body">
+                                <div class="follower-controls">
+                                    <a ng-show="{{item.username=='@rjang' }}" href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i><span>&nbsp;&nbsp;Following</span></a>
+                                    <a ng-hide="{{item.username=='@rjang' }}" href="#" class="btn btn-sm btn-outline">Follow</a>
+                                </div>
+                                <a href="#" class="follower-name">{{item.fullname}}</a><br>
+                                <a href="#" class="follower-username">{{item.username}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- / .row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-map-marker"></i>Google Maps</span>
+                    </div> <!-- / .panel-heading -->
+                    <div class="panel-body" style="position:relative;height: 300px;">
+                        <div class="widget-maps" id="widget-maps-example" mm-map></div>
+                    </div> <!-- / .panel-body -->
+                </div> <!-- / .panel -->
+                <!-- /19. $GOOGLE_MAPS_WIDGET -->
+
+            </div>
+        </div> <!-- / .row -->
+    </div>
+    <div class="tab-pane fade in" id="statpanels">
+        <div class="page-header">
+            <h1><i class="fa fa-bar-chart-o page-header-icon"></i>&nbsp;&nbsp;Stat Panels</h1>
+        </div> <!-- / .page-header -->
+
+        <div class="note note-info padding-xs-vr">
+            PixelAdmin's <strong>stat panels</strong> are flexible tool to visualize data sets. You can create panels without writing any extra styles. Also you can define height of panels via css (all sub blocks will stretch automatically). See source code.<br><br>
+            <strong>NOTE:</strong> This examples uses utility classes defined in the utils.less file.<br><br>
+            <button class="btn btn-xs" id="equal-height">Equalize heights</button>
+        </div> <!-- / .note -->
+
+        <div class="row">
+            <div class="col-sm-5">
+
+                <!-- 5. $EXAMPLE_NOTIFICATIONS =====================================================================
+
+                    Notifications example
+                    -->
+                <div class="stat-panel">
+                    <!-- Success background, bordered, without top and bottom borders, without left border, without padding, vertically and horizontally centered text, large text -->
+                    <a href="#" class="stat-cell col-xs-5 bg-success bordered no-border-vr no-border-l no-padding valign-middle text-center text-lg">
+                        <i class="fa fa-calendar"></i>&nbsp;&nbsp;<strong>11</strong>
+                    </a> <!-- /.stat-cell -->
+                    <!-- Without padding, extra small text -->
+                    <div class="stat-cell col-xs-7 no-padding valign-middle">
+                        <!-- Add parent div.stat-rows if you want build nested rows -->
+                        <div class="stat-rows">
+                            <div class="stat-row">
+                                <!-- Success background, small padding, vertically aligned text -->
+                                <a href="#" class="stat-cell bg-success padding-sm valign-middle">
+                                    32 messages
+                                    <i class="fa fa-envelope-o pull-right"></i>
+                                </a>
+                            </div>
+                            <div class="stat-row">
+                                <!-- Success darken background, small padding, vertically aligned text -->
+                                <a href="#" class="stat-cell bg-success darken padding-sm valign-middle">
+                                    9 issues
+                                    <i class="fa fa-bug pull-right"></i>
+                                </a>
+                            </div>
+                            <div class="stat-row">
+                                <!-- Success darker background, small padding, vertically aligned text -->
+                                <a href="#" class="stat-cell bg-success darker padding-sm valign-middle">
+                                    47 new users
+                                    <i class="fa fa-users pull-right"></i>
+                                </a>
+                            </div>
+                        </div> <!-- /.stat-rows -->
+                    </div> <!-- /.stat-cell -->
+                </div> <!-- /.stat-panel -->
+                <!-- /5. $EXAMPLE_NOTIFICATIONS -->
+
+            </div>
+            <div class="col-sm-4">
+
+                <!-- 6. $EXAMPLE_COMMENTS_COUNT ====================================================================
+
+                    Comments count example
+                    -->
+                <div class="stat-panel">
+                    <!-- Success background. vertically centered text -->
+                    <div class="stat-cell bg-danger valign-middle">
+                        <!-- Stat panel bg icon -->
+                        <i class="fa fa-comments bg-icon"></i>
+                        <!-- Extra large text -->
+                        <span class="text-xlg"><strong>124</strong></span><br>
+                        <!-- Big text -->
+                        <span class="text-bg">Comments</span><br>
+                        <!-- Small text -->
+                        <span class="text-sm">New comments today</span>
+                    </div> <!-- /.stat-cell -->
+                </div> <!-- /.stat-panel -->
+                <!-- /6. $EXAMPLE_COMMENTS_COUNT -->
+
+            </div>
+            <div class="col-sm-3">
+
+                <!-- 7. $EXAMPLE_ICON_PANEL ========================================================================
+
+                    Icon panel example
+                    -->
+                <div class="stat-panel">
+                    <div class="stat-row">
+                        <!-- Info background, without padding, horizontally centered text, super large text -->
+                        <div class="stat-cell bg-info no-padding text-center text-slg">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                    </div> <!-- /.stat-row -->
+                    <div class="stat-row">
+                        <!-- Bordered, without top border, horizontally centered text, large text -->
+                        <div class="stat-cell bordered no-border-t text-center text-lg">
+                            <strong>4:50</strong>
+                            <small><small>PM</small></small>
+                        </div>
+                    </div> <!-- /.stat-row -->
+                </div> <!-- /.stat-panel -->
+                <!-- /7. $EXAMPLE_ICON_PANEL -->
+
+            </div>
+        </div> <!-- / .row -->
+        <div class="row">
+            <div class="col-sm-3">
+
+                <!-- 8. $EXAMPLE_VISITORS_CHART ====================================================================
+
+                    Visitors chart example
+                    -->
+
+
+                <div class="stat-panel">
+                    <div class="stat-row">
+                        <!-- Warning background -->
+                        <div class="stat-cell bg-warning">
+                            <!-- Big text -->
+                            <span class="text-bg">15% more</span><br>
+                            <!-- Small text -->
+                            <span class="text-sm">Monthly visitor statistics</span>
+                        </div>
+                    </div> <!-- /.stat-row -->
+                    <div class="stat-row">
+                        <!-- Warning background, small padding, without top padding, horizontally centered text -->
+                        <div class="stat-cell bg-warning padding-sm no-padding-t text-center">
+                            <div id="stats-sparklines-2" class="stats-sparklines" style="width: 100%"></div>
+                        </div>
+                    </div> <!-- /.stat-row -->
+                </div> <!-- /.stat-panel -->
+                <!-- /8. $EXAMPLE_VISITORS_CHART -->
+
+            </div>
+            <div class="col-sm-4">
+
+                <!-- 9. $EXAMPLE_RETWEETS_GRAPH ====================================================================
+
+                    Retweets graph example
+                    -->
+
+
+                <div class="stat-panel">
+                    <div class="stat-row">
+                        <!-- Info background, small padding -->
+                        <div class="stat-cell bg-info padding-sm">
+                            <!-- Extra small text -->
+                            <div class="text-xs" style="margin-bottom: 5px;">RETWEETS GRAPH</div>
+                            <div class="stats-sparklines" id="stats-sparklines-3" style="width: 100%"></div>
+                        </div>
+                    </div> <!-- /.stat-row -->
+                    <div class="stat-row">
+                        <!-- Bordered, without top border, horizontally centered text -->
+                        <div class="stat-counters bordered no-border-t text-center">
+                            <!-- Small padding, without horizontal padding -->
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>312</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">TWEETS</span>
+                            </div>
+                            <!-- Small padding, without horizontal padding -->
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>1000</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">FOLLOWERS</span>
+                            </div>
+                            <!-- Small padding, without horizontal padding -->
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>523</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">FOLLOWING</span>
+                            </div>
+                        </div> <!-- /.stat-counters -->
+                    </div> <!-- /.stat-row -->
+                </div> <!-- /.stat-panel -->
+                <!-- /9. $EXAMPLE_RETWEETS_GRAPH -->
+
+            </div>
+            <div class="col-sm-5">
+
+                <!-- 10. $EXAMPLE_EARNINGS_GRAPH ===================================================================
+
+                    Earnings graph example
+                    -->
+
+
+                <div class="stat-panel">
+                    <!-- Bordered, without right border, right aligned text -->
+                    <div class="stat-cell col-xs-5 bordered no-border-r text-right">
+                        <!-- Stat panel bg icon -->
+                        <i class="fa fa-trophy bg-icon bg-icon-left"></i>
+                        <!-- Extra small text -->
+                        <span class="text-xs">TODAY'S EARNINGS</span><br>
+                        <!-- Extra large text -->
+                        <span class="text-xlg"><small><small>$</small></small><strong>247</strong></span>
+                    </div> <!-- /.stat-cell -->
+                    <!-- Success darken background, without padding, vertically centered text -->
+                    <div class="stat-cell col-xs-7 bg-success no-padding valign-bottom">
+                        <div class="stats-sparklines" id="stats-sparklines-1" style="width: 100%"></div>
+                    </div>
+                </div> <!-- /.stat-panel -->
+                <!-- /10. $EXAMPLE_EARNINGS_GRAPH -->
+
+            </div>
+        </div> <!-- / .row -->
+        <div class="row">
+            <div class="col-sm-4">
+
+                <!-- 11. $EXAMPLE_ACCOUNT_OVERVIEW =================================================================
+
+                    Account overview example
+                    -->
+                <div class="stat-panel">
+                    <div class="stat-row">
+                        <!-- Success darker background -->
+                        <div class="stat-cell bg-success darker">
+                            <!-- Stat panel bg icon -->
+                            <i class="fa fa-lightbulb-o bg-icon" style="font-size:60px;line-height:80px;height:80px;"></i>
+                            <!-- Big text -->
+                            <span class="text-bg">Overview</span><br>
+                            <!-- Small text -->
+                            <span class="text-sm">Your account statistics</span>
+                        </div>
+                    </div> <!-- /.stat-row -->
+                    <div class="stat-row">
+                        <!-- Success background, without bottom border, without padding, horizontally centered text -->
+                        <div class="stat-counters bg-success no-border-b no-padding text-center">
+                            <!-- Small padding, without horizontal padding -->
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>12</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">PURCHASES</span>
+                            </div>
+                            <!-- Small padding, without horizontal padding -->
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>17</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">REVIEWS</span>
+                            </div>
+                            <!-- Small padding, without horizontal padding -->
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>49</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">LIKES</span>
+                            </div>
+                        </div> <!-- /.stat-counters -->
+                    </div> <!-- /.stat-row -->
+                    <div class="stat-row">
+                        <!-- Success background, without bottom border, without padding, horizontally centered text -->
+                        <div class="stat-counters bg-success no-border-b no-padding text-center">
+                            <!-- Small padding, without horizontal padding -->
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>203</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">FRIENDS</span>
+                            </div>
+                            <div class="stat-cell col-xs-4 padding-sm no-padding-hr">
+                                <!-- Big text -->
+                                <span class="text-bg"><strong>1056</strong></span><br>
+                                <!-- Extra small text -->
+                                <span class="text-xs">POINTS</span>
+                            </div>
+                            <!-- Success background, small padding, without left and right padding, vertically centered text -->
+                            <a href="#" class="stat-cell col-xs-4 bg-success padding-sm no-padding-hr valign-middle">
+                                <!-- Extra small text -->
+                                <span class="text-xs">MORE&nbsp;&nbsp;<i class="fa fa-caret-right"></i></span>
+                            </a>
+                        </div> <!-- /.stat-counters -->
+                    </div> <!-- /.stat-row -->
+                </div> <!-- /.stat-panel -->
+                <!-- /11. $EXAMPLE_ACCOUNT_OVERVIEW -->
+
+            </div>
+            <div class="col-sm-8">
+
+                <!-- 12. $EXAMPLE_UPLOAD_STATISTICS ================================================================
+
+                    Upload statistics example
+                    -->
+
+
+                <div class="stat-panel">
+                    <div class="stat-row">
+                        <!-- Bordered, without right border, top aligned text -->
+                        <div class="stat-cell col-sm-4 bordered no-border-r padding-sm-hr valign-top">
+                            <!-- Small padding, without top padding, extra small horizontal padding -->
+                            <h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-cloud-upload text-primary"></i>&nbsp;&nbsp;Uploads</h4>
+                            <!-- Without margin -->
+                            <ul class="list-group no-margin">
+                                <!-- Without left and right borders, extra small horizontal padding -->
+                                <li class="list-group-item no-border-hr padding-xs-hr">
+                                    Documents <span class="label pull-right">34</span>
+                                </li> <!-- / .list-group-item -->
+                                <!-- Without left and right borders, extra small horizontal padding -->
+                                <li class="list-group-item no-border-hr padding-xs-hr">
+                                    Audio <span class="label pull-right">128</span>
+                                </li> <!-- / .list-group-item -->
+                                <!-- Without left and right borders, without bottom border, extra small horizontal padding -->
+                                <li class="list-group-item no-border-hr no-border-b padding-xs-hr">
+                                    Videos <span class="label pull-right">12</span>
+                                </li> <!-- / .list-group-item -->
+                            </ul>
+                        </div> <!-- /.stat-cell -->
+                        <!-- Primary background, small padding, vertically centered text -->
+                        <div class="stat-cell col-sm-8 bg-primary padding-sm valign-middle">
+                            <div id="hero-graph" class="graph" style="height: 180px;"></div>
+                        </div>
+                    </div>
+                </div> <!-- /.stat-panel -->
+                <!-- /12. $EXAMPLE_UPLOAD_STATISTICS -->
+
+            </div>
+        </div> <!-- / .row -->
+
+
+
+    </div>
+    <div class="tab-pane fade" id="mainmenudemo">
+        <div class="page-header">
+            <h1><span class="text-light-gray">Layouts / </span>Main Menu</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Collapsing/Expanding</span>
+                    </div>
+                    <div class="panel-body">
+                        To expand the main menu on small screens, add class <code>.mme</code> to the <code>&lt;body&gt;</code>. To collapse the main menu on desktops, add class <code>.mmc</code> to the <code>&lt;body&gt;</code>.
+                        <br><br>
+                        <button class="btn" id="toggle-mme" ng-click="hidemainmenu()">Hide The Main Menu</button>&nbsp;&nbsp;
+                        <button class="btn" id="toggle-mme" ng-click="showmainmenu()">Show The Main Menu</button>&nbsp;&nbsp;
+                        <button class="btn" id="toggle-mmc" ng-click="togglemainmenu()">Toggle Main Menu</button>&nbsp;&nbsp;
+                        <button class="btn" id="toggle-mmc" ng-click="expandmainmenu()">Expand Main Menu</button>&nbsp;&nbsp;
+                        <button class="btn" id="toggle-mmc" ng-click="callopsemainmenu()">Callopse Main Menu</button>&nbsp;&nbsp;
+
+
+                        <button class="btn" id="toggle-mmc" ng-click="fixedmainmenu()">Fixed Main Menu</button>&nbsp;&nbsp;
+                        <button class="btn" id="toggle-mmc" ng-click="notfixedmainmenu()">Not Fixed Main Menu</button>&nbsp;&nbsp;
+
+
+                        <button class="btn" id="toggle-mme">Toggle .mme class</button>&nbsp;&nbsp;
+                        <button class="btn" id="toggle-mmc">Toggle .mmc class</button>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Menu settings</span>
+                        <div class="panel-heading-controls">
+                            <span class="label label-primary">Updated</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        You can find the main menu settings in the <code>javascripts/sources/app.coffee</code> file. Customize them by passing options in the <code>PixelAdmin.start</code> method. I would not recommend editing the source files, because you may have trouble with code update in the future.
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>accordion</td>
+                                <td><code>true</code></td>
+                                <td>The main menu acts like an accordion, i.e. when you open a submenu, all other opened submenus will close.</td>
+                            </tr>
+                            <tr>
+                                <td>animation_speed</td>
+                                <td><code>250</code></td>
+                                <td>Animation duration.</td>
+                            </tr>
+                            <tr>
+                                <td>store_state</td>
+                                <td><code>true</code></td>
+                                <td>Store the main menu 'expanded/collapsed' state in the localStorage/cookies.</td>
+                            </tr>
+                            <tr>
+                                <td>store_state_key</td>
+                                <td><code>'mmstate'</code></td>
+                                <td>Key in the localStorage/cookies.</td>
+                            </tr>
+                            <tr>
+                                <td>disable_animation_on</td>
+                                <td><code>['small']</code></td>
+                                <td>Disable animation on specified screen sizes for the perfomance reason. Possible values: 'small', 'tablet', 'desktop'.</td>
+                            </tr>
+                            <tr>
+                                <td>dropdown_close_delay</td>
+                                <td><code>300</code></td>
+                                <td>Dropdown close delay in milliseconds. <strong>Note:</strong> Don't use values smaller than 100.</td>
+                            </tr>
+                            <tr>
+                                <td>detect_active</td>
+                                <td><code>true</code></td>
+                                <td>Detect active item.</td>
+                            </tr>
+                            <tr>
+                                <td>detect_active_predicate</td>
+                                <td><code>function(href, url) {<br>&nbsp;&nbsp;return href === url;<br>}</code></td>
+                                <td>Function that used to find active item by comparing item link and page location. Called for each menu item.<br><strong>href</strong> - item link;<br><strong>url</strong> - page location.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Menu API</span>
+                        <div class="panel-heading-controls">
+                            <span class="label label-primary">Updated</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        Access to the main menu instance: <code>PixelAdmin.plugins.main_menu.METHOD</code>.
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>toggle()</code></td>
+                                <td>
+                                    Toggle main menu collapsed/expanded state.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>toggleSubmenu(li)</code></td>
+                                <td>
+                                    <div class="label label-warning">MM EXPANDED</div>
+                                    Expand/collapse menu item.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>collapseSubmenu(li)</code></td>
+                                <td>
+                                    <div class="label label-warning">MM EXPANDED</div>
+                                    Collapse main menu item <code>.mm-dropdown</code>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>expandSubmenu(li)</code></td>
+                                <td>
+                                    <div class="label label-warning">MM EXPANDED</div>
+                                    Expand main menu item <code>.mm-dropdown</code>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>collapseAllSubmenus(li)</code></td>
+                                <td>
+                                    <div class="label label-warning">MM EXPANDED</div>
+                                    Collapse all opened main menu subitems <code>.mm-dropdown</code>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>openDropdown(li, freeze=false)</code></td>
+                                <td>
+                                    <div class="label label-warning">MM COLLAPSED</div>
+                                    Open main menu dropdown <code>.mm-dropdown</code>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>closeCurrentDropdown(force=false)</code></td>
+                                <td>
+                                    <div class="label label-warning">MM COLLAPSED</div>
+                                    Close opened dropdown <code>.mm-dropdown</code>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>freezeDropdown(li)</code></td>
+                                <td>
+                                    <div class="label label-warning">MM COLLAPSED</div>
+                                    Freeze dropdown.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>detectActiveItem()</code></td>
+                                <td>
+                                    Detect active item.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Menu position</span>
+                    </div>
+                    <div class="panel-body">
+                        By default the main menu places on the left side of the window. To put the menu on the right side, just add class <code>.main-menu-right</code> to the <code>&lt;body&gt;</code>. You could open demo settings and try it.<br><br>
+
+                        <div style="background: #f1f1f1;border-radius:3px;overflow: hidden">
+                            <div style="width: 100%;height: 30px;background:#ddd;font-size:10px;font-weight: 600;padding:8px 0 0 10px">PIXELADMIN</div>
+                            <div style="width: 25%;height: 100px;background:#999;" class="pull-right"></div>
+                        </div>
+
+                        <hr class="panel-wide">
+
+                        <!-- Radios -->
+                        <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">HIDE MAIN MENU</h6>
+
+                        You can hide the main menu and toggle button by adding class <code>.no-main-menu</code> to the <code>&lt;body&gt;</code>. You would open demo settings and try it. To completely remove the main menu from your project: <br><br>
+                        <ol>
+                            <li>Open the <span class="bg-success">jscompiler.js</span> file and remove line <code>build/components/main-menu.js</code>;</li>
+                            <li>Open the <span class="bg-success">styles/pixel-admin.less</span> file and remove line <code>@@import './pixel-admin-less/main-menu.less';</code></li>
+                            <li>Remove <code>#main-menu</code> markup from your html;</li>
+                            <li>Run <code>node csscompiler.js</code> and <code>node jscompiler.js</code> commands from the console (the compilers are cross platform)</li>
+                        </ol><br>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-title">Menu content</span>
+                    </div>
+                    <div class="panel-body">
+                        You can add custom content blocks to the main menu. To add a top block, just insert <code>&lt;div class="menu-content top"&gt;Content...&lt;/div&gt;</code> before <code>&lt;div class="navigation"&gt;...&lt;/div&gt;</code>. To add a bottom block insert <code>&lt;div class="menu-content"&gt;Content...&lt;/div&gt;</code> after <code>&lt;div class="navigation"&gt;...&lt;/div&gt;</code>.
+                        <br><br>
+
+                        <div style="background: #f1f1f1;border-radius:3px;overflow: hidden;width: 150px;text-align: center;margin: 0 auto;">
+                            <div style="height: 40px;background:#999;line-height: 40px;">.menu-content.top</div>
+                            <div style="height: 100px;line-height: 100px;">.navigation</div>
+                            <div style="height: 40px;background:#999;line-height: 40px;">.menu-content</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--</div>
+</div>-->

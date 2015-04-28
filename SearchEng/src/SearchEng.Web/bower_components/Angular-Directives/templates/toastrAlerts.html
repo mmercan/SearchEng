@@ -1,0 +1,99 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">Angular Components</div>
+        </div>
+        <div class="panel-body">
+                <!--#region toastrAlerts  -->
+                <div class="tab-pane" id="toastrAlerts">
+                    <div class="note note-info">
+                        <h2>Service not a directive</h2>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="4">
+                                        Add "notificationService" service in to your controller dependencies <br /><br />
+                                        angular.module("app").controller("angularcomp", ["$scope", "$http", "$routeParams", "$location"  ,"alertService", <b style="color:navy">"notificationService"</b>,"mainMenuService",  function($scope, $http, $routeParams, $location,  alertservice, <b style="color:navy"> notificationservice</b>,mainMenuService)
+                                    </td>
+                                </tr>
+                                <tr><td>Name</td><td>Type</td><td>Action</td><td>Desciption</td></tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>notificationService.success</td>
+                                    <td> function (title,message,options)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>notificationService.info</td>
+                                    <td> function (title,message,options)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>notificationService.warning</td>
+                                    <td> function (title,message,options)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>notificationService.error</td>
+                                    <td> function (title,message,options)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>title</td>
+                                    <td>string/html</td>
+                                    <td>title on notifation</td>
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>string/html</td>
+                                    <td>content on notifation</td>
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td>
+                                        "closeButton": false,<br />
+                                        "debug": false,<br />
+                                        "positionClass": "toast-top-right",<br />
+                                        "onclick": null,<br />
+                                        "showDuration": "3000",<br />
+                                        "hideDuration": "1000",<br />
+                                        "timeOut": "5000",<br />
+                                        "extendedTimeOut": "1000",<br />
+                                        "showEasing": "swing",<br />
+                                        "hideEasing": "linear",<br />
+                                        "showMethod": "fadeIn",<br />
+                                        "hideMethod": "fadeOut"
+                                    </td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title">Toastr notifications</span>
+                        </div>
+                        <div class="panel-body buttons-with-margins">
+                            <button class="btn btn-block btn-info btn-lg" ng-click="notificationInfo()">Default</button>
+                            <pre>notificationService.info("<strong>Heads up! </strong> Dude", "<strong>Check this </strong> This alert needs your attention, but it's not super important.", { "closeButton": true, }); </pre>
+
+                            <button class="btn btn-block  btn-lg btn-danger" id="jq-growl-error" ng-click="notificationError()">Error</button>
+                            <pre>notificationService.error("<strong>Warning! </strong> something is Wrong","Best check yo self, you're not looking too good. Change a few things up and try submitting again."); </pre>
+
+                            <button class="btn btn-block  btn-lg  btn-success" id="jq-growl-notice" ng-click="notificationSuccess()">Notice</button>
+                            <pre>notificationService.success("<strong>Well done! </strong> Mate", "<strong>Cool</strong> You successfully read this important alert message.");</pre>
+
+                            <button class="btn btn-block  btn-lg  btn-warning" id="jq-growl-warning" ng-click="notificationWarning()">Warning</button>
+                            <pre>notificationService.warning("<strong>Warning! </strong>  Warning", "<strong>Warning! </strong> Best check yo self, you're not looking too good.", { "progressBar": true, "positionClass": "toast-top-left", "showDuration": "3000"});</pre>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--#endregion -->
+        </div>
+    </div>
+</div>

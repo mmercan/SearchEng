@@ -1,0 +1,13 @@
+{
+  "name": "pixeladminless",
+  "homepage": "https://github.com/mmercan/pixeladminLess",
+  "_release": "4dae2510dd",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4dae2510dddc266d30b6fab0028241f1f3be2b46"
+  },
+  "_source": "https://github.com/mmercan/pixeladminLess.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/mmercan/pixeladminLess.git"
+}

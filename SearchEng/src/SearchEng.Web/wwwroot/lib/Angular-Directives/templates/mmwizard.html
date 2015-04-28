@@ -1,0 +1,98 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">Angular Components</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmwizard  -->
+            <div id="mmwizard" class="tab-pane" ng-init="">
+                <div class="note note-info">
+                    <h2>restrict: 'C'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>mmLocalstorage
+                <h2>ng-non-bindable</h2>
+
+
+                <ul class="mmWizard" step-changed="stepchanged">
+                    <li class="wizard-step">
+                        <div class="wizard-caption">Step1<span class="wizard-step-description">Personal Info</span></div>
+                        <div class="wizard-content">
+                            <form name="validateForm">
+                                <div class="form-group dark has-feedback" mm-validator="{'required':'can not be empty'}">
+                                    <label class="control-label">Name</label> <input type="text" class="form-control" name="name" ng-model="user.name" required minlength="2" maxlength="30" />
+                                </div>
+                                <div class="form-group dark has-feedback" mm-validator="{'required':'can not be empty'}">
+                                    <label class="control-label">Surname</label> <input type="text" class="form-control" name="surname" ng-model="user.surname" required />
+                                </div>
+                                <div class="form-group dark has-feedback">
+                                    <label class="control-label">Gender</label><select class="form-control" name="user.gender" ng-model="user.gender">
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                </div>
+                                <div class="form-group dark has-feedback">
+                                    <label class="control-label">Birthdate</label><label class="control-label">Name</label> <input type="text" class="form-control mmDatepicker" name="birthdate" ng-model="user.birthdate" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="wizard-buttons"></div>
+                    </li>
+                    <li class="wizard-step">
+                        <div class="wizard-caption">Step 2 <span class="wizard-step-description">Account Info</span></div>
+                        <div class="wizard-content">
+                            <form name="validateForm">
+                                <div class="form-group dark has-feedback" mm-validator="{'required':'can not be empty'}"><label class="control-label">Company Name</label> <input type="text" class="form-control" name="companyName" ng-model="user.companyName" required /></div>
+                                <div class="form-group dark has-feedback"><label class="control-label">Job Title</label> <input type="text" class="form-control" name="jobTitle" ng-model="user.jobTitle" /></div>
+                                <div class="form-group dark has-feedback"><label class="control-label">Age</label> <input type="number" class="form-control" name="age" ng-model="user.age" min="18" max="110" /></div>
+                                <div class="wizard-buttons"></div>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="wizard-step">
+                        <div class="wizard-caption">Step 3 <span class="wizard-step-description">Subscription Info</span></div>
+                        <div class="wizard-content" ng-non-bindable>
+                            <div class="form-group dark has-feedback">
+                                <label class="control-label">Pick Subscription Model</label>
+                                <div class="radio"><label><input type="radio" ng-model="user.subscriptionModel" name="optionsRadios" id="subscriptionModel" value="Free" checked="">Free</label></div>
+                                <div class="radio"><label><input type="radio" ng-model="user.subscriptionModel" name="optionsRadios" id="subscriptionModel" value="Monthly" checked="">Monthly</label></div>
+                                <div class="radio"><label><input type="radio" ng-model="user.subscriptionModel" name="optionsRadios" id="subscriptionModel" value="Annually" checked="">Annually</label></div>
+                            </div>
+                            <div class="form-group dark has-feedback">
+                                <select class="form-control" ng-model="user.timezone" mm-select2="{ allowClear: true}">
+                                    <optgroup ng-repeat=" group in $parent.timezonelist" label="{{group.label}}">
+                                        <option ng-repeat="item in group.cities" value="{{item.value}}">{{item.name}}</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="wizard-buttons"></div>
+                    </li>
+                    <li class="wizard-step">
+                        <div class="wizard-caption">Summary <span class="wizard-step-description">Please check all your answers before click Finish</span></div>
+                        <div class="wizard-content">
+                            <div class="row"><div class="col-sm-2">Name</div><div class="col-sm-10">{{user.name}}</div></div>
+                            <div class="row"><div class="col-sm-2">Surname</div><div class="col-sm-10">{{user.surname}}</div></div>
+                            <div class="row"><div class="col-sm-2">Gender</div><div class="col-sm-10">{{user.gender}}</div></div>
+                            <div class="row"><div class="col-sm-2">Birthdate</div><div class="col-sm-10">{{user.birthdate}}</div></div>
+                            <div class="row"><div class="col-sm-2">Company Name</div><div class="col-sm-10">{{user.companyName}}</div></div>
+                            <div class="row"><div class="col-sm-2">Job Title</div><div class="col-sm-10">{{user.jobTitle}}</div></div>
+                            <div class="row"><div class="col-sm-2"> Subscription Model</div><div class="col-sm-10">{{user.subscriptionModel}}</div></div>
+                            <div class="row"><div class="col-sm-2">Time Zone</div><div class="col-sm-10">{{user.timezone}}</div></div>
+                        </div>
+                        <div class="wizard-buttons"></div>
+                    </li>
+                </ul>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

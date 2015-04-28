@@ -1,0 +1,52 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">Angular Components</div>
+        </div>
+        <div class="panel-body">
+            <!--#region timePicker  -->
+            <div id="timePicker" class="tab-pane" ng-init="">
+                <div class="note note-info">
+                    <h2>restrict: 'C'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>timepicker</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ng-model</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>hour-step</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>minute-step</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>show-meridian</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>mm-timepicker
+
+                {{mytime}}
+
+                <timepicker ng-model="mytime" ng-change="changed()" hour-step="1" minute-step="5" show-meridian="false"></timepicker>
+
+                <pre>&lt;timepicker ng-model="mytime" ng-change="changed()" hour-step="1" minute-step="5" show-meridian="false"&gt;&lt;/timepicker&gt;</pre>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

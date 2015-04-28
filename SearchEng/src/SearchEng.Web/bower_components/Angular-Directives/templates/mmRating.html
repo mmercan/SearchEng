@@ -1,0 +1,40 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmRating</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmRating  -->
+            <div class="tab-pane" id="mmRating">
+                <div class="note note-info">
+                    <h2>restrict: 'A'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmRating</td>
+                                <td>no additional params</td>
+                                <td>
+                                    class="mmRating" rating Control
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ngModel</td>
+                                <td>integer</td>
+                                <td>Rating's numeric value</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <span class="mmRating" ng-model="rating"></span>
+                <pre>&lt;span class="mmRating" ng-model="rating"&gt;&lt;/span&gt;</pre>
+                <span class="mmRating" ng-model="rating" disabled="true"></span>
+                <pre>&nbsp;&lt;span class="mmRating" ng-model="rating" disabled="true"&gt;&lt;/span&gt;</pre>
+
+                Current rating: <strong id="current-rating-example">{{rating}}</strong>&nbsp;&nbsp;&nbsp;
+                <button ng-click="rating=2.3" id=" set-rating-example" class="btn btn-xs">Set current rating = 2.3</button>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

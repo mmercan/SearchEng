@@ -1,0 +1,70 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmFileUploader</div>
+        </div>
+        <div class="panel-body">
+
+            <!--#region mmFileRead  -->
+            <div class="tab-pane" id="mmFileRead">
+                <div class="note note-info">
+                    <h2>restrict: 'C'</h2>
+                    <h2>JqueryUI required</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmFileUploader</td>
+                                <td>class</td>
+                                <td>enables mmFileUploader directive</td>
+                            </tr>
+                            <tr>
+                                <td>progress</td>
+                                <td>numeric</td>
+                                <td> it return upload percentage as integer between 0 to 100 on upload process </td>
+                            </tr>
+                            <tr>
+                                <td>iscompleted</td>
+                                <td>bool</td>
+                                <td>Returs true when upload finishes</td>
+                            </tr>
+                            <tr>
+                                <td>filesuploaded</td>
+                                <td>event (function)</td>
+                                <td>trigers the function when all files uploaded returns <b>uploadedfiles</b></td>
+                            </tr>
+                            <tr>
+                                <td>uploadedfiles</td>
+                                <td>Object</td>
+                                <td>
+                                    <p>if backend returns Json string it parses as a list and if multiple is true it returns parsed Json respond from server</p><p> if multiple is false it returns the first result from parsed Json respond </p>
+                                    <p>if server doesn't respond as Json string <b>uploadedfiles</b> return direct server respond</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>multiple</td>
+                                <td></td>
+                                <td>Single or Multiple file to upload</td>
+                            </tr>
+                            <tr>
+                                <td>uploadlocation</td>
+                                <td></td>
+                                <td>Backend Api Location</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre>&lt;div class="mmFileUploader" uploadedfiles="uploadedfile" filesuploaded="filesuploaded" uploadlocation="api/upload" multiple="true"&gt;&lt;/div&gt;</pre>
+                <div class="mmFileUploader" uploadedfiles="uploadedfile" filesuploaded="filesuploaded" uploadlocation="api/upload" multiple="true">
+                </div>
+                <h4>Backend Requied to save the files</h4>
+                <p>Expects Http status 200 for Successfull upload response from server</p>
+                <p>Http 500 and 404 is for Errors on upload</p>
+                <p>Completed event returns server response if Http Status is 200</p>
+
+                <pre><p>using System.IO;<br />using System.Net;<br />using System.Net.Http;<br />using System.Text;<br />using System.Threading.Tasks;<br />using System.Web;<br />using System.Web.Http;</p> <p>namespace testit.Controllers<br />{<br />&nbsp;&nbsp;&nbsp; public class UploadController : ApiController<br />&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public async Task&lt;HttpResponseMessage&gt; PostFile()<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!Request.Content.IsMimeMultipartContent()){throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string root = HttpContext.Current.Server.MapPath("~/App_Data");<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var provider = new MultipartFormDataStreamProvider(root);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var sb = new StringBuilder(); <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; await Request.Content.ReadAsMultipartAsync(provider);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (var key in provider.FormData.AllKeys)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (var val in provider.FormData.GetValues(key))<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb.Append(string.Format("{0}: {1}\n", key, val));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (var file in provider.FileData)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var fileInfo = new FileInfo(file.LocalFileName);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //var fileBinary = File.ReadAllBytes(fileInfo.FullName);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb.Append(string.Format("Uploaded file: {0} ({1} bytes)\n", fileInfo.Name, fileInfo.Length));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return new HttpResponseMessage{ Content = new StringContent(sb.ToString())};<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch (System.Exception e){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; }<br />}</p> </pre>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

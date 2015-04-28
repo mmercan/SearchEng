@@ -1,0 +1,92 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">popover</div>
+        </div>
+        <div class="panel-body">
+            <!--#region popover  -->
+            <div id="popover" class="tab-pane">
+                <div class="note note-info">
+                    <h2>restrict: 'AC'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr><td>data-popover</td><td></td><td>or popover to enable tooltip directive </td></tr>
+                            <tr><td>data-placement</td><td></td><td>left, top, bottom, right position of the message</td></tr>
+                            <tr><td>data-title</td><td></td><td>title in popover</td></tr>
+                            <tr><td>data-content</td><td></td><td>Message in popover</td></tr>
+                            <tr>
+                                <td>class</td>
+                                <td></td>
+                                <td>
+                                    popover-success, popover-danger,  popover-warning, popover-info :color options <br />
+                                    popover-colorful : not just Title content also get colors
+                                    popover-dark : darker colors
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                popover
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <span class="panel-title">Popovers</span>
+                            </div>
+                            <div class="panel-body buttons-with-margins" id="popovers-demo">
+                                <button type="button" class="btn" data-toggle="popover" data-popover data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Popover title" data-original-title="" title="">Popover on right</button>&nbsp;&nbsp;
+                                <button type="button" class="btn" data-toggle="popover" data-popover data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Popover title" data-original-title="" title="">Popover on top</button>&nbsp;&nbsp;
+                                <button type="button" class="btn" data-toggle="popover" data-popover data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Popover title" data-original-title="" title="">Popover on bottom</button>&nbsp;&nbsp;
+                                <button type="button" class="btn" data-popover data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Popover title" data-original-title="" title="">Popover on left</button>&nbsp;&nbsp;
+                                <button type="button" class="btn" data-popover data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="">Without title</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <span class="panel-title">Colorful popovers</span>
+                            </div>
+                            <div class="panel-body buttons-with-margins" id="s-popovers-demo">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" data-popover class="btn btn-success popover-success" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Success default" data-original-title="" title="">Success</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-danger popover-danger" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Danger default" data-original-title="" title="">Danger</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-warning popover-warning" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Warning default" data-original-title="" title="">Warning</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-info popover-info" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Info default" data-original-title="" title="">Info</button>
+                                    </div>
+                                </div><br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" data-popover class="btn btn-success popover-success popover-dark" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Success dark" data-original-title="" title="">Success dark</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-danger popover-danger popover-dark" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Danger dark" data-original-title="" title="">Danger dark</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-warning popover-warning popover-dark" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Warning dark" data-original-title="" title="">Warning dark</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-info popover-info popover-dark" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Info dark" data-original-title="" title="">Info dark</button>
+                                    </div>
+                                </div><br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" data-popover class="btn btn-success popover-success popover-colorful" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Success default - Colorful" data-original-title="" title="">Success - Colorful</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-danger popover-danger popover-colorful" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Danger default - Colorful" data-original-title="" title="">Danger - Colorful</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-warning popover-warning popover-colorful" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Warning default - Colorful" data-original-title="" title="">Warning - Colorful</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-info popover-info popover-colorful" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Info default - Colorful" data-original-title="" title="">Info - Colorful</button>
+                                    </div>
+                                </div><br />
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" data-popover class="btn btn-success popover-success popover-dark popover-colorful" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Success dark - Colorful" data-original-title="" title="">Success dark - Colorful</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-danger popover-danger popover-dark popover-colorful" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Danger dark - Colorful" data-original-title="" title="">Danger dark - Colorful</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-warning popover-warning popover-dark popover-colorful" data-toggle="popover" data-placement="bottom" data-content="Vivamussagittis lacus vel augue laoreet rutrum faucibus." data-title="Warning dark - Colorful" data-original-title="" title="">Warning dark - Colorful</button>&nbsp;&nbsp;
+                                        <button type="button" data-popover class="btn btn-info popover-info popover-dark popover-colorful" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Info dark - Colorful" data-original-title="" title="">Info dark - Colorful</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

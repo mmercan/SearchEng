@@ -1,0 +1,22 @@
+{
+    "Data": {
+        "DefaultConnection": { 
+            "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-SearchEng.Web-51b270ba-76ee-4827-b5f4-04006bcc1e06;Trusted_Connection=True;MultipleActiveResultSets=true"
+        }
+    },
+	"EntityFramework": {
+		"ApplicationDbContext": {
+			"ConnectionString": "Data:DefaultConnection:ConnectionString"
+		}
+	},
+	"myconfig": {
+		"providerSettings": {
+			"logger": { "name": "consoleLogger", "type": "AW.Core.Providers.Components.Logger.LocalLogger, AW.Core" },
+			"mailler": { "Name": "smtpMailler", "Type": "SmtpMailler", "Address": "mmercan@outlook.com", "Password": "Pa$$w0rd", "Username": "mrtmrcn" },
+			"modules": {
+				"consoleLogger": { "name": "consoleLogger", "type": "SearchEng.Extensions.EntityLogger, SearchEng.Extensions" },
+			}
+		}
+
+	}
+}

@@ -1,0 +1,799 @@
+﻿<div class="page-header">
+    <h1><span class="text-light-gray">Form components / </span>Advanced</h1>
+</div> <!-- / .page-header -->
+
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- 5. $SWITCHERS =================================================================================
+
+
+                  Selected Item :{{selectedFirst}}
+        listitem : {{selectedListItem}}Switchers
+        -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Switchers</span>
+            </div>
+            <div class="panel-body" id="switcher-examples">
+                <div>
+                    <input type="checkbox" ng-model="isSelected" mm-switcher />&nbsp;&nbsp;
+                    <input type="checkbox" ng-model="isSelected" mm-switcher options="switchertemplate" theme="square">&nbsp;&nbsp;
+                    <input type="checkbox" ng-model="isSelected" mm-switcher theme="modern">
+                    <input type="checkbox" ng-model="isSelected" />
+                </div>
+
+                <hr class="panel-wide">
+
+                <!-- Colors -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">COLORS</h6>
+
+                <div id="switchers-colors-default" class="form-group-margin">
+                    <input type="checkbox" data-class="switcher-primary" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-success" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-danger" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-info" checked="checked" ng-model="isSelected" mm-switcher>
+                </div>
+                <div id="switchers-colors-square" class="form-group-margin">
+                    <input type="checkbox" data-class="switcher-primary" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-success" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-danger" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-info" checked="checked" ng-model="isSelected" mm-switcher theme="square">
+                </div>
+                <div id="switchers-colors-modern">
+                    <input type="checkbox" data-class="switcher-primary" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-success" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-danger" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" data-class="switcher-info" checked="checked" ng-model="isSelected" mm-switcher theme="modern">
+                </div>
+
+                <hr class="panel-wide">
+
+                <!-- Sizes -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">SIZES</h6>
+
+                <div id="switchers-sizes">
+                    <div class="form-group-margin">
+                        <input type="checkbox" data-class="switcher-lg" class="switcher-example-default" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                        <input type="checkbox" data-class="switcher-lg" class="switcher-example-square" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" data-class="switcher-lg" class="switcher-example-modern" ng-model="isSelected" mm-switcher theme="modern">
+                    </div>
+                    <div class="form-group-margin">
+                        <input type="checkbox" class="switcher-example-default" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                        <input type="checkbox" class="switcher-example-square" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" class="switcher-example-modern" ng-model="isSelected" mm-switcher theme="modern">
+                    </div>
+                    <div>
+                        <input type="checkbox" data-class="switcher-sm" class="switcher-example-default" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                        <input type="checkbox" data-class="switcher-sm" class="switcher-example-square" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" data-class="switcher-sm" class="switcher-example-modern" ng-model="isSelected" mm-switcher theme="modern">
+                    </div>
+                </div>
+
+                <hr class="panel-wide">
+
+                <!-- Disabled state -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">DISABLED STATE</h6>
+
+                <div id="switchers-disabled">
+                    <div class="form-group-margin">
+                        <input type="checkbox" id="switcher-disabled-default" disabled="disabled" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                        <input type="checkbox" id="switcher-disabled-square" checked="checked" disabled="disabled" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" id="switcher-disabled-modern" disabled="disabled" ng-model="isSelected" mm-switcher>
+                    </div>
+                    <div>
+                        <button class="btn btn-success btn-sm" id="switcher-enable-all">Enable</button>&nbsp;&nbsp;
+                        <button class="btn btn-danger btn-sm" id="switcher-disable-all">Disable</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel widget-tasks">
+            <div class="panel-heading">
+                <span class="panel-title"><i class="panel-title-icon fa fa-star-o"></i>Rating</span>
+            </div> <!-- / .panel-heading -->
+            <div class="panel-body">
+                <span class="mmRating" ng-model="rating" disabled="true"></span>&nbsp;&nbsp;&nbsp;
+                <span class="mmRating" ng-model="rating"></span>&nbsp;&nbsp;&nbsp;
+                Current rating: <strong id="current-rating-example">{{rating}}</strong>&nbsp;&nbsp;&nbsp;
+                Your rating: <strong id="your-rating-example">0</strong><br><br>
+                <button ng-click="rating=2.3" id=" set-rating-example" class="btn btn-xs">Set current rating = 2.3</button>
+            </div> <!-- / .panel-body -->
+        </div> <!-- / .panel -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Styled checkboxeds and radios</span>
+            </div>
+            <div class="panel-body no-padding-t">
+
+                <!-- Checkboxes -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">CHECKBOXES</h6>
+
+                <!-- Checkbox styling -->
+                <p>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" class="px">
+                        <span class="lbl">One</span>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" class="px" checked="checked">
+                        <span class="lbl">Two</span>
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" class="px">
+                        <span class="lbl">Three</span>
+                    </label>
+                </p>
+                <hr>
+                <!-- Checkbox styling on button click -->
+                <p>
+                    <label class="checkbox-inline"><input type="checkbox"> One</label>
+                    <label class="checkbox-inline"><input type="checkbox" checked="checked"> Two</label>
+                    <label class="checkbox-inline"><input type="checkbox"> Three</label>
+                    <br><br>
+                    <button class="btn btn-xs" id="styled-ch-btn">Add some magic</button>
+                </p>
+
+                <hr class="panel-wide">
+
+                <!-- Radios -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">RADIOS</h6>
+
+                <!-- Radio styling -->
+                <p>
+                    <label class="radio">
+                        <input type="radio" name="styled-r1" class="px">
+                        <span class="lbl">One</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="styled-r1" class="px" checked="checked">
+                        <span class="lbl">Two</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="styled-r1" class="px">
+                        <span class="lbl">Three</span>
+                    </label>
+                </p>
+                <hr>
+                <!-- Radio styling on button click -->
+                <p>
+                    <label class="radio"><input type="radio" name="styled-r2"> One</label>
+                    <label class="radio"><input type="radio" name="styled-r2" checked="checked"> Two</label>
+                    <label class="radio"><input type="radio" name="styled-r2"> Three</label>
+                    <button class="btn btn-xs" id="styled-r-btn">Add some magic</button>
+                </p>
+
+                <hr class="panel-wide">
+
+                <div class="note">
+                    Also you can create single checkbox/radio without text label (see source code).
+                </div>
+
+                <p>
+                    <label class="px-single"><input type="checkbox" name="" value="" class="px"><span class="lbl"></span></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="px-single"><input type="checkbox" name="" value="" class="px"><span class="lbl"></span></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="px-single"><input type="checkbox" name="" value="" class="px"><span class="lbl"></span></label>
+                </p>
+
+                <div>
+                    <label class="px-single"><input type="radio" name="single-radio" value="" class="px"><span class="lbl"></span></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="px-single"><input type="radio" name="single-radio" value="" class="px"><span class="lbl"></span></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <label class="px-single"><input type="radio" name="single-radio" value="" class="px"><span class="lbl"></span></label>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- /6. $STYLED_CHECKBOXEDS_AND_RADIOS -->
+        <!-- 7. $JQUERY_CHARACTER_LIMIT ====================================================================
+
+                        jQuery Character limit
+        -->
+        <!-- Javascript -->
+        <!--<script>
+            init.push(function () {
+                $("#character-limit-input").limiter(20, { label: '#character-limit-input-label' });
+                $("#character-limit-textarea").limiter(100, { label: '#character-limit-textarea-label' });
+            });
+        </script>-->
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">jQuery Character limit</span>
+            </div>
+            <div class="panel-body">
+                <input type="text" id="character-limit-input" class="form-control">
+                <div id="character-limit-input-label" class="limiter-label form-group-margin">Characters left: <span class="limiter-count"></span></div>
+
+                <textarea id="character-limit-textarea" rows="3" class="form-control"></textarea>
+                <div id="character-limit-textarea-label" class="limiter-label">Characters left: <span class="limiter-count"></span></div>
+            </div>
+        </div>
+        <!-- /7. $JQUERY_CHARACTER_LIMIT -->
+        <!-- 8. $JQUERY_EXPANDING_INPUTS ===================================================================
+
+                        jQuery Expanding inputs
+        -->
+
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">jQuery Expanding inputs</span>
+            </div>
+            <div class="panel-body">
+
+                <div id="jq-expanding-input" class="form-group-margin">
+                    <input type="text" class="form-control">
+                    <div class="expanding-input-hidden" style="margin-top: 10px;">
+                        <label class="checkbox-inline"><input type="checkbox"> Checkbox</label>
+                        <button class="btn btn-primary pull-right">Post comment</button>
+                    </div>
+                </div>
+
+                <div id="jq-expanding-textarea">
+                    <textarea rows="3" class="form-control"></textarea>
+                    <div class="expanding-input-hidden" style="margin-top: 10px;">
+                        <label class="checkbox-inline"><input type="checkbox"> Checkbox</label>
+                        <button class="btn btn-primary pull-right">Post comment</button>
+                    </div>
+                </div>
+
+                <hr class="panel-wide">
+
+                <!-- Sizes -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">SIZES</h6>
+
+                <div id="jq-expanding-input-sm" class="form-group-margin">
+                    <input type="text" class="form-control input-sm">
+                    <div class="expanding-input-hidden">Hidden content</div>
+                </div>
+                <div id="jq-expanding-input-default" class="form-group-margin">
+                    <input type="text" class="form-control">
+                    <div class="expanding-input-hidden">Hidden content</div>
+                </div>
+                <div id="jq-expanding-input-lg">
+                    <input type="text" class="form-control input-lg">
+                    <div class="expanding-input-hidden">Hidden content</div>
+                </div>
+
+                <hr class="panel-wide">
+
+                <!-- Callbacks -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">CALLBACKS</h6>
+
+                <div id="jq-expanding-input-callbacks">
+                    <textarea rows="1" class="form-control"></textarea>
+                    <div class="expanding-input-hidden" style="margin-top: 10px;">
+                        <button class="btn btn-primary pull-right">Post comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /8. $JQUERY_EXPANDING_INPUTS -->
+
+    </div>
+    <div class="col-md-6">
+
+        <!-- 9. $JQUERY_SELECT2 ============================================================================
+
+                        jQuery Select2
+        -->
+
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">jQuery Select2</span>
+            </div>
+            <div class="panel-body select2-disabled-examples select2-colors-examples">
+                <div class="note note-info">More info and examples at <a href="http://ivaynberg.github.io/select2/" target="_blank">http://ivaynberg.github.io/select2/</a></div>
+
+
+                <select class="form-control" ng-model="selectedListItem" mm-select2="{ allowClear: true}">
+                    <optgroup ng-repeat=" group in timezonelist" label="{{group.label}}">
+                        <option ng-repeat="item in group.cities" value="{{item.value}}">{{item.name}}</option>
+                    </optgroup>
+                </select>
+
+                <hr class="panel-wide">
+
+                <!-- Multiselect -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">MULTISELECT</h6>
+
+                <select multiple="multiple" class="form-control" ng-model="selectedFirst" mm-select2="{ allowClear: true}">
+                    <optgroup ng-repeat=" group in timezonelist" label="{{group.label}}">
+                        <option ng-repeat="item in group.cities" value="{{item.value}}">{{item.name}}</option>
+                    </optgroup>
+                </select>
+
+
+                <!--<hr class="panel-wide">
+
+                <!-- External source -->
+                <hr class="panel-wide">
+
+                <!-- External source -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">EXTERNAL SOURCE</h6>
+
+                <input type="text" id="jquery-select2-external" class="form-control">
+
+                <hr class="panel-wide">
+
+                <!-- Disabled state -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">DISABLED STATE</h6>
+                <select class="form-control" mm-select2="{ allowClear: true}" ng-model="sListItem" disabled="disabled">
+                    <option></option>
+                    <option value="1">First option</option>
+                    <option value="2">Second option</option>
+                    <option value="3">Third option</option>
+                    <option value="4">Fourth option</option>
+                    <option value="5">Fourth option</option>
+                </select>
+                <br>
+                <select class="form-control" disabled="disabled" mm-select2="{ allowClear: true}" ng-model="sListItem">
+                    <option value="1">First option</option>
+                    <option value="2">Second option</option>
+                    <option value="3" selected="selected">Third option</option>
+                    <option value="4">Fourth option</option>
+                    <option value="5">Fourth option</option>
+                </select>
+                <br>
+                <select multiple="multiple" class="form-control" disabled="disabled" mm-select2="{ allowClear: true}" ng-model="sListItem">
+                    <option></option>
+                    <option value="1">First option</option>
+                    <option value="2">Second option</option>
+                    <option value="3">Third option</option>
+                    <option value="4">Fourth option</option>
+                    <option value="5">Fourth option</option>
+                </select>
+
+                <br>
+
+                <select multiple="multiple" class="form-control" disabled="disabled" mm-select2="{ allowClear: true}" ng-model="sListItem">
+                    <option value="1">First option</option>
+                    <option value="2">Second option</option>
+                    <option value="3" selected="selected">Third option</option>
+                    <option value="4" selected="selected">Fourth option</option>
+                    <option value="5">Fourth option</option>
+                </select>
+
+                <br>
+
+                <select class="form-control" multiple="multiple" mm-select2="{allowClear: true}" ng-model="sListItem">
+                    <option></option>
+                    <option value="1">First option</option>
+                    <option value="2">Second option</option>
+                    <option value="3" disabled="disabled">Disabled option</option>
+                    <option value="4">Fourth option</option>
+                    <option value="5">Fourth option</option>
+                </select>
+
+                <hr class="panel-wide">
+
+                <!-- Colors -->
+                <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">COLORS</h6>
+
+                <!-- Primary -->
+                <div class="select2-primary">
+                    <select multiple="multiple" class="form-control" mm-select2="{ allowClear: true}" ng-model="sListItem">
+                        <option value="1" selected="selected">First option</option>
+                        <option value="2">Second option</option>
+                        <option value="3" selected="selected">Third option</option>
+                        <option value="4" selected="selected">Fourth option</option>
+                        <option value="5">Fifth option</option>
+                    </select>
+                </div>
+                <br>
+
+                <!-- Success -->
+                <div class="select2-success">
+                    <select multiple="multiple" class="form-control" mm-select2="{ allowClear: true}" ng-model="sListItem">
+                        <option value="1" selected="selected">First option</option>
+                        <option value="2">Second option</option>
+                        <option value="3" selected="selected">Third option</option>
+                        <option value="4" selected="selected">Fourth option</option>
+                        <option value="5">Fifth option</option>
+                    </select>
+                </div>
+                <br>
+
+                <!-- Warning -->
+                <div class="select2-warning">
+                    <select multiple="multiple" class="form-control" mm-select2="{ allowClear: true}" ng-model="sListItem">
+                        <option value="1" selected="selected">First option</option>
+                        <option value="2">Second option</option>
+                        <option value="3" selected="selected">Third option</option>
+                        <option value="4" selected="selected">Fourth option</option>
+                        <option value="5">Fifth option</option>
+                    </select>
+                </div>
+                <br>
+
+                <!-- Danger -->
+                <div class="select2-danger">
+                    <select multiple="multiple" class="form-control" mm-select2="{ allowClear: true}" ng-model="sListItem">
+                        <option value="1" selected="selected">First option</option>
+                        <option value="2">Second option</option>
+                        <option value="3" selected="selected">Third option</option>
+                        <option value="4" selected="selected">Fourth option</option>
+                        <option value="5">Fifth option</option>
+                    </select>
+                </div>
+                <br>
+
+                <!-- Info -->
+                <div class="select2-info">
+                    <select multiple="multiple" class="form-control" mm-select2="{allowClear: true}" ng-model="sListItem">
+                        <option value="1" selected="selected">First option</option>
+                        <option value="2">Second option</option>
+                        <option value="3" selected="selected">Third option</option>
+                        <option value="4" selected="selected">Fourth option</option>
+                        <option value="5">Fifth option</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- /9. $JQUERY_SELECT2 -->
+        <!-- 10. $MASKED_INPUTS ============================================================================
+
+                        Masked inputs
+        -->
+
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Masked inputs</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://digitalbush.com/projects/masked-input-plugin/" target="_blank">http://digitalbush.com/projects/masked-input-plugin/</a></div>
+
+                <input type="text" placeholder="Date: 99/99/9999" mm-mask="99/99/9999" ng-model="mydate" class="form-control form-group-margin" id="masked-inputs-examples-date">
+                <input type="text" ng-model="mydate" />
+                <input type="text" placeholder="SSN: 999-99-9999" mm-mask="999-99-9999" ng-model="mydate1" class=" form-control form-group-margin" id="masked-inputs-examples-ssn">
+                <input type="text" placeholder="Phone: (999) 999-9999" mm-mask="(999) 999-9999" ng-model="mydate2" class=" form-control form-group-margin" id="masked-inputs-examples-phone">
+                <input type="text" placeholder="Product Key: a*-999-a999" mm-mask="a*-999-a999" ng-model="mydate3" class=" form-control" id="masked-inputs-examples-product-key">
+            </div>
+        </div>
+        <!-- /10. $MASKED_INPUTS -->
+        <!-- 11. $STYLED_FILE_INPUTS ==============================================================================
+
+                        Styled file inputs
+        -->
+        <!-- Javascript -->
+        <!--<script>
+            init.push(function () {
+                $('#styled-finputs-example').pixelFileInput({ placeholder: 'No file selected...' });
+            })
+        </script>-->
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Styled file inputs</span>
+            </div>
+            <div class="panel-body">
+                <input type="file" id="styled-finputs-example">
+            </div>
+        </div>
+        <!-- /11. $STYLED_FILE_INPUTS -->
+        <!-- 12. $JQUERY_AUTORESIZING_TEXTAREA =============================================================
+
+                        jQuery Autoresizing Textarea
+        -->
+        <!-- Javascript -->
+        <!--<script>
+            init.push(function () {
+                $("#jq-autoresizing-textarea-example").autosize();
+            });
+        </script>-->
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">jQuery Autoresizing Textarea</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.jacklmoore.com/autosize/" target="_blank">http://www.jacklmoore.com/autosize/</a></div>
+
+                <textarea id="jq-autoresizing-textarea-example" rows="3" class="form-control"></textarea>
+            </div>
+        </div>
+        <!-- /12. $JQUERY_AUTORESIZING_TEXTAREA -->
+        <!-- 13. $JQUERY_KNOB ==============================================================================
+
+                        jQuery Knob
+        -->
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">jQuery Knob</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://anthonyterrien.com/knob/" target="_blank">http://anthonyterrien.com/knob/</a></div>
+
+                <div style="display: inline-block">
+                    <input type="text" ng-model="knobnumber" knob data-width="80" data-height="80" data-fgcolor="#6597ea" data-thickness=".2" data-angleoffset="180">
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <div style="display: inline-block">
+                    <input type="text" ng-model="knobnumber" knob data-width="80" data-height="80" data-displayprevious="true" data-thickness=".2" data-min="-100" data-angleoffset="-125" data-anglearc="250" data-linecap="round" data-fgcolor="#5ebd5e">
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <div style="display: inline-block">
+                    <input type="text" ng-model="knobnumber" knob data-width="100" data-height="100" data-thickness=".25" data-cursor="true" data-fgcolor="#e5635f">
+                </div>
+
+                <div style="display: inline-block">
+                    <input type="text" ng-model="knobnumber" knob data-width="150" data-max="170" data-cursor=true data-thickness=".5" data-fgcolor="#AAAAAA" data-bgcolor="#FFFFFF" data-displayinput="true">
+                </div>
+
+            </div>
+        </div>
+        <!-- /13. $JQUERY_KNOB -->
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        <!-- 14. $DROPZONEJS_FILE_UPLOADS ==================================================================
+
+                        Dropzone.js file uploads
+        -->
+        <!-- Javascript -->
+        <!--<script>
+            init.push(function () {
+                $("#dropzonejs-example").dropzone({
+                    url: "//dummy.html",
+                    paramName: "file", // The name that will be used to transfer the file
+                    maxFilesize: 0.5, // MB
+
+                    addRemoveLinks: true,
+                    dictResponseError: "Can't upload file!",
+                    autoProcessQueue: false,
+                    thumbnailWidth: 138,
+                    thumbnailHeight: 120,
+
+                    previewTemplate: '<div class="dz-preview dz-file-preview"><div class="dz-details"><div class="dz-filename"><span data-dz-name></span></div><div class="dz-size">File size: <span data-dz-size></span></div><div class="dz-thumbnail-wrapper"><div class="dz-thumbnail"><img data-dz-thumbnail><span class="dz-nopreview">No preview</span><div class="dz-success-mark"><i class="fa fa-check-circle-o"></i></div><div class="dz-error-mark"><i class="fa fa-times-circle-o"></i></div><div class="dz-error-message"><span data-dz-errormessage></span></div></div></div></div><div class="progress progress-striped active"><div class="progress-bar progress-bar-success" data-dz-uploadprogress></div></div></div>',
+
+                    resize: function (file) {
+                        var info = { srcX: 0, srcY: 0, srcWidth: file.width, srcHeight: file.height },
+                            srcRatio = file.width / file.height;
+                        if (file.height > this.options.thumbnailHeight || file.width > this.options.thumbnailWidth) {
+                            info.trgHeight = this.options.thumbnailHeight;
+                            info.trgWidth = info.trgHeight * srcRatio;
+                            if (info.trgWidth > this.options.thumbnailWidth) {
+                                info.trgWidth = this.options.thumbnailWidth;
+                                info.trgHeight = info.trgWidth / srcRatio;
+                            }
+                        } else {
+                            info.trgHeight = file.height;
+                            info.trgWidth = file.width;
+                        }
+                        return info;
+                    }
+                });
+            });
+        </script>-->
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Dropzone.js file uploads</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.dropzonejs.com" target="_blank">http://www.dropzonejs.com</a></div>
+
+                <div id="dropzonejs-example" class="dropzone-box">
+                    <div class="dz-default dz-message">
+                        <i class="fa fa-cloud-upload"></i>
+                        Drop files in here<br><span class="dz-text-small">or click to pick manually</span>
+                    </div>
+                    <form action="//dummy.html">
+                        <div class="fallback">
+                            <input name="file" type="file" multiple="" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /14. $DROPZONEJS_FILE_UPLOADS -->
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        <!-- 15. $BOOTSTRAP_X_EDITABLE =====================================================================
+
+                        Bootstrap X-Editable
+        -->
+        <!-- Javascript -->
+        <!--<script>
+            init.push(function () {
+                $('#bs-x-editable-username').editable({
+                    type: 'text',
+                    name: 'username',
+                    title: 'Enter username'
+                });
+
+                $('#bs-x-editable-firstname').editable({
+                    validate: function (value) {
+                        if ($.trim(value) == '') return 'This field is required';
+                    }
+                });
+
+                $('#bs-x-editable-sex').editable({
+                    prepend: "not selected",
+                    source: [
+                        { value: 1, text: 'Male' },
+                        { value: 2, text: 'Female' }
+                    ],
+                    display: function (value, sourceData) {
+                        var colors = { "": "gray", 1: "green", 2: "blue" },
+                            elem = $.grep(sourceData, function (o) { return o.value == value; });
+
+                        if (elem.length) {
+                            $(this).text(elem[0].text).css("color", colors[value]);
+                        } else {
+                            $(this).empty();
+                        }
+                    }
+                });
+
+                $('#bs-x-editable-vacation').editable({
+                    datepicker: {
+                        todayBtn: 'linked'
+                    }
+                });
+
+                $('#bs-x-editable-dob').editable();
+
+                $('#bs-x-editable-event').editable({
+                    combodate: {
+                        firstItem: 'name'
+                    }
+                });
+
+                $('#bs-x-editable-comments').editable({
+                    showbuttons: 'bottom'
+                });
+
+                $('#bs-x-editable-state2').editable({
+                    value: 'California',
+                    typeahead: {
+                        name: 'state',
+                        local: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+                    }
+                });
+
+                $('#bs-x-editable-fruits').editable({
+                    limit: 3,
+                    source: [
+                        { value: 1, text: 'banana' },
+                        { value: 2, text: 'peach' },
+                        { value: 3, text: 'apple' },
+                        { value: 4, text: 'watermelon' },
+                        { value: 5, text: 'orange' }
+                    ]
+                });
+
+                $('#bs-x-editable-tags').editable({
+                    select2: {
+                        tags: ['html', 'javascript', 'css', 'ajax'],
+                        tokenSeparators: [",", " "]
+                    }
+                });
+
+                var countries = [];
+                $.each({ "BD": "Bangladesh", "BE": "Belgium", "BF": "Burkina Faso", "BG": "Bulgaria", "BA": "Bosnia and Herzegovina", "BB": "Barbados", "WF": "Wallis and Futuna", "BL": "Saint Bartelemey", "BM": "Bermuda", "BN": "Brunei Darussalam", "BO": "Bolivia", "BH": "Bahrain", "BI": "Burundi", "BJ": "Benin", "BT": "Bhutan", "JM": "Jamaica", "BV": "Bouvet Island", "BW": "Botswana", "WS": "Samoa", "BR": "Brazil", "BS": "Bahamas", "JE": "Jersey", "BY": "Belarus", "O1": "Other Country", "LV": "Latvia", "RW": "Rwanda", "RS": "Serbia", "TL": "Timor-Leste", "RE": "Reunion", "LU": "Luxembourg", "TJ": "Tajikistan", "RO": "Romania", "PG": "Papua New Guinea", "GW": "Guinea-Bissau", "GU": "Guam", "GT": "Guatemala", "GS": "South Georgia and the South Sandwich Islands", "GR": "Greece", "GQ": "Equatorial Guinea", "GP": "Guadeloupe", "JP": "Japan", "GY": "Guyana", "GG": "Guernsey", "GF": "French Guiana", "GE": "Georgia", "GD": "Grenada", "GB": "United Kingdom", "GA": "Gabon", "SV": "El Salvador", "GN": "Guinea", "GM": "Gambia", "GL": "Greenland", "GI": "Gibraltar", "GH": "Ghana", "OM": "Oman", "TN": "Tunisia", "JO": "Jordan", "HR": "Croatia", "HT": "Haiti", "HU": "Hungary", "HK": "Hong Kong", "HN": "Honduras", "HM": "Heard Island and McDonald Islands", "VE": "Venezuela", "PR": "Puerto Rico", "PS": "Palestinian Territory", "PW": "Palau", "PT": "Portugal", "SJ": "Svalbard and Jan Mayen", "PY": "Paraguay", "IQ": "Iraq", "PA": "Panama", "PF": "French Polynesia", "BZ": "Belize", "PE": "Peru", "PK": "Pakistan", "PH": "Philippines", "PN": "Pitcairn", "TM": "Turkmenistan", "PL": "Poland", "PM": "Saint Pierre and Miquelon", "ZM": "Zambia", "EH": "Western Sahara", "RU": "Russian Federation", "EE": "Estonia", "EG": "Egypt", "TK": "Tokelau", "ZA": "South Africa", "EC": "Ecuador", "IT": "Italy", "VN": "Vietnam", "SB": "Solomon Islands", "EU": "Europe", "ET": "Ethiopia", "SO": "Somalia", "ZW": "Zimbabwe", "SA": "Saudi Arabia", "ES": "Spain", "ER": "Eritrea", "ME": "Montenegro", "MD": "Moldova, Republic of", "MG": "Madagascar", "MF": "Saint Martin", "MA": "Morocco", "MC": "Monaco", "UZ": "Uzbekistan", "MM": "Myanmar", "ML": "Mali", "MO": "Macao", "MN": "Mongolia", "MH": "Marshall Islands", "MK": "Macedonia", "MU": "Mauritius", "MT": "Malta", "MW": "Malawi", "MV": "Maldives", "MQ": "Martinique", "MP": "Northern Mariana Islands", "MS": "Montserrat", "MR": "Mauritania", "IM": "Isle of Man", "UG": "Uganda", "TZ": "Tanzania, United Republic of", "MY": "Malaysia", "MX": "Mexico", "IL": "Israel", "FR": "France", "IO": "British Indian Ocean Territory", "FX": "France, Metropolitan", "SH": "Saint Helena", "FI": "Finland", "FJ": "Fiji", "FK": "Falkland Islands (Malvinas)", "FM": "Micronesia, Federated States of", "FO": "Faroe Islands", "NI": "Nicaragua", "NL": "Netherlands", "NO": "Norway", "NA": "Namibia", "VU": "Vanuatu", "NC": "New Caledonia", "NE": "Niger", "NF": "Norfolk Island", "NG": "Nigeria", "NZ": "New Zealand", "NP": "Nepal", "NR": "Nauru", "NU": "Niue", "CK": "Cook Islands", "CI": "Cote d'Ivoire", "CH": "Switzerland", "CO": "Colombia", "CN": "China", "CM": "Cameroon", "CL": "Chile", "CC": "Cocos (Keeling) Islands", "CA": "Canada", "CG": "Congo", "CF": "Central African Republic", "CD": "Congo, The Democratic Republic of the", "CZ": "Czech Republic", "CY": "Cyprus", "CX": "Christmas Island", "CR": "Costa Rica", "CV": "Cape Verde", "CU": "Cuba", "SZ": "Swaziland", "SY": "Syrian Arab Republic", "KG": "Kyrgyzstan", "KE": "Kenya", "SR": "Suriname", "KI": "Kiribati", "KH": "Cambodia", "KN": "Saint Kitts and Nevis", "KM": "Comoros", "ST": "Sao Tome and Principe", "SK": "Slovakia", "KR": "Korea, Republic of", "SI": "Slovenia", "KP": "Korea, Democratic People's Republic of", "KW": "Kuwait", "SN": "Senegal", "SM": "San Marino", "SL": "Sierra Leone", "SC": "Seychelles", "KZ": "Kazakhstan", "KY": "Cayman Islands", "SG": "Singapore", "SE": "Sweden", "SD": "Sudan", "DO": "Dominican Republic", "DM": "Dominica", "DJ": "Djibouti", "DK": "Denmark", "VG": "Virgin Islands, British", "DE": "Germany", "YE": "Yemen", "DZ": "Algeria", "US": "United States", "UY": "Uruguay", "YT": "Mayotte", "UM": "United States Minor Outlying Islands", "LB": "Lebanon", "LC": "Saint Lucia", "LA": "Lao People's Democratic Republic", "TV": "Tuvalu", "TW": "Taiwan", "TT": "Trinidad and Tobago", "TR": "Turkey", "LK": "Sri Lanka", "LI": "Liechtenstein", "A1": "Anonymous Proxy", "TO": "Tonga", "LT": "Lithuania", "A2": "Satellite Provider", "LR": "Liberia", "LS": "Lesotho", "TH": "Thailand", "TF": "French Southern Territories", "TG": "Togo", "TD": "Chad", "TC": "Turks and Caicos Islands", "LY": "Libyan Arab Jamahiriya", "VA": "Holy See (Vatican City State)", "VC": "Saint Vincent and the Grenadines", "AE": "United Arab Emirates", "AD": "Andorra", "AG": "Antigua and Barbuda", "AF": "Afghanistan", "AI": "Anguilla", "VI": "Virgin Islands, U.S.", "IS": "Iceland", "IR": "Iran, Islamic Republic of", "AM": "Armenia", "AL": "Albania", "AO": "Angola", "AN": "Netherlands Antilles", "AQ": "Antarctica", "AP": "Asia/Pacific Region", "AS": "American Samoa", "AR": "Argentina", "AU": "Australia", "AT": "Austria", "AW": "Aruba", "IN": "India", "AX": "Aland Islands", "AZ": "Azerbaijan", "IE": "Ireland", "ID": "Indonesia", "UA": "Ukraine", "QA": "Qatar", "MZ": "Mozambique" }, function (k, v) {
+                    countries.push({ id: k, text: v });
+                });
+
+                $('#bs-x-editable-country').editable({
+                    source: countries,
+                    select2: {
+                        width: 200,
+                        placeholder: 'Select country',
+                        allowClear: true
+                    }
+                });
+
+                $('#bs-x-editable-address').editable({
+                    value: {
+                        city: "Moscow",
+                        street: "Lenina",
+                        building: "12"
+                    },
+                    validate: function (value) {
+                        if (value.city == '') return 'city is required!';
+                    },
+                    display: function (value) {
+                        if (!value) {
+                            $(this).empty();
+                            return;
+                        }
+                        var html = '<b>' + $('<div>').text(value.city).html() + '</b>, ' + $('<div>').text(value.street).html() + ' st., bld. ' + $('<div>').text(value.building).html();
+                        $(this).html(html);
+                    }
+                });
+            });
+        </script>-->
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Bootstrap X-Editable</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://vitalets.github.io/x-editable/" target="_blank">http://vitalets.github.io/x-editable/</a></div>
+
+                <table id="user" class="table table-bordered table-striped" style="clear: both">
+                    <tbody>
+                        <tr>
+                            <td width="35%">Simple text field</td>
+                            <td width="65%"><a href="#" id="bs-x-editable-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a></td>
+                        </tr>
+                        <tr>
+                            <td>Empty text field, required</td>
+                            <td><a href="#" id="bs-x-editable-firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Select, local array, custom display</td>
+                            <td><a href="#" id="bs-x-editable-sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Datepicker</td>
+                            <td><a href="#" id="bs-x-editable-vacation" data-type="date" data-viewformat="dd.mm.yyyy" data-pk="1" data-placement="right" data-title="When you want vacation to start?">25.02.2013</a></td>
+                        </tr>
+                        <tr>
+                            <td>Combodate (date)</td>
+                            <td><a href="#" id="bs-x-editable-dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1" data-title="Select Date of birth"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Combodate (datetime)</td>
+                            <td><a href="#" id="bs-x-editable-event" data-type="combodate" data-template="D MMM YYYY  HH:mm" data-format="YYYY-MM-DD HH:mm" data-viewformat="MMM D, YYYY, HH:mm" data-pk="1" data-title="Setup event date and time"></a></td>
+                        </tr>
+                        <tr>
+                            <td>Textarea, buttons below. Submit by <i>ctrl+enter</i></td>
+                            <td><a href="#" id="bs-x-editable-comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a></td>
+                        </tr>
+                        <tr>
+                            <td>Twitter typeahead.js</td>
+                            <td><a href="#" id="bs-x-editable-state2" data-type="typeaheadjs" data-pk="1" data-placement="right" data-title="Start typing State.."></a></td>
+                        </tr>
+                        <tr>
+                            <td>Checklist</td>
+                            <td><a href="#" id="bs-x-editable-fruits" data-type="checklist" data-value="2,3" data-title="Select fruits"></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>Select2 (tags mode)</td>
+                            <td><a href="#" id="bs-x-editable-tags" data-type="select2" data-pk="1" data-title="Enter tags">html, javascript</a></td>
+                        </tr>
+                        <tr>
+                            <td>Select2 (dropdown mode)</td>
+                            <td><a href="#" id="bs-x-editable-country" data-type="select2" data-pk="1" data-value="BS" data-title="Select country"></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>Custom input, several fields</td>
+                            <td><a href="#" id="bs-x-editable-address" data-type="address" data-pk="1" data-title="Please, fill address"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>-->
+        <!-- /15. $BOOTSTRAP_X_EDITABLE -->
+
+    </div>
+</div>

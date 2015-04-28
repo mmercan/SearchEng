@@ -1,0 +1,156 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmTimeline</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmTimeline  -->
+            <div id="mmTimeline" class="tab-pane">
+                <div class="note note-info">
+                    <h2>restrict: 'E'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="row">
+                    <mm-timeline-col itemssource="users">
+                        <div class="panel">
+                            <div class="panel-heading"><img class="img-responsive" ng-src="{{item.email|gravatarfilter}}" alt=""></div>
+                            <div class="panel-body text-justify">
+                                <h2><a href="#">{{item.email}}</a></h2><p>{{item.text}}</p>
+                                <a class="btn-u btn-u-sm" href="#">Read More</a>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="list-unstyled list-inline blog-info">
+                                    <li><i class="fa fa-clock-o"></i> March 28, 2014</li>
+                                    <li><i class="fa fa-comments-o"></i> <a href="#">7 Comments {{item.firstName}} {{item.lastName}}</a></li>
+                                </ul>
+                                <a class="likes" href="#"><i class="fa fa-heart"></i>239</a>
+                            </div>
+                        </div>
+                    </mm-timeline-col>
+                    <pre>&lt;mm-timeline-col itemssource="users"&gt;<br />&nbsp; &lt;div class="panel"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-heading"&gt;&lt;img class="img-responsive" ng-src="{{item.email|gravatarfilter}}" alt=""&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-body text-justify"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;&lt;a href="#"&gt;{{item.email}}&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;{{item.text}}&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a class="btn-u btn-u-sm" href="#"&gt;Read More&lt;/a&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-footer"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ul class="list-unstyled list-inline blog-info"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;i class="fa fa-clock-o"&gt;&lt;/i&gt; March 28, 2014&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;i class="fa fa-comments-o"&gt;&lt;/i&gt; &lt;a href="#"&gt;7 Comments {{item.firstName}} {{item.lastName}}&lt;/a&gt;&lt;/li&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a class="likes" href="#"&gt;&lt;i class="fa fa-heart"&gt;&lt;/i&gt;239&lt;/a&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp; &lt;/div&gt;<br />&lt;/mm-timeline-col&gt;</pre>
+                    <pre> $scope.productID = 743;</pre>
+                </div>
+                <div class="row">
+                    <mm-timeline itemssource="users">
+                        <time datetime=""><span>4/1/08</span> <span>January</span></time>
+                        <div class="panel">
+                            <div class="panel-heading"><h2>{{item.email}}</h2></div>
+                            <div class="panel-body">
+                                <div class="col-md-2">
+                                    <img class="img-responsive" ng-src="{{item.email|gravatarfilter}}" alt="">
+                                    <div class="md-margin-bottom-20"></div>
+                                </div>
+                                <div class="col-md-10">
+                                    <p><b>{{item.firstName}} {{item.lastName}}</b></p>
+                                    <p>{{item.email}}</p>
+                                    <p>Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </mm-timeline>
+                    <pre>&lt;mm-timeline itemssource="users"&gt;<br />&nbsp; &lt;time datetime=""&gt;&lt;span&gt;4/1/08&lt;/span&gt; &lt;span&gt;January&lt;/span&gt;&lt;/time&gt;<br />&nbsp; &lt;div class="panel"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-heading"&gt;&lt;h2&gt;{{item.email}}&lt;/h2&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-body"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-md-2"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img class="img-responsive" ng-src="{{item.email|gravatarfilter}}" alt=""&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="md-margin-bottom-20"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-md-10"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;{{item.firstName}} {{item.lastName}}&lt;/b&gt;&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;{{item.email}}&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato.&lt;/p&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp; &lt;/div&gt;<br />&lt;/mm-timeline&gt;</pre>
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <div class="page-header">
+                            <h1><span class="text-light-gray">Pages / </span>Timeline</h1>
+                            <div class="pull-right">
+                                <div class="text-semibold text-light-gray text-sm">CENTERED&nbsp;&nbsp;&nbsp;</div>
+                                <input mm-switcher type="checkbox" ng-model="centered" data-class="switcher-success" id="timeline-centered">
+                            </div>
+                        </div>
+                        <div class="timeline" ng-class="{'centered': centered}">
+                            <div class="tl-header now bg-primary">Now</div>
+
+                            <div class="tl-entry">
+                                <div class="tl-time">1h ago</div>
+                                <div class="tl-icon bg-warning"><i class="fa fa-envelope"></i></div>
+                                <div class="panel tl-body">
+                                    <h4 class="text-warning">Lorem ipsum dolor sit amet</h4>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+                            </div>
+
+                            <div class="tl-entry left">
+                                <div class="tl-time">2h ago</div>
+                                <div class="tl-icon bg-success"><i class="fa fa-picture-o"></i></div>
+                                <div class="panel tl-body">
+                                    <a href="#">John Doe</a> shared an image on <a href="#">The Gallery</a>
+                                    <div class="tl-wide text-center" style="padding: 10px;margin-top:15px;margin-bottom: 15px;background: #f1f1f1">
+                                        <img src="/assets/demo/signin-bg-5.jpg" alt="" style="max-height: 150px;max-width: 100%;">
+                                    </div>
+                                    <i class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
+                                </div>
+                            </div>
+
+                            <div class="tl-entry">
+                                <div class="tl-time">3h ago</div>
+                                <div class="tl-icon bg-success"><img src="/assets/demo/avatars/2.jpg" alt=""></div>
+                                <div class="panel tl-body">
+                                    <a href="#">Robert Jang</a> commented on <a href="#">The Article</a>
+                                    <div class="well well-sm" style="margin: 10px 0 0 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                </div>
+                            </div>
+
+                            <div class="tl-entry left">
+                                <div class="tl-time">4h ago</div>
+                                <div class="tl-icon bg-dark-gray"><i class="fa fa-check"></i></div>
+                                <div class="panel tl-body">
+                                    <img src="/assets/demo/avatars/5.jpg" alt="" class="rounded" style=" width: 20px;height: 20px;margin-top: -2px;">&nbsp;&nbsp;<a href="#">Denise Steiner</a> followed <a href="#">Johg Doe</a>
+                                </div>
+                            </div>
+                            <div class="tl-header">Yesterday</div>
+
+                            <div class="tl-entry">
+                                <div class="tl-time">9:02 pm</div>
+                                <div class="tl-icon bg-info"><i class="fa fa-comment"></i></div>
+                                <div class="panel tl-body">
+                                    <a href="#">John Doe</a> liked a comment on <a href="#">Some Article</a>
+                                    <div style="margin-top: 10px;" class="text-sm">
+                                        <img src="/assets/demo/avatars/3.jpg" alt="" class="rounded" style=" width: 20px;height: 20px;margin-top: -2px;">&nbsp;&nbsp;<a href="#">Michelle Bortz</a> commented 2 days ago
+                                        <div class="well well-sm" style="margin: 6px 0 0 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tl-entry left">
+                                <div class="tl-time">5:47 pm</div>
+                                <div class="panel tl-body">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </div>
+                            </div>
+
+                            <div class="tl-entry">
+                                <div class="tl-time">2:35 pm</div>
+                                <div class="tl-icon bg-danger"><i class="fa fa-heart"></i></div>
+                                <div class="panel tl-body">
+                                    <a href="#">John Doe</a> liked <a href="#">Shop Item</a>
+                                </div>
+                            </div>
+
+                            <div class="tl-entry left">
+                                <div class="tl-time">11:21 am</div>
+                                <div class="panel tl-body">
+                                    <h4 class="text-danger">Lorem ipsum dolor sit amet</h4>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

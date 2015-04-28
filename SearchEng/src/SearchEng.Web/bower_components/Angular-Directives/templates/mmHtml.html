@@ -1,0 +1,34 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmFullcalendar</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmHtml  -->
+            <div class="tab-pane" id="mmHtml">
+                <div class="note note-info">
+                    <h2>restrict: 'ACM'</h2>
+                    <h2> ng-bind-html-unsafe is removed instead of   using trustAsHtml I go with mmHtml</h2>
+                    <pre><span> $scope.to_trusted = function(html_code) {return $sce.trustAsHtml(html_code);}</span></pre>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmHtml</td>
+                                <td>object</td>
+                                <td>mmHtml enables html directive and the value to convert to html DOM from string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2> ng-bind-html-unsafe</h2>
+
+                <textarea class="form-control" ng-model="texthtml"></textarea>
+                <div mm-html="texthtml"></div>
+
+                <pre><p>&lt;textarea class="form-control" ng-model="texthtml"&gt;&lt;/textarea&gt;<br />&lt;div mm-html="texthtml"&gt;&lt;/div&gt;</p></pre>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

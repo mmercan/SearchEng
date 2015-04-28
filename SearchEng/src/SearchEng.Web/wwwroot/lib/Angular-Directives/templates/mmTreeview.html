@@ -1,0 +1,118 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmTreeview</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmTreeview  -->
+            <div id="mmTreeview" class="tab-pane">
+                <div class="note note-info">
+                    <h2>restrict: 'E'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mm-treeview</td>
+                                <td>no parameters</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>itemssource</td>
+                                <td>'=' Object</td>
+                                <td>array of items to show in treeview</td>
+                            </tr>
+                            <tr>
+                                <td>idfield</td>
+                                <td>@ string</td>
+                                <td>id field represent unique field in itemssource's array </td>
+                            </tr>
+                            <tr>
+                                <td>parentfield</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>nullvalue</td>
+                                <td>object</td>
+                                <td>treeview requires a root object by null record on parentfield column, if there is no null value on parentfield column, nullvalue field help treeview to describe the root item's parentfield value</td>
+                            </tr>
+                            <tr>
+                                <td>textfield</td>
+                                <td>@</td>
+                                <td>textfield use to show individual items to users  in treeview</td>
+                            </tr>
+                            <tr>
+                                <td>data-template</td>
+                                <td>div > sub element</td>
+                                <td>if a single text field (textfield) isn't enough to represent items in treeview data-templete will be a replaced the text </td>
+                            </tr>
+
+                            <tr>
+                                <td>selectedtext</td>
+                                <td>=</td>
+                                <td>it retuns selected record's textfield column</td>
+                            </tr>
+                            <tr>
+                                <td>selectedId</td>
+                                <td>=</td>
+                                <td>it retuns selected record's idfield column</td>
+                            </tr>
+                            <tr>
+                                <td>ngModel</td>
+                                <td>= object</td>
+                                <td>it returns selected record</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="well">
+                    {{treeselecteditem.ProductAssembly}} = {{treeselecteditem.ComponentName}} X {{treeselecteditem.PerAssemblyQty}}
+                </div>
+                <div class="panel widget-article-comments">
+                    <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-comment"></i>mmTreeview directive </span></div>
+                    <div class="panel-body">
+
+                        <mm-treeview itemssource="assemblyTree" ng-model="treeselecteditem" selected-id="selectidid" nullvalue="productID" selectedtext="selectedText" idfield="ComponentID" textfield="ComponentName" parentfield="ProductAssemblyID"></mm-treeview>
+                    </div>
+                </div>
+                <p>&lt;div class="well"&gt;<br />{{treeselecteditem.ProductAssembly}} = {{treeselecteditem.ComponentName}} X {{treeselecteditem.PerAssemblyQty}}<br />&lt;/div&gt;</p>
+                <pre>&lt;mm-treeview itemssource="assemblyTree" ng-model="treeselecteditem" selected-id="selectidid" nullvalue="productID" selectedtext="selectedText" idfield="ComponentID" textfield="ComponentName" parentfield="ProductAssemblyID"&gt;&lt;/mm-treeview&gt;</pre>
+
+                <div class="panel widget-article-comments">
+                    <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-comment"></i>Not A directive only recursive Tecnique </span></div>
+                    <div class="panel-body">
+                        <script type="text/ng-template" id="categoryTree">
+                            <img ng-src="{{comment.email|gravatarfilter}}" alt="" class="comment-avatar">
+                            <div class="comment-body">
+                                <div class="comment-text">
+                                    <div class="comment-heading"><a href="#" title="">{{comment.name}}</a><span>14 hours ago</span></div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                </div>
+                                <div class="comment-footer">
+                                    <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;<a href="#"><i class="fa fa-thumbs-o-down"></i></a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#">Reply</a>
+                                </div>
+                            </div>
+                            <div class="comment" ng-repeat="comment in comment.comments" ng-include="'categoryTree'"></div>
+                        </script>
+
+                        <div class="comment" ng-repeat="comment in comments" ng-include="'categoryTree'"></div>
+                    </div>
+                    <div class="panel-footer clearfix">
+                        <div class="article-comments-add">
+                            <textarea rows="1" class="form-control input-sm"></textarea>
+                            <div class="expanding-input-hidden" style="margin-top: 10px;">
+                                <button class="btn btn-sm btn-primary pull-right">Post comment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <pre><p>&lt;script type="text/ng-template" id="categoryTree"&gt;<br />&nbsp; &lt;img ng-src="{{comment.email|gravatarfilter}}" alt="" class="comment-avatar"&gt;<br />&nbsp; &lt;div class="comment-body"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="comment-text"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="comment-heading"&gt;&lt;a href="#" title=""&gt;{{comment.name}}&lt;/a&gt;&lt;span&gt;14 hours ago&lt;/span&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="comment-footer"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="#"&gt;&lt;i class="fa fa-thumbs-o-up"&gt;&lt;/i&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="#"&gt;&lt;i class="fa fa-thumbs-o-down"&gt;&lt;/i&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&middot;&amp;nbsp;&amp;nbsp;&lt;a href="#"&gt;Reply&lt;/a&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp; &lt;/div&gt;<br />&nbsp; &lt;div class="comment" ng-repeat="comment in comment.comments" ng-include="'categoryTree'"&gt;&lt;/div&gt;<br />&lt;/script&gt;</p> <p>&lt;div class="comment" ng-repeat="comment in comments" ng-include="'categoryTree'"&gt;&lt;/div&gt;</p> </pre>
+                <h3>CSS gives 26px margin-left on each Comments when they are inside each other margin left inceases on each level</h3>
+                <pre>.widget-article-comments .comment {<br />&nbsp; padding-top: 13px;<br />}<br />.widget-article-comments .comment:first-child {<br />&nbsp; padding-top: 0;<br />}<br />.widget-article-comments .comment &gt; .comment {<br />&nbsp; margin-left: 26px !important;<br />}<br />.widget-article-comments .comment-avatar {<br />&nbsp; border-radius: 999999px;<br />&nbsp; display: block;<br />&nbsp; float: left;<br />&nbsp; height: 32px;<br />&nbsp; position: relative;<br />&nbsp; width: 32px;<br />}<br />.widget-article-comments .comment-heading {<br />&nbsp; font-size: 12px;<br />&nbsp; padding-bottom: 2px;<br />}<br />.widget-article-comments .comment-heading span {<br />&nbsp; color: #aaa;<br />&nbsp; display: inline-block;<br />&nbsp; font-size: 11px;<br />&nbsp; margin-left: 5px;<br />}<br />.widget-article-comments .comment-body {<br />&nbsp; float: none;<br />&nbsp; margin-left: 46px;<br />&nbsp; position: relative;<br />}<br />.widget-article-comments .comment-body:before {<br />&nbsp; border-color: transparent #e4e4e4 transparent transparent;<br />&nbsp; border-style: solid;<br />&nbsp; border-width: 6px 6px 6px 0;<br />&nbsp; content: "";<br />&nbsp; display: block;<br />&nbsp; height: 0px;<br />&nbsp; left: -6px;<br />&nbsp; position: absolute;<br />&nbsp; top: 11px;<br />&nbsp; width: 0px;<br />}<br />.widget-article-comments .comment-text {<br />&nbsp; border: 1px solid #e4e4e4;<br />&nbsp; border-radius: 2px;<br />&nbsp; padding: 7px 12px 8px 12px;<br />}<br />.widget-article-comments .comment-footer {<br />&nbsp; display: block;<br />&nbsp; font-size: 12px;<br />&nbsp; padding: 4px 12px 0 12px;<br />}<br />.widget-article-comments .comment-footer,<br />.widget-article-comments .comment-footer a {<br />&nbsp; color: #aaa;<br />}<br />.widget-article-comments .comment-footer a:hover {<br />&nbsp; color: #555555;<br />}<br />.widget-article-comments .comment-footer i {<br />&nbsp; font-size: 13px;<br />}<br />.panel.widget-article-comments .comment,<br />.panel .widget-article-comments .comment {<br />&nbsp; margin: 0 -20px;<br />&nbsp; padding-left: 20px;<br />&nbsp; padding-right: 20px;<br />}</pre>
+
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

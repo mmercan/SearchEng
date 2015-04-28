@@ -1,0 +1,36 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">Angular Components</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mainMenuCommands  -->
+            <div id="mainMenuCommands" class="tab-pane">
+                <div class="note note-info">
+                    <h2>Service not a directive</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td colspan="4">
+                                    Add "mainMenuService" service in to your controller dependencies <br /><br />
+                                    angular.module("app").controller("angularcomp", ["$scope", "$http", "$routeParams", "$location",  "alertService", "notificationService",<b style="color:navy">"mainMenuService"</b>,  function($scope, $http, $routeParams, $location,  alertService, notificationService, <b style="color:navy">mainMenuService</b>){}
+                                </td>
+                            </tr>
+                            <tr><td>Name</td><td>Type</td><td>Action</td><td>Desciption</td></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td> mainMenuService.show();</td><td>function</td><td><input class="btn btn-lg btn-primary" type="button" ng-click="showmainmenu()" value="Show main Menu" /></td><td>show the menu if it is Hidden</td></tr>
+                            <tr><td>mainMenuService.hide();</td><td>function</td><td><input class="btn btn-lg btn-primary" type="button" ng-click="hidemainmenu()" value="Hide main Menu" /></td><td>hide the menu if it is visible</td></tr>
+                            <tr><td>mainMenuService.toggle();</td><td>function</td><td><input class="btn btn-lg btn-primary" type="button" ng-click="togglemainmenu()" value="Toggle main Menu" /></td><td>Callopse/ Expand the menu</td></tr>
+                            <tr><td>mainMenuService.expand();</td><td>function</td><td><input class="btn btn-lg btn-primary" type="button" ng-click="expandmainmenu()" value="Expand main Menu" /></td><td>Expand the menu if it is Callopse</td></tr>
+                            <tr><td>mainMenuService.collapse();</td><td>function</td><td><input class="btn btn-lg btn-primary" type="button" ng-click="callopsemainmenu()" value="Callopse main Menu" /></td><td>Callopse te menu if it is Expanded</td></tr>
+                            <tr><td>mainMenuService.fixed();</td><td>function</td><td><input class="btn btn-lg btn-primary" type="button" ng-click="fixedmainmenu()" value="Fixed main Menu" /></td><td>Fixed the Menu on scrolling</td></tr>
+                            <tr><td>mainMenuService.notfixed();</td><td>function</td><td><input class="btn btn-lg btn-primary" type="button" ng-click="notfixedmainmenu()" value="Non Fixed main Menu" /></td><td>Srcoll the menu on page scrolling</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

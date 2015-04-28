@@ -1,0 +1,18 @@
+{
+	"version": "1.0.0-*",
+	"dependencies": {
+		"SearchEng.Common": "1.0.0-*",
+		"EntityFramework.Core": "7.0.0-beta3",
+		"Newtonsoft.Json": "6.0.6"
+
+	},
+
+	"frameworks": {
+		"aspnet50": {
+			"dependencies": {
+
+			},
+			"frameworkAssemblies": { "System.Runtime.Serialization.Xml": "4.0.0.0", "System.Xml": "4.0.0.0" , "System.Xml.Linq": "4.0.0.0"}
+		}
+	}
+}

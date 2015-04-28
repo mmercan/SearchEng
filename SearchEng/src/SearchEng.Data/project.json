@@ -1,0 +1,31 @@
+{
+	"version": "1.0.0-*",
+	"dependencies": {
+
+		"EntityFramework.Core": "7.0.0-beta3",
+		"EntityFramework.Commands": "7.0.0-beta3",
+		"EntityFramework.Relational": "7.0.0-beta3",
+		"EntityFramework.SqlServer": "7.0.0-beta3",
+		"Microsoft.Framework.Cache.Memory": "1.0.0-beta3",
+
+		"Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
+		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
+		
+		
+		
+		"FluentValidation": "5.5.0",
+		"SearchEng.Common": "1.0.0-*",
+	
+		"System.ComponentModel.Annotations": "4.0.10.0-beta-22606",
+		"System.Runtime.Serialization.Json": "4.0.0-beta-22606"
+
+	},
+
+    "frameworks": {
+        "aspnet50": {
+            "dependencies": {
+            }
+        }
+
+    }
+}

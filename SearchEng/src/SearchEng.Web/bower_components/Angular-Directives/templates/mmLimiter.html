@@ -1,0 +1,57 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary" ng-init="contenttt='Yeeeeeeh'">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">maxlength</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmLimiter  -->
+            <div class="note note-info">
+                <h2>restrict: 'A'</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Type</td>
+                            <td>Desciption</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>maxlength</td>
+                            <td>object</td>
+                            <td>
+                                this directive is for only input and TextAreas,on input maxlength nativelly keep the text length as desired, on Textareas letters counts  and doesn't let the lenght of letters exceed
+                                <b>mmCounter</b> Returns how many letters left, maxlength enables the directive
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>mmCounter</td>
+                            <td>numeric</td>
+                            <td>Returns how many letters left</td>
+                        </tr>
+                        <tr>
+                            <td>labelit</td>
+                            <td>bool</td>
+                            <td>*Not Implemented Yet, if true  Append a label next to input or TextArea to show how many letter left</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <input class="form-control" maxlength="50" mm-counter="counter" />
+            <label>{{counter}}</label>
+            <pre>&lt;input class="form-control" maxlength="15" mm-counter="counter" /&gt;<br />&lt;label &gt;{{counter}}&lt;/label&gt;</pre>
+
+            <textarea class="form-control" ng-model="contenttt" maxlength="144" mm-counter="counter2"></textarea>
+            <label>{{counter2}}</label>
+            <pre>&lt;textarea class="form-control" maxlength="144" mm-counter="counter2"&gt;&lt;/textarea&gt;<br />&lt;label&gt;{{counter2}}&lt;/label&gt;</pre>
+
+
+                <input class="form-control" ng-model="contenttt" maxlength="15" type="text" />
+
+
+
+        </div>
+        <!--#endregion -->
+    </div>
+</div>

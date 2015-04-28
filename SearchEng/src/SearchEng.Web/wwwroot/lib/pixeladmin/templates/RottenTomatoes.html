@@ -1,0 +1,1057 @@
+﻿<ul class="nav nav-tabs" id="uidemo-tabs-default-demo">
+    <li><a data-toggle="tab" data-target="#movies">Movies</a></li>
+    <li class="active"><a data-toggle="tab" data-target="#dvds">Dvds</a></li>
+    <li><a data-toggle="tab" data-target="#search">Search</a></li>
+    <li><a data-toggle="tab" data-target="#selectedBook">Book</a></li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade" id="movies">
+        <div class="page-header"><h1><i class="fa fa-ticket page-header-icon"></i>&nbsp;&nbsp;Movies</h1></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel widget-comments">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>Box Office</span>
+                        <div class="panel-heading-controls">
+                            <button class="btn btn-xs btn-warning btn-outline" ng-click="moviesBoxOfficeCall()"><span class="fa fa-refresh"></span>&nbsp;&nbsp;Refresh</button>
+                            <span class="label label-info pull-right">{{moviesBoxOffice.length}}</span>
+                        </div>
+                    </div>
+                    <div class="panel-body" mm-scroll="600">
+                        <div class="comment" ng-repeat="item in moviesBoxOffice">
+                            <div style="float:left">
+                                <img alt="" ng-src="{{item.posters.detailed}}">
+                                <h3>
+                                    {{item.ratings.audience_score}}
+                                    <i ng-show="item.ratings.audience_rating=='Upright'" class="panel-title-icon fa fa-thumbs-up"></i>
+                                    <i ng-show="item.ratings.audience_rating=='Spilled'" class="panel-title-icon fa fa-thumbs-down"></i>
+                                </h3>
+                                <h3>
+                                    {{item.ratings.critics_score}}
+                                    <i ng-show="item.ratings.critics_rating=='Certified Fresh'" class="panel-title-icon fa fa-smile-o"></i>
+                                    <i ng-show="item.ratings.critics_rating=='Rotten'" class="panel-title-icon fa fa-frown-o"></i>
+                                </h3>
+                            </div>
+                            <div style="margin-left:80px" class="comment-body">
+                                <div class="comment-by">
+                                    <h4><a title="" href="#">{{item.title}}</a></h4>
+                                </div>
+                                <div class="comment-text">
+                                    {{item.synopsis}}
+                                </div>
+                                <div class="comment-actions">
+                                    <h4>Cast</h4>
+                                    <ul class="list-inline">
+                                        <li ng-repeat="cast in item.abridged_cast"><img class="comment-avatar" alt="" ng-src="{{item.posters.detailed}}"><span style="display:block;margin-top:12px;margin-right:15px"> {{cast.name}}</span></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel widget-comments">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>In Theaters</span>
+                        <div class="panel-heading-controls pull-right">
+                            <ul pager-source itemssource='moviesInTheaters' results="pagedmoviesInTheaters" filter="moviesInTheatersfilter" class="pagination-xs pagination" ng-model="currentPage" items-per-page="5"></ul>
+                            <form action="" style="width:200px">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" ng-model="moviesInTheatersfilter.title" placeholder="Search..." name="s">
+                                    <span class="input-group-btn">
+                                        <button class="btn" type="submit">
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="comment" style="clear:both" ng-repeat="item in pagedmoviesInTheaters">
+                            <div style="float:left">
+                                <img alt="" ng-src="{{item.posters.detailed}}">
+                                <h4>
+                                    {{item.ratings.audience_score}}
+                                    <i ng-show="item.ratings.audience_rating=='Upright'" class="panel-title-icon fa fa-thumbs-up"></i>
+                                    <i ng-show="item.ratings.audience_rating=='Spilled'" class="panel-title-icon fa fa-thumbs-down"></i>
+                                </h4>
+                                <h4>
+                                    {{item.ratings.critics_score}}
+                                    <i ng-show="item.ratings.critics_rating=='Certified Fresh'" class="panel-title-icon fa fa-smile-o"></i>
+                                    <i ng-show="item.ratings.critics_rating=='Rotten'" class="panel-title-icon fa fa-frown-o"></i>
+                                </h4>
+                            </div>
+                            <div style="margin-left:80px" class="comment-body">
+
+                                <div class="comment-by">
+                                    <h4><a title="" href="#">{{item.title}}</a></h4>
+                                </div>
+                                <div class="comment-text" mm-scroll="100">
+                                    {{item.synopsis}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel widget-comments">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>Opening this Week</span>
+                        <div class="panel-heading-controls">
+                            <ul pager-source itemssource="moviesOpening" results="pagedmoviesOpening" items-per-page="6" ng-model="currentPage"></ul>
+                            <span class="label label-info pull-right">{{moviesOpening.length}}</span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="comment" style="clear:both" ng-repeat="item in pagedmoviesOpening">
+                            <div style="float:left">
+                                <img class="thread-avatar" style="height:48px" alt="" ng-src="{{item.posters.detailed}}">
+                            </div>
+                            <div style="margin-left:60px" class="comment-body">
+                                <div class="comment-by">
+                                    <h5>
+                                        <span ng-hide="item.ratings.audience_score==-1">
+                                            folks : %{{item.ratings.audience_score}}
+                                            <i ng-show="item.ratings.audience_rating=='Upright'" class="panel-title-icon fa fa-thumbs-up"></i>
+                                            <i ng-show="item.ratings.audience_rating=='Spilled'" class="panel-title-icon fa fa-thumbs-down"></i>
+                                        </span>
+                                        -
+                                        <span ng-hide="item.ratings.critics_score==-1">
+                                            critics : %{{item.ratings.critics_score}}
+                                            <i ng-show="item.ratings.critics_rating=='Certified Fresh'" class="panel-title-icon fa fa-smile-o"></i>
+                                            <i ng-show="item.ratings.critics_rating=='Rotten'" class="panel-title-icon fa fa-frown-o"></i>
+                                        </span>
+                                    </h5>
+                                    <h5><a title="" href="#">{{item.title}}</a></h5>
+                                </div>
+                                <!--<div class="comment-text">
+                                        {{item.synopsis}}
+                                    </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="panel widget-comments">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>Upcoming Movies</span>
+                        <div class="panel-heading-controls">
+                            <ul pager-source itemssource="moviesUpcoming" results="pagedmoviesUpcoming" items-per-page="10" ng-model="moviesUpcomingCurrentPage"></ul>
+                            <span class="label label-info pull-right">{{moviesUpcoming.length}}</span>
+                        </div>
+                    </div>
+                    <div class="panel-body" style="clear:both">
+                        <div class="col-sm-4" style="padding:5px;" ng-repeat="item in pagedmoviesUpcoming">
+                            <div class="well" style="height:110px;margin:0;">
+                                <div style="float:left">
+                                    <img class="thread-avatar" style="height:48px" alt="" ng-src="{{item.posters.detailed}}">
+                                </div>
+                                <div style="margin-left:60px" class="comment-body">
+                                    <div class="comment-by">
+                                        <h6>
+                                            <span ng-hide="item.ratings.audience_score==-1">
+                                                folks : %{{item.ratings.audience_score}}
+                                                <i ng-show="item.ratings.audience_rating=='Upright'" class="panel-title-icon fa fa-thumbs-up"></i>
+                                                <i ng-show="item.ratings.audience_rating=='Spilled'" class="panel-title-icon fa fa-thumbs-down"></i>
+                                            </span>
+                                            -
+                                            <span ng-hide="item.ratings.critics_score==-1">
+                                                critics : %{{item.ratings.critics_score}}
+                                                <i ng-show="item.ratings.critics_rating=='Certified Fresh'" class="panel-title-icon fa fa-smile-o"></i>
+                                                <i ng-show="item.ratings.critics_rating=='Rotten'" class="panel-title-icon fa fa-frown-o"></i>
+                                            </span>
+                                        </h6>
+                                        <h6><a title="" href="#">{{item.title}}</a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade in active" id="dvds">
+        <div class="page-header"><h1><i class="fa fa-film page-header-icon"></i>&nbsp;&nbsp;Dvds</h1> </div>
+        <div class="row">
+            <div id="bcTarget" style="width:250px;height:100px"></div>
+        </div>
+    </div>
+    <div class="tab-pane fade in" id="search">
+        <div class="row">
+            <div class="page-search">
+                <div class="page-header">
+                    <h1><i class="fa fa-search page-header-icon"></i>&nbsp;&nbsp;Search results</h1>
+                </div>
+                <div class="search-text">
+                    <strong>{{searchResultTotal}}</strong> results found for: <span class="text-primary">Lorem ipsum</span>
+                </div>
+                <div class="search-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-target="#search-tabs-all" data-toggle="tab">Movies <span class="label label-primary">{{searchMovieResultsTotal}}</span></a></li>
+                        <li><a data-target="#search-tabs-users" data-toggle="tab">Books <span class="label label-success">{{searchBookResultsTotal}}</span></a></li>
+                        <li><a data-target="#search-tabs-messages" data-toggle="tab">Messages <span class="label label-danger">9</span></a></li>
+                    </ul>
+                </div>
+                <div class="panel search-panel">
+                    <form action="" class="search-form bg-primary">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon no-background"><i class="fa fa-search"></i></span>
+                            <input type="text" name="s" class="form-control" ng-model="searchTerm" placeholder="Type your search here...">
+                            <span class="input-group-btn">
+                                <button class="btn" type="submit" ng-click="searchCall()">Search</button>
+                            </span>
+                        </div> <!-- / .input-group -->
+                    </form>
+                    <!-- / Search form -->
+                    <!-- Search results -->
+                    <div class="panel-body tab-content">
+
+                        <!-- Classic search -->
+                        <ul class="search-classic tab-pane fade in active" id="search-tabs-all">
+                            <li ng-repeat="item in searchMovieResults">
+                                <img class="thread-avatar" style="vertical-align: middle;float:left" alt="" ng-src="{{item.posters.detailed}}">
+
+                                <div style="margin-left:75px">
+
+                                    <a href="#" class="search-title">{{item.title}}</a>
+                                    <a ng-href="{{item.links.alternate}}" target="_blank" href="#" class="search-url">{{item.links.alternate}}</a>
+                                    <div class="search-content" style="min-height:50px">
+                                        {{item.synopsis}}
+                                    </div> <!-- / .search-content -->
+                                    <div class="search-tags">
+                                        <span class="search-tags-text">Cast:</span>
+
+                                        <a ng-repeat="cast in item.abridged_cast" href="#" class="label label-success">{{cast.name}}</a>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <!-- / Classic search -->
+                        <!-- Users search -->
+                        <div class="search-users tab-pane fade" id="search-tabs-users">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Author</th>
+                                        <th class="text-center">Rating</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in searchBookResults">
+
+                                        <td>
+                                            <img ng-src="{{item.best_book.image_url}}" alt="">
+                                        </td>
+                                        <td><a ng-click='gotoBookdetail(item.best_book.id["#text"])' class="pointer"> {{item.best_book.title}}  - {{item.best_book.id["#text"] }} </a></td>
+                                        <td>{{item.best_book.author.name}}</td>
+                                        <td class="text-center">{{item.average_rating}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- / Users search -->
+                        <!-- Messages search -->
+                        <div class="search-messages tab-pane fade widget-messages" id="search-tabs-messages">
+                            <div class="message unread">
+                                <a href="#" title="" class="from">Robert Jang</a>
+                                <a href="#" title="" class="title">Message Title 1</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message unread">
+                                <a href="#" title="" class="from">Michelle Bortz</a>
+                                <a href="#" title="" class="title"><i class="message-title-icon fa fa-paperclip"></i>Message Title 2</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message">
+                                <a href="#" title="" class="from">Timothy Owens</a>
+                                <a href="#" title="" class="title">Message Title 3</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message">
+                                <a href="#" title="" class="from">Denise Steiner</a>
+                                <a href="#" title="" class="title">Message Title 4</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message">
+                                <a href="#" title="" class="from">Robert Jang</a>
+                                <a href="#" title="" class="title">Message Title 5</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message">
+                                <a href="#" title="" class="from">Michelle Bortz</a>
+                                <a href="#" title="" class="title">Message Title 6</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message">
+                                <a href="#" title="" class="from">Timothy Owens</a>
+                                <a href="#" title="" class="title">Message Title 7</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message">
+                                <a href="#" title="" class="from">Denise Steiner</a>
+                                <a href="#" title="" class="title">Message Title 8</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+
+                            <div class="message">
+                                <a href="#" title="" class="from">Robert Jang</a>
+                                <a href="#" title="" class="title">Message Title 9</a>
+                                <div class="date">18 jan</div>
+                            </div> <!-- / .message -->
+                        </div>
+                        <!-- / Messages search -->
+                    </div>
+                    <!-- / Search results -->
+                    <!-- Panel Footer -->
+                    <div class="panel-footer">
+                        <ul class="pagination">
+                            <li class="disabled"><a href="#">«</a></li>
+                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div> <!-- / .panel-footer -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="selectedBook">
+        <div class="page-profile">
+            <div class="profile-full-name">
+                <span class="text-semibold" ng-hide='bookdetail.title["#cdata-section"]'>{{bookdetail.title}}</span>
+                <span class="text-semibold" ng-show='bookdetail.title["#cdata-section"]'>{{bookdetail.title["#cdata-section"]}}</span>
+                ISBN : {{bookdetail.isbn["#cdata-section"]}}
+                <span class="label label-info pull-right">{{bookdetail.language_code}}</span>
+            </div>
+            <div class="profile-row">
+                <div class="left-col">
+                    <div class="profile-block">
+                        <div class="panel profile-photo">
+                            <img ng-src="{{bookdetail.image_url}}" alt="">
+                        </div><br>
+                        <a href="#" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a>&nbsp;&nbsp;
+                        <a href="#" class="btn"><i class="fa fa-comment"></i></a>
+                    </div>
+
+                    <div class="panel panel-transparent">
+                        <div class="panel-heading">
+                            <span class="panel-title">About the Book</span>
+                        </div>
+                        <div class="panel-body">
+                            <span mm-html='bookdetail.description["#cdata-section"]'></span>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-transparent">
+                        <div class="panel-heading">
+                            <span class="panel-title">Statistics</span>
+                        </div>
+                        <div class="list-group">
+                            <a class="list-group-item"> Released in <strong>{{bookdetail.publication_year}}</strong> </a>
+                            <a class="list-group-item"><strong>{{bookdetail.num_pages["#cdata-section"]}}</strong> Pages</a>
+                            <a class="list-group-item"><strong>{{bookdetail.format["#cdata-section"]}}</strong> Format</a>
+                            <a class="list-group-item"><strong>{{bookdetail.average_rating}}  </strong>Rating <!--<span disabled="true" class="mmRating" ng-model="bookdetail.average_rating"></span>--></a>
+                            <a class="list-group-item">Published by <strong>{{bookdetail.publisher}}</strong> </a>
+                        </div>
+                    </div>
+                    <div class="panel panel-transparent profile-skills">
+                        <div class="panel-heading"><span class="panel-title">Popular Shelves</span></div>
+                        <div class="panel-body">
+                            <span ng-repeat="shelf in bookdetail.popular_shelves.shelf" class="label label-primary">{{shelf["@name"]}} : {{shelf["@count"]}}</span>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-transparent">
+                        <div class="panel-heading"><span class="panel-title">Social</span></div>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item"><i class="profile-list-icon fa fa-twitter" style="color: #4ab6d5"></i> @@dsteiner</a>
+                            <a href="#" class="list-group-item"><i class="profile-list-icon fa fa-facebook-square" style="color: #1a7ab9"></i> Denise Steiner</a>
+                            <a href="#" class="list-group-item"><i class="profile-list-icon fa fa-envelope" style="color: #888"></i> dsteiner@@example.com</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right-col">
+                    <hr class="profile-content-hr no-grid-gutter-h">
+                    <div class="profile-content">
+                        <ul id="profile-tabs" class="nav nav-tabs">
+                            <li class="active"><a data-target="#similarBooks" data-toggle="tab">Similar Books</a></li>
+                            <li><a data-target="#authors" data-toggle="tab">Authors</a></li>
+
+                            <li><a data-target="#timeline" data-toggle="tab">Timeline</a></li>
+                            <li><a data-target="#reviews" data-toggle="tab">Reviews</a></li>
+                        </ul>
+                        <div class="tab-content tab-content-bordered panel-padding">
+                            <div class="tab-pane fade in active" id="similarBooks">
+                                <div class="panel panel-transparent">
+                                    <div class="panel-heading">
+                                        <span class="panel-title">About the Book</span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <span mm-html='bookdetail.description["#cdata-section"]'></span>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body" style="clear:both">
+                                    <div class="col-sm-4" style="padding:5px;" ng-repeat="item in bookdetail.similar_books.book">
+                                        <div class="well" style="height:190px;margin:0;">
+                                            <div style="float:left">
+                                                <img class="thread-avatar" alt="" ng-src='{{item.image_url["#cdata-section"]}}'>
+                                            </div>
+                                            <div style="margin-left:120px;height:100%" class="comment-body">
+                                                <div class="comment-by" style="height:100%">
+                                                    <h5>
+                                                        <a ng-hide='item.title["#cdata-section"]' class="pointer" title="" ng-click="gotoBookdetail(item.id)">{{item.title}}</a>
+                                                        <a ng-show='item.title["#cdata-section"]' class="pointer" title="" ng-click="gotoBookdetail(item.id)">{{item.title["#cdata-section"]}}</a>
+                                                        {{item.isbn}}
+                                                    </h5>
+                                                    <span>Rating : %{{item.average_rating}}</span>
+                                                    <h6 class="bottom" style="bottom:15px; position: absolute;">
+                                                        Author :<strong> {{item.authors.author.name}}</strong>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" tab-pane panel no-padding no-border fade in" id="authors">
+                                <div style="margin-top:50px;float:left">
+                                    <img ng-src='{{authordetail.image_url["#cdata-section"]}}' style="max-width:175px" />
+                                </div>
+                                <div class="panel panel-transparent">
+                                    <div class="panel-heading">
+                                        <i ng-show="authordetail.gender=='male'" class="fa fa-male"></i>
+                                        <i ng-show="authordetail.gender=='female'" class="fa fa-female"></i>
+                                        <span class="panel-title">{{authordetail.name}}</span>
+                                        <span class="badge badge-info pull-right">{{authordetail.works_count}} Work</span>
+                                    </div>
+                                    <div class="panel-body" style="margin-left:185px">
+                                        <span mm-html='authordetail.about["#cdata-section"]'></span>
+                                    </div>
+                                </div>
+
+                                <div class="widget-followers" style="margin-left:20px">
+                                    <div class="follower" ng-repeat="book in authordetail.books.book" style="clear:both;min-height:170px">
+                                        <img ng-src="{{book.image_url}}" alt="" style="max-width:100px;float:left">
+                                        <div class="body" style="margin-left:105px;">
+                                            <a class="follower-name pointer" ng-click='gotoBookdetail(book.id["#text"])'>{{book.title}}</a><br>
+                                            <a class="follower-username">
+                                                <span mm-html="book.description"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="timeline">
+                                <div class="timeline">
+                                    <!-- Timeline header -->
+                                    <div class="tl-header now">Now</div>
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">
+                                            1h ago
+                                        </div>
+                                        <div class="tl-icon bg-warning"><i class="fa fa-envelope"></i></div>
+                                        <div class="panel tl-body">
+                                            <h4 class="text-warning">Lorem ipsum dolor sit amet</h4>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            2h ago
+                                        </div>
+                                        <div class="tl-icon bg-success"><i class="fa fa-picture-o"></i></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Denise Steiner</a> shared an image on <a href="#">The Gallery</a>
+                                            <div class="tl-wide text-center" style="padding: 10px;margin-top:15px;margin-bottom: 15px;background: #f1f1f1">
+                                                <img src="/assets/demo/signin-bg-5.jpg" alt="" style="max-height: 150px;max-width: 100%;">
+                                            </div>
+                                            <i class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">
+                                            3h ago
+                                        </div>
+                                        <div class="tl-icon bg-success"><img src="/assets/demo/avatars/2.jpg" alt=""></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Robert Jang</a> commented on <a href="#">The Article</a>
+                                            <div class="well well-sm" style="margin: 10px 0 0 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            4h ago
+                                        </div>
+                                        <div class="tl-icon bg-dark-gray"><i class="fa fa-check"></i></div>
+                                        <div class="panel tl-body">
+                                            <img src="/assets/demo/avatars/5.jpg" alt="" class="rounded" style=" width: 20px;height: 20px;margin-top: -2px;">&nbsp;&nbsp;<a href="#">Denise Steiner</a> followed <a href="#">Johg Doe</a>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+                                    <!-- Timeline header -->
+                                    <div class="tl-header">Yesterday</div>
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">
+                                            9:02 pm
+                                        </div>
+                                        <div class="tl-icon bg-info"><i class="fa fa-comment"></i></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Denise Steiner</a> liked a comment on <a href="#">Some Article</a>
+                                            <div style="margin-top: 10px;" class="text-sm">
+                                                <img src="/assets/demo/avatars/3.jpg" alt="" class="rounded" style=" width: 20px;height: 20px;margin-top: -2px;">&nbsp;&nbsp;<a href="#">Michelle Bortz</a> commented 2 days ago
+                                                <div class="well well-sm" style="margin: 6px 0 0 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                            </div>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            5:47 pm
+                                        </div>
+                                        <div class="panel tl-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">
+                                            2:35 pm
+                                        </div>
+                                        <div class="tl-icon bg-danger"><i class="fa fa-heart"></i></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Denise Steiner</a> liked <a href="#">Shop Item</a>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            11:21 am
+                                        </div>
+                                        <div class="panel tl-body">
+                                            <h4 class="text-danger">Lorem ipsum dolor sit amet</h4>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                </div> <!-- / .timeline -->
+                            </div>
+                            <div class="tab-pane fade no-padding no-border" id="reviews">
+                                <div class="widget-article-comments">
+                                    <div class="comment">
+                                        <img src="/assets/demo/avatars/1.jpg" alt="" class="comment-avatar">
+                                        <div class="comment-body">
+                                            <form action="" id="leave-comment-form" class="comment-text no-padding no-border">
+                                                <textarea class="form-control" rows="1"></textarea>
+                                                <div class="expanding-input-hidden" style="margin-top: 10px;">
+                                                    <label class="checkbox-inline pull-left">
+                                                        <input type="checkbox" class="px">
+                                                        <span class="lbl">Private message</span>
+                                                    </label>
+                                                    <button class="btn btn-primary pull-right">Leave Message</button>
+                                                </div>
+                                            </form>
+                                        </div> <!-- / .comment-body -->
+                                    </div>
+
+                                    <hr class="no-panel-padding-h panel-wide">
+
+                                    <div class="comment">
+                                        <img src="/assets/demo/avatars/2.jpg" alt="" class="comment-avatar">
+                                        <div class="comment-body">
+                                            <div class="comment-text">
+                                                <div class="comment-heading">
+                                                    <a href="#" title="">Robert Jang</a><span>14 hours ago</span>
+                                                </div>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                            </div>
+                                            <div class="comment-footer">
+                                                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                <a href="#">Reply</a>
+                                            </div>
+                                        </div> <!-- / .comment-body -->
+
+                                        <div class="comment">
+                                            <img src="/assets/demo/avatars/4.jpg" alt="" class="comment-avatar">
+                                            <div class="comment-body">
+                                                <div class="comment-text">
+                                                    <div class="comment-heading">
+                                                        <a href="#" title="">Timothy Owens</a><span>14 hours ago</span>
+                                                    </div>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                                </div>
+                                                <div class="comment-footer">
+                                                    <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                    <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                    &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                    <a href="#">Reply</a>
+                                                </div>
+                                            </div> <!-- / .comment-body -->
+                                        </div> <!-- / .comment -->
+
+                                        <div class="comment">
+                                            <img src="/assets/demo/avatars/5.jpg" alt="" class="comment-avatar">
+                                            <div class="comment-body">
+                                                <div class="comment-text">
+                                                    <div class="comment-heading">
+                                                        <a href="#" title="">Denise Steiner</a><span>14 hours ago</span>
+                                                    </div>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                                </div>
+                                                <div class="comment-footer">
+                                                    <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                    <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                    &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                    <a href="#">Reply</a>
+                                                </div>
+                                            </div> <!-- / .comment-body -->
+
+                                            <div class="comment">
+                                                <img src="/assets/demo/avatars/1.jpg" alt="" class="comment-avatar">
+                                                <div class="comment-body">
+                                                    <div class="comment-text">
+                                                        <div class="comment-heading">
+                                                            <a href="#" title="">John Doe</a><span>14 hours ago</span>
+                                                        </div>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    </div>
+                                                    <div class="comment-footer">
+                                                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                        <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                        &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comment">
+                                        <img src="/assets/demo/avatars/3.jpg" alt="" class="comment-avatar">
+                                        <div class="comment-body">
+                                            <div class="comment-text">
+                                                <div class="comment-heading">
+                                                    <a href="#" title="">Michelle Bortz</a><span>14 hours ago</span>
+                                                </div>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                            </div>
+                                            <div class="comment-footer">
+                                                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                <a href="#">Reply</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comment">
+                                        <img src="/assets/demo/avatars/2.jpg" alt="" class="comment-avatar">
+                                        <div class="comment-body">
+                                            <div class="comment-text">
+                                                <div class="comment-heading">
+                                                    <a href="#" title="">Robert Jang</a><span>14 hours ago</span>
+                                                </div>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                            </div>
+                                            <div class="comment-footer">
+                                                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                <a href="#">Reply</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="comment">
+                                            <img src="/assets/demo/avatars/4.jpg" alt="" class="comment-avatar">
+                                            <div class="comment-body">
+                                                <div class="comment-text">
+                                                    <div class="comment-heading">
+                                                        <a href="#" title="">Timothy Owens</a><span>14 hours ago</span>
+                                                    </div>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                                </div>
+                                                <div class="comment-footer">
+                                                    <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                    <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                    &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                    <a href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="comment">
+                                            <img src="/assets/demo/avatars/5.jpg" alt="" class="comment-avatar">
+                                            <div class="comment-body">
+                                                <div class="comment-text">
+                                                    <div class="comment-heading">
+                                                        <a href="#" title="">Denise Steiner</a><span>14 hours ago</span>
+                                                    </div>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                                </div>
+                                                <div class="comment-footer">
+                                                    <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                    <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                    &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                    <a href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment">
+                                                <img src="/assets/demo/avatars/1.jpg" alt="" class="comment-avatar">
+                                                <div class="comment-body">
+                                                    <div class="comment-text">
+                                                        <div class="comment-heading">
+                                                            <a href="#" title="">John Doe</a><span>14 hours ago</span>
+                                                        </div>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                    </div>
+                                                    <div class="comment-footer">
+                                                        <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                        <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                        &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment">
+                                        <img src="/assets/demo/avatars/3.jpg" alt="" class="comment-avatar">
+                                        <div class="comment-body">
+                                            <div class="comment-text">
+                                                <div class="comment-heading">
+                                                    <a href="#" title="">Michelle Bortz</a><span>14 hours ago</span>
+                                                </div>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                            </div>
+                                            <div class="comment-footer">
+                                                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                                                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                                                &nbsp;&nbsp;·&nbsp;&nbsp;
+                                                <a href="#">Reply</a>
+                                            </div>
+                                        </div> <!-- / .comment-body -->
+                                    </div> <!-- / .comment -->
+                                </div>
+                            </div> <!-- / .tab-pane -->
+                            <div class="tab-pane fade widget-followers" id="profile-tabs-followers">
+
+                                <div class="timeline centered">
+                                    <!-- Timeline header -->
+                                    <div class="tl-header now">Now</div>
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">  1h ago </div>
+                                        <div class="tl-icon bg-warning"><i class="fa fa-envelope"></i></div>
+                                        <div class="panel tl-body">
+                                            <h4 class="text-warning">Lorem ipsum dolor sit amet</h4>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            2h ago
+                                        </div>
+                                        <div class="tl-icon bg-success"><i class="fa fa-picture-o"></i></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Denise Steiner</a> shared an image on <a href="#">The Gallery</a>
+                                            <div class="tl-wide text-center" style="padding: 10px;margin-top:15px;margin-bottom: 15px;background: #f1f1f1">
+                                                <img src="/assets/demo/signin-bg-5.jpg" alt="" style="max-height: 150px;max-width: 100%;">
+                                            </div>
+                                            <i class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">
+                                            3h ago
+                                        </div>
+                                        <div class="tl-icon bg-success"><img src="/assets/demo/avatars/2.jpg" alt=""></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Robert Jang</a> commented on <a href="#">The Article</a>
+                                            <div class="well well-sm" style="margin: 10px 0 0 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            4h ago
+                                        </div>
+                                        <div class="tl-icon bg-dark-gray"><i class="fa fa-check"></i></div>
+                                        <div class="panel tl-body">
+                                            <img src="/assets/demo/avatars/5.jpg" alt="" class="rounded" style=" width: 20px;height: 20px;margin-top: -2px;">&nbsp;&nbsp;<a href="#">Denise Steiner</a> followed <a href="#">Johg Doe</a>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+                                    <!-- Timeline header -->
+                                    <div class="tl-header">Yesterday</div>
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">
+                                            9:02 pm
+                                        </div>
+                                        <div class="tl-icon bg-info"><i class="fa fa-comment"></i></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Denise Steiner</a> liked a comment on <a href="#">Some Article</a>
+                                            <div style="margin-top: 10px;" class="text-sm">
+                                                <img src="/assets/demo/avatars/3.jpg" alt="" class="rounded" style=" width: 20px;height: 20px;margin-top: -2px;">&nbsp;&nbsp;<a href="#">Michelle Bortz</a> commented 2 days ago
+                                                <div class="well well-sm" style="margin: 6px 0 0 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                            </div>
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            5:47 pm
+                                        </div>
+                                        <div class="panel tl-body">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </div> <!-- / .tl-body -->
+                                    </div> <!-- / .tl-entry -->
+
+                                    <div class="tl-entry">
+                                        <div class="tl-time">
+                                            2:35 pm
+                                        </div>
+                                        <div class="tl-icon bg-danger"><i class="fa fa-heart"></i></div>
+                                        <div class="panel tl-body">
+                                            <a href="#">Denise Steiner</a> liked <a href="#">Shop Item</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="tl-entry left">
+                                        <div class="tl-time">
+                                            11:21 am
+                                        </div>
+                                        <div class="panel tl-body">
+                                            <h4 class="text-danger">Lorem ipsum dolor sit amet</h4>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div> <!-- / .tab-pane -->
+                            <div class="tab-pane fade widget-followers" id="profile-tabs-following">
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/1.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i><span>&nbsp;&nbsp;Following</span></a>
+                                        </div>
+                                        <a href="#" class="follower-name">John Doe</a><br>
+                                        <a href="#" class="follower-username">@@jdoe</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/3.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Michelle Bortz</a><br>
+                                        <a href="#" class="follower-username">@@mbortz</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/4.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Timothy Owens</a><br>
+                                        <a href="#" class="follower-username">@@towens</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/5.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Denise Steiner</a><br>
+                                        <a href="#" class="follower-username">@@dsteiner</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/1.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i><span>&nbsp;&nbsp;Following</span></a>
+                                        </div>
+                                        <a href="#" class="follower-name">John Doe</a><br>
+                                        <a href="#" class="follower-username">@@jdoe</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/3.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Michelle Bortz</a><br>
+                                        <a href="#" class="follower-username">@@mbortz</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/4.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Timothy Owens</a><br>
+                                        <a href="#" class="follower-username">@@towens</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/5.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Denise Steiner</a><br>
+                                        <a href="#" class="follower-username">@@dsteiner</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/1.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i><span>&nbsp;&nbsp;Following</span></a>
+                                        </div>
+                                        <a href="#" class="follower-name">John Doe</a><br>
+                                        <a href="#" class="follower-username">@@jdoe</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/3.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Michelle Bortz</a><br>
+                                        <a href="#" class="follower-username">@@mbortz</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/4.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Timothy Owens</a><br>
+                                        <a href="#" class="follower-username">@@towens</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/5.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Denise Steiner</a><br>
+                                        <a href="#" class="follower-username">@@dsteiner</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/1.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i><span>&nbsp;&nbsp;Following</span></a>
+                                        </div>
+                                        <a href="#" class="follower-name">John Doe</a><br>
+                                        <a href="#" class="follower-username">@@jdoe</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/3.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Michelle Bortz</a><br>
+                                        <a href="#" class="follower-username">@@mbortz</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/4.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Timothy Owens</a><br>
+                                        <a href="#" class="follower-username">@@towens</a>
+                                    </div>
+                                </div>
+
+                                <div class="follower">
+                                    <img src="/assets/demo/avatars/5.jpg" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">Denise Steiner</a><br>
+                                        <a href="#" class="follower-username">@@dsteiner</a>
+                                    </div>
+                                </div>
+                            </div> <!-- / .tab-pane -->
+                        </div> <!-- / .tab-content -->
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

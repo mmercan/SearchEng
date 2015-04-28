@@ -1,0 +1,18 @@
+{
+    "version": "1.0.0-*",
+    "dependencies": {
+        "SearchEng.Search": "1.0.0-*",
+        "SearchEng.Common": "1.0.0-*",
+		"SearchEng.Data": "1.0.0-*",
+		"xunit": "2.1.0-beta1-build2945",
+		"xunit.runner.visualstudio": "2.1.0-beta1-build1051"
+		
+    },
+
+    "frameworks": {
+        "aspnet50": {
+            "dependencies": {
+            }
+        }
+    }
+}

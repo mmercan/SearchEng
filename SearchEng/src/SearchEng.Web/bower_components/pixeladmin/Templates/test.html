@@ -1,0 +1,359 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{currentItem.Name}}
+    </div>
+    <div class="panel-body">
+
+        <ul id="productTabs" class="nav nav-tabs">
+            <li class="active"><a data-target="#productdetails" data-toggle="tab">Product Details</a></li>
+            <li><a data-target="#reviews" data-toggle="tab">Reviews</a></li>
+            <li><a data-target="#docsandphotos" data-toggle="tab">Documents and Photos</a></li>
+            <li><a data-target="#ordersSupp" data-toggle="tab">Inventory, Orders and Suppliers</a></li>
+            <li><a data-target="#statistics" data-toggle="tab">Statistics</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="productdetails">
+                <form novalidate name="catForm" ng-submit="save(catForm)">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" ng-model="currentItem.Name" placeholder="Product Name" required maxlength="40" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Product Number</label>
+                                <input type="text" class="form-control" ng-model="currentItem.ProductNumber" placeholder="Product Number" required maxlength="40" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Color</label>
+                                <input type="text" class="form-control" ng-model="currentItem.Color" placeholder="Color" required maxlength="40" />
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Standard Cost</label>
+                                        <input type="number" class="form-control" ng-model="currentItem.StandardCost" placeholder="Standard Cost" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>ListPrice</label>
+                                        <input type="number" ng-disabled="!currentItem.FinishedGoodsFlag" class="form-control" ng-model="currentItem.ListPrice" placeholder="List Price" required maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Size</label>
+                                        <input type="text" class="form-control" ng-model="currentItem.Size" placeholder="Size" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Size Unit Measure</label>
+                                        <input type="text" class="form-control" ng-model="currentItem.SizeUnitMeasureCode" placeholder="Size Unit Measure" required maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Weight</label>
+                                        <input type="number" class="form-control" ng-model="currentItem.Weight" placeholder="Weight" required maxlength="40" />
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Weight Unit Measure</label>
+                                        <input type="text" class="form-control" ng-model="currentItem.WeightUnitMeasureCode" placeholder="Weight Unit Measure" required maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <!--<div class="col-sm-8">
+                                <div class="form-group">
+                                    <label>Product Name</label>
+                                    <input type="text" class="form-control" ng-model="currentItem.ProductName" placeholder="Product Name" required maxlength="40" />
+                                </div>
+
+                                <div class="input-group">
+                                    <label>Supplier</label>
+                                    <select class="form-control" ng-model="currentItem.SupplierID" data-ng-options="s.SupplierID as s.CompanyName  for s in suppliers.value" required></select>
+                                    <span class="input-group-btn">
+                                        <selection-modal selecteditem="currentItem.SupplierID" itemssource="suppliers" columns="['CompanyName','ContactTitle','ContactName']" valuefield="'SupplierID'" textfield="'CompanyName'"></selection-modal>
+                                    </span>
+                                </div>
+
+                                <div class="input-group">
+                                    <label>Category</label>
+                                    <select class="form-control" ng-model="currentItem.CategoryID" data-ng-options="c.CategoryID as c.CategoryName  for c in categories" required></select>
+                                    <span class="input-group-btn">
+                                        <div class="http-get" address="'/Categoryjson.txt'" results="categories"></div>
+                                        <selection-modal selecteditem="currentItem.CategoryID" itemssource="categories" columns="['CategoryName']" valuefield="'CategoryID'" textfield="'CategoryName'"></selection-modal>
+                                    </span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Quantity Per Unit</label>
+                                    <input type="text" class="form-control" ng-model="currentItem.QuantityPerUnit" placeholder="Quantity Per Unit" maxlength="20" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Unit Price</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">$</span>
+                                        <input type="number" class="form-control" ng-model="currentItem.UnitPrice" placeholder="Unit Price" />
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!--<div class="col-sm-4">
+                                <div class="form-group">
+                                    <label>Units In Stock</label>
+                                    <input type="number" class="form-control" ng-model="currentItem.UnitsInStock" placeholder="Units In Stock" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Units On Order</label>
+                                    <input type="number" class="form-control" ng-model="currentItem.UnitsOnOrder" disabled placeholder="Units On Order" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Reorder Level</label>
+                                    <input type="number" class="form-control" ng-model="currentItem.ReorderLevel" disabled placeholder="Reorder Level" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Discontinued</label>
+                                    <select ng-model="currentItem.Discontinued" class="form-control" required>
+
+                                        <option value="true"> Yes </option>
+                                        <option value="false"> No </option>
+                                    </select>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row" style="height: 74px">
+                                <div class="col-sm-6">
+                                    <div class="checkbox">
+                                        <label> </label>
+                                        <input type="checkbox" ng-model="currentItem.MakeFlag" required />Internal Production
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="checkbox">
+                                        <label>Finished Goods</label>
+                                        <input type="checkbox" ng-model="currentItem.FinishedGoodsFlag" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>ProductSubcategoryID</label>
+                                <div class="input-group">
+                                    <select ng-disabled="!currentItem.FinishedGoodsFlag" class="form-control" ng-model="currentItem.ProductSubcategoryID" data-ng-options="c.ProductSubcategoryID as c.Name  for c in subCategories" required></select>
+                                    <div class="input-group-btn">
+                                        <mm-selection-modal selecteditem="currentItem.ProductSubcategoryID" itemssource="subCategories" columns="['Name']" valuefield="'ProductSubcategoryID'" textfield="'Name'">
+                                            <div class="filter-template">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" ng-model="filter.Name" placeholder="CompanyName">
+                                                </div>
+                                            </div>
+                                        </mm-selection-modal>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>ProductModel</label> {{currentItem.ProductModelID}}
+                                <div class="input-group">
+                                    <input ng-disabled="!currentItem.FinishedGoodsFlag" type="text" class="form-control" ng-model="currentItem.ProductModelName" placeholder="ProductModelID" required maxlength="40" />
+                                    <div class="input-group-btn">
+                                        <mm-selection-modal-ajax url="/SearchApi/searchProductModel" selected-id="currentItem.ProductModelID" selected-text="currentItem.ProductModelName" selecteditem="currentItem.ProductSubcategoryID" itemssource="subCategories" columns="['Name']" valuefield="'ProductSubcategoryID'" textfield="'Name'">
+                                            <div class="filter-template">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" ng-model="filter.Name" placeholder="Name">
+                                                </div>
+                                            </div>
+                                        </mm-selection-modal-ajax>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Safety Stock Level</label>
+                                        <input type="number" class="form-control" ng-model="currentItem.SafetyStockLevel" placeholder="Safety Stock Level" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Reorder Point</label>
+                                        <input type="number" class="form-control" ng-model="currentItem.ReorderPoint" placeholder="Reorder Point" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Days To Manufacture</label>
+                                        <input type="number" class="form-control" ng-model="currentItem.DaysToManufacture" placeholder="Days To Manufacture" required maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Product Line</label>
+                                        <input type="text" class="form-control" ng-model="currentItem.ProductLine" placeholder="ProductLine" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Class</label>
+                                        <input type="text" class="form-control" ng-model="currentItem.Class" placeholder="Class" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Style</label>
+                                        <input type="text" class="form-control" ng-model="currentItem.Style" placeholder="Style" required maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>SellStartDate</label>
+                                        <input ng-disabled="!currentItem.FinishedGoodsFlag" type="date" class="form-control" ng-model="currentItem.SellStartDate" placeholder="SellStartDate" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>SellEndDate</label>
+                                        <input ng-disabled="!currentItem.FinishedGoodsFlag" type="date" class="form-control" ng-model="currentItem.SellEndDate" placeholder="SellEndDate" required maxlength="40" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>DiscontinuedDate</label>
+                                        <input type="date" class="form-control" ng-model="currentItem.DiscontinuedDate" placeholder="DiscontinuedDate" required maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <hr />
+                                <input type="submit" class=" btn btn-primary" value="Save" ng-disabled="catForm.$invalid" />
+                                <input type="button" value="Delete" class="btn btn-danger pull-right" ng-show="currentItem.CategoryID" data-ng-click="remove()" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane" id="reviews">
+                <mm-table itemssource="currentReviews" columns="['ReviewerName','ReviewDate','EmailAddress','Rating','Comments']"></mm-table>
+            </div>
+            <div class="tab-pane" id="docsandphotos">
+
+                <style type="text/css">
+                    .dropzone {
+                        width: 100%;
+                        height: 45px;
+                        border: 1px solid #ccc;
+                        text-align: center;
+                        padding: 30px;
+                        font-family: Arial;
+                    }
+                    img {
+                        max-width: 100%;
+                        max-height:180px;
+                    }
+                </style>
+
+
+                <div class="dropzone" file-dropzone="[image/png, image/jpeg, image/gif]"
+                     file="image" file-name="imageFileName" data-max-file-size="3" file-selected="fileSelected">
+                    <span>Drop Image Here</span>
+                </div>
+
+                <div class="col-sm-3 thumbnail" style="position:relative;height:200px" ng-repeat="img in images">
+                    <img class="img-responsive" style="position:absolute;top:auto;bottom:auto;vertical-align:middle" ng-src={{img.file}} />
+                </div>
+           
+
+                <ul class="mm-sortable" itemssource="inventory" orderfield="ProductID">
+                    <li ng-repeat="item in inventory">{{item.Name}}</li>
+                </ul>
+                <input type="button" class="btn" ng-click="test()"value="test" />
+
+            </div>
+            <div class="tab-pane" id="ordersSupp">
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading"> {{currentItem.Name}} Production</div>
+                            <div class="panel-body">
+                                <mm-table itemssource="workorderAndSales" columns="['TotalSales','Ordered','Stocked','Scrapped','NetStocked']"></mm-table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading"> {{currentItem.Name}} Purchases</div>
+                            <div class="panel-body">
+                                <mm-table itemssource="purchaseOrderDetail" , columns="['VendorName','ReceivedQty','RejectedQty','StockedQty','unitprice','linetotal']"></mm-table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px;">
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading"> {{currentItem.Name}} Assembly Tree</div>
+                            <div class="panel-body">
+                                <mm-treeview itemssource="assemblyTree" selected-id="selectidid" nullvalue="productID" selectedtext="selectedText" idfield="ComponentID" textfield="ComponentName" parentfield="ProductAssemblyID"></mm-treeview>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading"> {{currentItem.Name}} Inventory</div>
+                            <div class="panel-body">
+                                <mm-table itemssource="inventory" columns="['Name','Shelf','Bin','Quantity']"></mm-table>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="tab-pane" id="statistics">
+                <div mm-chart itemssource="productchart" config="chartconfig"></div>
+
+            </div>
+        </div>

@@ -1,0 +1,108 @@
+﻿<div class="col-sm-12 fill" ng-controller="angularcomp">
+    <div class=" panel panel-primary fill">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmScroll</div>
+        </div>
+        <div class="panel-body fill">
+            <!--#region mmScroll  -->
+            <div class="row fill">
+                <div class="col-md-6 fill">
+
+                    <div id="leftNav" class="fill" style="overflow:auto; position:relative; top:0px; left:0px; right:0px; bottom:0px;">
+                        <div class="comment" ng-repeat="item in events">
+                            <div style="float:left">
+                                <img alt="" ng-src="{{item.posters.detailed}}">
+                                <h3>
+                                    {{item.ratings.audience_score}}
+                                    <i ng-show="item.ratings.audience_rating=='Upright'" class="panel-title-icon fa fa-thumbs-up"></i>
+                                    <i ng-show="item.ratings.audience_rating=='Spilled'" class="panel-title-icon fa fa-thumbs-down"></i>
+                                </h3>
+                                <h3>
+                                    {{item.ratings.critics_score}}
+                                    <i ng-show="item.ratings.critics_rating=='Certified Fresh'" class="panel-title-icon fa fa-smile-o"></i>
+                                    <i ng-show="item.ratings.critics_rating=='Rotten'" class="panel-title-icon fa fa-frown-o"></i>
+                                </h3>
+                            </div>
+                            <div style="margin-left:80px" class="comment-body">
+                                <div class="comment-by">
+                                    <h4><a title="" href="#">{{item.title}}</a></h4>
+                                </div>
+                                <div class="comment-text">
+                                    {{item.synopsis}}
+                                </div>
+                                <div class="comment-actions">
+                                    <h4>Cast</h4>
+                                    <ul class="list-inline">
+                                        <li ng-repeat="cast in item.abridged_cast"><img class="comment-avatar" alt="" ng-src="{{item.posters.detailed}}"><span style="display:block;margin-top:12px;margin-right:15px"> {{cast.name}}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                 <!--<div class="tab-pane" id="mmScroll">
+                <div class="note note-info">
+                    <h2>restrict: 'A'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmScroll</td>
+                                <td>numeric</td>
+                                <td>
+                                    numeric number defines the height <br />
+                                    mm-scroll="600"
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel widget-comments">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>Upcoming</span>
+                        <div class="panel-heading-controls">
+                            <button class="btn btn-xs btn-warning btn-outline" ng-click="moviesBoxOfficeCall()"><span class="fa fa-refresh"></span>&nbsp;&nbsp;Refresh</button>
+                            <span class="label label-info pull-right">{{moviesBoxOffice.length}}</span>
+                        </div>
+                    </div>
+                    <div class="panel-body" mm-scroll="80vh">
+                        <div class="comment" ng-repeat="item in events">
+                            <div style="float:left">
+                                <img alt="" ng-src="{{item.posters.detailed}}">
+                                <h3>
+                                    {{item.ratings.audience_score}}
+                                    <i ng-show="item.ratings.audience_rating=='Upright'" class="panel-title-icon fa fa-thumbs-up"></i>
+                                    <i ng-show="item.ratings.audience_rating=='Spilled'" class="panel-title-icon fa fa-thumbs-down"></i>
+                                </h3>
+                                <h3>
+                                    {{item.ratings.critics_score}}
+                                    <i ng-show="item.ratings.critics_rating=='Certified Fresh'" class="panel-title-icon fa fa-smile-o"></i>
+                                    <i ng-show="item.ratings.critics_rating=='Rotten'" class="panel-title-icon fa fa-frown-o"></i>
+                                </h3>
+                            </div>
+                            <div style="margin-left:80px" class="comment-body">
+                                <div class="comment-by">
+                                    <h4><a title="" href="#">{{item.title}}</a></h4>
+                                </div>
+                                <div class="comment-text">
+                                    {{item.synopsis}}
+                                </div>
+                                <div class="comment-actions">
+                                    <h4>Cast</h4>
+                                    <ul class="list-inline">
+                                        <li ng-repeat="cast in item.abridged_cast"><img class="comment-avatar" alt="" ng-src="{{item.posters.detailed}}"><span style="display:block;margin-top:12px;margin-right:15px"> {{cast.name}}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <pre>&lt;div class="panel-body" mm-scroll="400"&gt;&lt;/div&gt;</pre>
+            </div>-->
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

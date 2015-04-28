@@ -1,0 +1,294 @@
+﻿<link href="/lib/Angular-Directives/panels.css" rel="stylesheet" />
+
+<link href="/lib/Angular-Directives/messages.css" rel="stylesheet" />
+<link href="/lib/Angular-Directives/messages-alt.css" rel="stylesheet" />
+<link href="/lib/Angular-Directives/support-tickets.css" rel="stylesheet" />
+
+<link href="/lib/Angular-Directives/threads.css" rel="stylesheet" />
+
+<link href="/lib/Angular-Directives/notifications.css" rel="stylesheet" />
+<link href="/lib/Angular-Directives/tasks.css" rel="stylesheet" />
+<link href="/lib/Angular-Directives/comments.css" rel="stylesheet" />
+<link href="/lib/Angular-Directives/followers.css" rel="stylesheet" />
+<link href="/lib/Angular-Directives/followers.css" rel="stylesheet" />
+
+<link href="/lib/Angular-Directives/mail.css" rel="stylesheet" />
+
+
+<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">Angular Components</div>
+        </div>
+        <div class="panel-body">
+            <div class="tab-pane" id="mmlist">
+
+                <div class="note note-info">
+                    <h2>restrict: 'EA'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>itemssource</td>
+                                <td></td>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <td>filter</td>
+                                <td></td>
+                                <td> </td>
+                            </tr>
+
+                            <tr>
+                                <td>selecteditem</td>
+                                <td></td>
+                                <td> </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3"><b>Templates</b></td>
+
+                            </tr>
+                            <tr>
+                                <td>data-template</td>
+                                <td></td>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+
+                            </tr>
+
+                            <tr>
+                                <td colspan="3"><b>Events</b></td>
+
+                            </tr>
+                            <tr>
+                                <td>itemselected</td>
+                                <td></td>
+                                <td> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <style>
+                    .listitem.active {
+                        background-color: rgb(235, 235, 235)!important;
+                    }
+
+                        .listitem.active .well {
+                            background-color: aqua;
+                            /*border-width:2px;*/
+                            border-bottom-width: 2px;
+                            border-right-width: 2px;
+                        }
+
+
+                    .listitem.data-template {
+                        cursor: pointer;
+                    }
+                </style>
+
+
+                <div class="panel">
+                    <div class="panel-heading">{{selectedlistitem.email}}</div>
+                    <div class="panel-body">
+                        <img ng-src="{{selectedlistitem.image}}" />
+                        {{selectedlistitem.firstName}} {{selectedlistitem.lastName}} <br />
+
+                    </div>
+                </div>
+                <input class="form-control" ng-model="Userfilter.firstName" />
+                <div mm-list="user in users | filter:Userfilter" itemselected="listitemselected" selecteditem="selectedlistitem">
+                    <div class="data-template">
+                        <div class="well">
+                            {{user.firstName}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">Products</div>
+                    <div class="panel-body">
+                        Products will list here
+                        <table mm-list="item in products">
+                            <div class="data-template">{{ProductName}}</div>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel widget-messages-alt">
+                            <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-envelope"></i>Alt Messages List</span></div>
+                            <div class="panel-body padding-sm mm-scroll" height="180">
+                                <div class="messages-list" mm-list="item in users| filter:Userfilter" selecteditem="selectedlistitem">
+                                    <div class="message data-template">
+                                        <img ng-src="{{item.image}}" alt="" class="message-avatar">
+                                        <a class="message-subject">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                                        <div class="message-description">
+                                            from <a>{{item.fullname}}</a>&nbsp;&nbsp;·&nbsp;&nbsp;2h ago
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="messages-link">MORE MESSAGES</a>
+                            </div>
+                        </div>
+
+                        <div class="panel widget-messages">
+                            <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-envelope-o"></i>Messages</span></div>
+                            <div class="panel-body" mm-list="item in users | filter:Userfilter" selecteditem="selectedlistitem">
+                                <div ng-class="{unread:item.messageSelected}" class="message data-template">
+                                    <div class="action-checkbox">
+                                        <label class="px-single"><input type="checkbox" name="" value="" ng-checked="item.messageSelected" class="px" checked="checked"><span class="lbl"></span></label>
+                                    </div>
+                                    <a title="" class="from">{{item.fullname}}</a>
+                                    <a title="" class="title"><i ng-show="item.messageAttached" class="message-title-icon fa fa-paperclip"></i>{{item.messagetitle}}</a>
+                                    <div class="date">18 jan</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel widget-support-tickets">
+                            <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-bullhorn"></i>Support Tickets</span></div>
+                            <div class="panel-body" mm-list="item in supportTickets" selecteditem="selectedTicket">
+                                <div class="ticket data-template">
+                                    <span class="label  ticket-label" ng-class="{'label-success':item.status=='Completed','label-warning':item.status=='Pending','label-info':item.status=='In progress','label-danger':item.status=='Rejected'}">{{item.status}}</span>
+                                    <a title="" class="ticket-title">
+                                        <i ng-show="item.isCritical" class="fa fa-warning text-danger"></i>
+                                        {{item.title}}<span>[#{{item.ticketNumber}}]</span>
+                                    </a>
+                                    <span class="ticket-info">Opened by <a href="#" title="">{{item.username}}</a> {{item.date}} </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel widget-threads">
+                            <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-comments-o"></i>Last threads</span></div>
+                            <div class="panel-body" mm-list="item in lessUsers" selecteditem="selectedlistless">
+                                <div class="thread data-template">
+                                    <img ng-src="{{item.image}}" alt="" class="thread-avatar">
+                                    <div class="thread-body">
+                                        <span class="thread-time">14h</span>
+                                        <a href="#" class="thread-title">Lorem ipsum dolor sit amet</a>
+                                        <div class="thread-info">started by <a href="#" title="">{{item.fullname}}</a> in <a href="#" title="">Forum name</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel widget-notifications">
+                            <div class="panel-heading"> <span class="panel-title"><i class="panel-title-icon fa fa-fire"></i>Notifications</span></div>
+                            <div class="panel-body padding-sm">
+                                <div class="notifications-list" mm-list="item in notifications" itemssource="notifications" selecteditem="selectednotification">
+                                    <div class="notification data-template">
+                                        <div class="notification-title text-{{item.color}}">{{item.title}}</div>
+                                        <div class="notification-description"><span mm-html="item.body"></span> </div>
+                                        <div class="notification-ago">12h ago</div>
+                                        <div class="notification-icon fa {{item.icon}} bg-{{item.color}}"></div>
+                                    </div>
+                                </div>
+                                <a href="#" class="notifications-link">MORE NOTIFICATIONS</a>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading"></div>
+                            <div class="panel-body">
+                                {{selectedtaskitem.title}}
+                            </div>
+                        </div>
+                        <div class="panel widget-tasks">
+                            <div class="panel-heading"> <span class="panel-title"><i class="panel-title-icon fa fa-tasks"></i>Tasks</span></div>
+                            <div mm-list="item in tasks" class="panel-body mmSortable list" itemssource="tasks" selecteditem="selectedtaskitem" orderfield="order" handle=".fa-arrows-v">
+
+                                <div class="data-template">
+                                    <div class="task" ng-class="{completed:item.completed}">
+                                        <span ng-show="item.priority=='high'" class="label label-warning pull-right">High</span>
+                                        <span ng-show="item.priority=='low'" class="label pull-right">Low</span>
+                                        <span class="pull-right">{{item.order}}</span>
+                                        <div class="fa fa-arrows-v task-sort-icon"></div>
+                                        <div class="action-checkbox">
+                                            <label class="px-single"><input type="checkbox" ng-model="item.completed" name="" value="" class="px"><span class="lbl"></span></label>
+                                        </div>
+                                        <a class="task-title">{{item.title}}<span>{{item.due}} {{item.completed}}</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer clearfix">
+                                <div class="pull-right">
+                                    <button class="btn btn-xs" id="clear-completed-tasks"><i class="fa fa-eraser text-success"></i> Clear completed tasks</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel widget-comments">
+                            <div class="panel-heading"> <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>Last comments</span> </div>
+                            <div class="panel-body" mm-list="item in lessUsers" selecteditem="selectedlessitem">
+                                <div class="comment data-template">
+                                    <img ng-src="{{item.image}}" alt="" class="comment-avatar">
+                                    <div class="comment-body">
+                                        <div class="comment-by">
+                                            <a href="#" title="">Denise Steiner</a> commented on <a href="#" title="">Article Name</a>
+                                        </div>
+                                        <div class="comment-text">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                        </div>
+                                        <div class="comment-actions">
+                                            <a href="#"><i class="fa fa-pencil"></i>Edit</a>
+                                            <a href="#"><i class="fa fa-times"></i>Remove</a>
+                                            <span class="pull-right">2 hours ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="panel widget-followers">
+                            <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-check"></i>Followers</span></div>
+                            <div class="panel-body" mm-list="item in lessUsers" selecteditem="selectedlessitem">
+
+                                <div class="follower data-template">
+                                    <img ng-src="{{item.image}}" alt="" class="follower-avatar">
+                                    <div class="body">
+                                        <div class="follower-controls">
+                                            <a ng-show="{{item.username=='@rjang' }}" href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i><span>&nbsp;&nbsp;Following</span></a>
+                                            <a ng-hide="{{item.username=='@rjang' }}" href="#" class="btn btn-sm btn-outline">Follow</a>
+                                        </div>
+                                        <a href="#" class="follower-name">{{item.fullname}}</a><br>
+                                        <a href="#" class="follower-username">{{item.username}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="page-mail">
+                        <ul class="mail-list" mm-list="item in emails">
+                            <li class="mail-item data-template">
+                                <div ng-class="{'unread':item.unread,'starred':item.starred}">
+                                    <div class="m-chck"><label class="px-single"><input type="checkbox" name="" value="" class="px"><span class="lbl"></span></label></div>
+                                    <div class="m-star"><a href="#"></a></div>
+                                    <div class="m-from"><a>{{item.from}}</a></div>
+                                    <div class="m-subject">
+                                        <span class="label label-danger">Social</span>
+
+                                        &nbsp;&nbsp;<a href="pages-show-email.html">{{item.subject}}</a>
+                                    </div>
+                                    <div class="m-date">{{item.date}}</div>
+                                </div>
+                            </li>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+.widget-tasks .task {
+  padding: 8px 0;
+  position: relative;
+}
+.widget-tasks .task:before,
+.widget-tasks .task:after {
+  content: " ";
+  display: table;
+}
+.widget-tasks .task:after {
+  clear: both;
+}
+.widget-tasks .task .action-checkbox,
+.widget-tasks .task .task-title {
+  display: block;
+  line-height: 21px;
+}
+.widget-tasks .task .action-checkbox {
+  float: left;
+  width: 20px;
+}
+.widget-tasks .task .action-checkbox > label,
+.widget-tasks .task .action-checkbox > input {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+}
+.widget-tasks .task .action-checkbox > label,
+.widget-tasks .task .action-checkbox > input {
+  vertical-align: middle;
+}
+.widget-tasks .task .action-checkbox > input,
+.widget-tasks .task .action-checkbox > label {
+  top: -1px;
+}
+.widget-tasks .task .task-title {
+  color: #444;
+  text-decoration: none;
+  float: none;
+  overflow: hidden;
+}
+.widget-tasks .task .task-title span {
+  display: inline-block;
+  color: #aaa;
+  margin-left: 5px;
+  font-size: 12px;
+  font-style: italic;
+}
+.widget-tasks .task.completed a {
+  color: #999;
+  text-decoration: line-through;
+}
+.widget-tasks .task.completed a span {
+  display: none;
+}
+.widget-tasks .task .label {
+  display: block;
+  position: absolute;
+  right: 0;
+}
+.widget-tasks .task .task-sort-icon {
+  color: #bbb;
+  cursor: move;
+  display: block;
+  float: left;
+  position: relative;
+  margin: -8px 6px -8px 0;
+  padding: 8px 12px;
+  line-height: 21px;
+}
+.widget-tasks .task + .task {
+  border-top: 1px solid;
+  border-top-color: #e4e4e4;
+}
+.widget-tasks .task.ui-sortable-helper {
+  background: #f1f6f7;
+}
+.panel.widget-tasks .task,
+.panel .widget-tasks .task {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 -20px;
+}
+.panel.widget-tasks .task .label,
+.panel .widget-tasks .task .label {
+  right: 20px;
+}
+.panel.widget-tasks .task .task-sort-icon,
+.panel .widget-tasks .task .task-sort-icon {
+  margin-left: -11px;
+}

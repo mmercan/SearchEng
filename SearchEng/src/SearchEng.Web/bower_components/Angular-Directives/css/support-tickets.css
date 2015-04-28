@@ -1,0 +1,56 @@
+.widget-support-tickets .ticket {
+  padding: 0 0 14px 0;
+}
+.widget-support-tickets .ticket + .ticket {
+  padding-top: 13px;
+  border-top: 1px solid;
+  border-top-color: #e4e4e4;
+}
+.widget-support-tickets .ticket:last-child {
+  padding-bottom: 0;
+}
+.widget-support-tickets a.ticket-title {
+  display: block;
+  font-size: 14px;
+  padding: 0 90px 0 0;
+  line-height: 20px;
+}
+.widget-support-tickets a.ticket-title i {
+  display: inline-block;
+  font-size: 11px;
+  margin: 0 5px 0 0;
+  top: -1px;
+  position: relative;
+  text-decoration: none;
+}
+.widget-support-tickets a.ticket-title span {
+  display: inline-block;
+  color: #aaa;
+  padding-left: 4px;
+  text-decoration: none !important;
+}
+.widget-support-tickets .ticket-label {
+  display: block;
+  float: right;
+  font-size: 10px;
+  line-height: 18px;
+  margin: 2px 0 0 0;
+  padding: 0 5px;
+  position: relative;
+}
+.widget-support-tickets .ticket-info {
+  color: #aaa;
+  font-size: 12px;
+}
+.widget-support-tickets .ticket-info a {
+  color: #555555;
+}
+.widget-support-tickets .ticket-info a:hover {
+  color: #888;
+}
+.panel.widget-support-tickets .ticket,
+.panel .widget-support-tickets .ticket {
+  margin: 0 -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

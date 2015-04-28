@@ -1,0 +1,141 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">knob</div>
+        </div>
+        <div class="panel-body">
+
+            <!--#region knob  -->
+            <div class="tab-pane active" id="knob">
+                <div class="note note-info">
+                    <h2>restrict: 'ACM'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>ngModel</td>
+                                <td>=</td>
+                                <td>Model Knobs Value get/set</td>
+                            </tr>
+                            <tr>
+                                <td>knob </td>
+                                <td>No parameter</td>
+                                <td>knob attribute enables knob directive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>data-min</td>
+                                <td>min value | default=0.</td>
+                            </tr>
+                            <tr>
+                                <td>data-max </td>
+                                <td>max value | default=100.</td>
+                            </tr>
+                            <tr>
+                                <td>data-step </td>
+                                <td>step size | default=1.</td>
+                            </tr>
+                            <tr>
+                                <td>data-angleOffset </td>
+                                <td>starting angle in degrees | default=0.</td>
+                            </tr>
+                            <tr>
+                                <td>data-angleArc </td>
+                                <td>arc size in degrees | default=360.</td>
+                            </tr>
+                            <tr>
+                                <td>data-stopper </td>
+                                <td>stop at min & max on keydown/mousewheel | default=true.</td>
+                            </tr>
+                            <tr>
+                                <td>data-readOnly </td>
+                                <td>disable input and events | default=false.</td>
+                            </tr>
+                            <tr>
+                                <td>data-rotation </td>
+                                <td>direction of progression | default=clockwise.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">UI : </td>
+                            </tr>
+                            <tr>
+                                <td>data-cursor </td>
+                                <td>display mode "cursor", cursor size could be changed passing a numeric value to the option, default width is used when passing boolean value "true" | default=gauge.</td>
+                            </tr>
+                            <tr>
+                                <td>data-thickness </td>
+                                <td>gauge thickness.</td>
+                            </tr>
+                            <tr>
+                                <td>data-lineCap </td>
+                                <td>gauge stroke endings. | default=butt, round=rounded line endings</td>
+                            </tr>
+                            <tr>
+                                <td>data-width </td>
+                                <td>dial width.</td>
+                            </tr>
+                            <tr>
+                                <td>data-displayInput </td>
+                                <td>default=true | false=hide input.</td>
+                            </tr>
+                            <tr>
+                                <td>data-displayPrevious </td>
+                                <td>default=false | true=displays the previous value with transparency.</td>
+                            </tr>
+                            <tr>
+                                <td>data-fgColor </td>
+                                <td>foreground color.</td>
+                            </tr>
+                            <tr>
+                                <td>data-inputColor </td>
+                                <td>input value (number) color.</td>
+                            </tr>
+                            <tr>
+                                <td>data-font </td>
+                                <td>font family.</td>
+                            </tr>
+                            <tr>
+                                <td>data-fontWeight </td>
+                                <td>font weight.</td>
+                            </tr>
+                            <tr>
+                                <td>data-bgColor </td>
+                                <td>background color.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    More info and examples at <a href="http://anthonyterrien.com/knob/" target="_blank">http://anthonyterrien.com/knob/</a>
+                </div>
+
+                <div>
+                    <input type="text" ng-model="knobnumber" knob data-width="80" data-height="80" data-fgcolor="#6597ea" data-thickness=".2" data-angleoffset="180">
+                    <pre>&lt;input type="text" ng-model="knobnumber" knob data-width="80" data-height="80" data-fgcolor="#6597ea" data-thickness=".2" data-angleoffset="180"&gt;</pre>
+                </div>
+                <div>
+                    <input type="text" ng-model="knobnumber" knob data-width="80" data-height="80" data-displayprevious="true" data-thickness=".2" data-min="-100" data-angleoffset="-125" data-anglearc="250" data-linecap="round" data-fgcolor="#5ebd5e">
+                    <pre>&lt;input type="text" ng-model="knobnumber" knob data-width="80" data-height="80" data-displayprevious="true" data-thickness=".2" data-min="-100" data-angleoffset="-125" data-anglearc="250" data-linecap="round" data-fgcolor="#5ebd5e"&gt;</pre>
+                </div>
+
+                <div>
+                    *Check for data-cursor
+                    <input type="text" ng-model="knobnumber" knob data-width="100" data-height="100" data-thickness=".25" data-cursor="true" data-fgcolor="#e5635f">
+                    <pre>&lt;input type="text" ng-model="knobnumber" knob data-width="100" data-height="100" data-thickness=".25" data-cursor="true" data-fgcolor="#e5635f"&gt;</pre>
+                </div>
+
+                <div>
+                    *Check for data-cursor
+                    <input type="text" ng-model="knobnumber" knob data-width="150" data-max="170" data-cursor=true data-thickness=".5" data-fgcolor="#AAAAAA" data-bgcolor="#FFFFFF" data-displayinput="true">
+                    <pre>&lt;input type="text" ng-model="knobnumber" knob data-width="150" data-max="170" data-cursor=true data-thickness=".5" data-fgcolor="#AAAAAA" data-bgcolor="#FFFFFF" data-displayinput="true"&gt;</pre>
+                </div>
+
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

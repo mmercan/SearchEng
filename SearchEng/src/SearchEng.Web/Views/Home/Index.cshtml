@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="gt-ie8 gt-ie9 not-ie">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Dashboard - PixelAdmin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+
+    <link href="/lib/jquery-ui/jquery-ui.css" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <script src="/lib/modernizr/modernizr.js"></script>
+
+    <link href="/lib/pixeladminless/AdminBundles.css" rel="stylesheet" />
+    <link href="/lib/select2/select2.css" rel="stylesheet" />
+    <style>
+        .container {
+            max-width: 100% !important;
+        }
+
+        .searchsuggest {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-top-color: #d9d9d9;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            cursor: default;
+            z-index: 1001;
+        }
+    </style>
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie.min.js"></script><![endif]-->
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANVOJwdi05pBunlJZs6KkN84uoLwNiy_Y&sensor=SET_TO_TRUE_OR_FALSE">
+
+    </script>
+</head>
+<body class="theme-purple-hills main-menu-animated main-navbar-fixed main-menu-fixed" ng-app="app" style="height:100%">
+    <div>
+        <div id="content-wrapper" class="container body-content" style="padding:15px;">
+            <div id="alert-wrapper"></div>
+            <div class="view-animate-container">
+                <div class="page-header">
+                    <h1><i class="fa fa-search page-header-icon"></i>&nbsp;&nbsp;<a href="#/search"> Search results</a></h1>
+                </div>
+                <div ng-view="" class="view-animate"></div>
+            </div>
+            <div id="main-menu-bg" style="display:none"></div>
+            <script src="/bundle/bundle.js"></script>
+
+            <script src="/lib/slimScroll/jquery.slimscroll.min.js"></script>
+            <script src="/lib/nprogress/nprogress.js"></script>
+
+            <script src="/lib/Angular-directives/components.js"></script>
+            <script src="/lib/Angular-directives/directives.js"></script>
+            <script src="/App/app.init.js"></script>
+            <script src="/App/search/searchctrl.js"></script>
+
+            <script src="/app/search/enterdirective.js"></script>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+.widget-comments .comment {
+  padding: 0 0 10px 0;
+}
+.widget-comments .comment + .comment {
+  padding-top: 10px;
+  border-top: 1px solid;
+  border-top-color: #e4e4e4;
+}
+.widget-comments .comment:last-child {
+  padding-bottom: 0;
+}
+.widget-comments .comment-avatar {
+  display: block;
+  float: left;
+  height: 32px;
+  margin-top: 5px;
+  width: 32px;
+  border-radius: 99999px;
+}
+.widget-comments .comment-body {
+  margin-left: 45px;
+}
+.widget-comments .comment-by,
+.widget-comments .actions {
+  color: #aaa;
+  display: block;
+}
+.widget-comments .comment-by {
+  font-style: italic;
+}
+.widget-comments .comment-by a {
+  font-style: normal;
+}
+.widget-comments .comment-text {
+  padding: 4px 0;
+}
+.widget-comments .comment-actions i {
+  display: inline-block;
+  margin-right: 5px;
+  text-decoration: none;
+}
+.widget-comments .comment-actions,
+.widget-comments .comment-actions a {
+  color: #aaa;
+  font-size: 12px;
+}
+.widget-comments .comment-actions a {
+  margin-right: 10px;
+  display: inline-block;
+}
+.widget-comments .comment-actions a:hover {
+  color: #555555;
+}
+.panel.widget-comments .comment,
+.panel .widget-comments .comment {
+  margin: 0 -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

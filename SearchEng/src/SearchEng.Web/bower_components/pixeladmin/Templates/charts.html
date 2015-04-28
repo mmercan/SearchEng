@@ -1,0 +1,466 @@
+﻿<div class="page-header">
+    <h1>Charts</h1>
+</div> <!-- / .page-header -->
+
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- 5. $MORRISJS_GRAPH ============================================================================
+
+                        Morris.js Graph
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						var tax_data = [
+							{"period": "2011 Q3", "licensed": 3407, "sorned": 660},
+							{"period": "2011 Q2", "licensed": 3351, "sorned": 629},
+							{"period": "2011 Q1", "licensed": 3269, "sorned": 618},
+							{"period": "2010 Q4", "licensed": 3246, "sorned": 661},
+							{"period": "2009 Q4", "licensed": 3171, "sorned": 676},
+							{"period": "2008 Q4", "licensed": 3155, "sorned": 681},
+							{"period": "2007 Q4", "licensed": 3226, "sorned": 620},
+							{"period": "2006 Q4", "licensed": 3245, "sorned": null},
+							{"period": "2005 Q4", "licensed": 3289, "sorned": null}
+						];
+						Morris.Line({
+							element: 'hero-graph',
+							data: tax_data,
+							xkey: 'period',
+							ykeys: ['licensed', 'sorned'],
+							labels: ['Licensed', 'Off the road'],
+							lineColors: PixelAdmin.settings.consts.COLORS,
+							lineWidth: 2,
+							pointSize: 4,
+							gridLineColor: '#cfcfcf',
+							resize: true
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Morris.js Graph</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.oesmith.co.uk/morris.js/" target="_blank">http://www.oesmith.co.uk/morris.js/</a></div>
+
+                <div class="graph-container">
+                    <div id="hero-graph" class="graph"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /5. $MORRISJS_GRAPH -->
+        <!-- 6. $MORRISJS_AREA =============================================================================
+
+                        Morris.js Area
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						Morris.Area({
+							element: 'hero-area',
+							data: [
+								{ period: '2010 Q1', iphone: 2666, ipad: null, itouch: 2647 },
+								{ period: '2010 Q2', iphone: 2778, ipad: 2294, itouch: 2441 },
+								{ period: '2010 Q3', iphone: 4912, ipad: 1969, itouch: 2501 },
+								{ period: '2010 Q4', iphone: 3767, ipad: 3597, itouch: 5689 },
+								{ period: '2011 Q1', iphone: 6810, ipad: 1914, itouch: 2293 },
+								{ period: '2011 Q2', iphone: 5670, ipad: 4293, itouch: 1881 },
+								{ period: '2011 Q3', iphone: 4820, ipad: 3795, itouch: 1588 },
+								{ period: '2011 Q4', iphone: 15073, ipad: 5967, itouch: 5175 },
+								{ period: '2012 Q1', iphone: 10687, ipad: 4460, itouch: 2028 },
+								{ period: '2012 Q2', iphone: 8432, ipad: 5713, itouch: 1791 }
+							],
+							xkey: 'period',
+							ykeys: ['iphone', 'ipad', 'itouch'],
+							labels: ['iPhone', 'iPad', 'iPod Touch'],
+							hideHover: 'auto',
+							lineColors: PixelAdmin.settings.consts.COLORS,
+							fillOpacity: 0.3,
+							behaveLikeLine: true,
+							lineWidth: 2,
+							pointSize: 4,
+							gridLineColor: '#cfcfcf',
+							resize: true
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Morris.js Area</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.oesmith.co.uk/morris.js/" target="_blank">http://www.oesmith.co.uk/morris.js/</a></div>
+
+                <div class="graph-container">
+                    <div id="hero-area" class="graph"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /6. $MORRISJS_AREA -->
+
+    </div>
+    <div class="col-md-6">
+
+        <!-- 7. $MORRISJS_BARS =============================================================================
+
+                        Morris.js Bars
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						Morris.Bar({
+							element: 'hero-bar',
+							data: [
+								{ device: 'iPhone', geekbench: 136 },
+								{ device: 'iPhone 3G', geekbench: 137 },
+								{ device: 'iPhone 3GS', geekbench: 275 },
+								{ device: 'iPhone 4', geekbench: 380 },
+								{ device: 'iPhone 4S', geekbench: 655 },
+								{ device: 'iPhone 5', geekbench: 1571 }
+							],
+							xkey: 'device',
+							ykeys: ['geekbench'],
+							labels: ['Geekbench'],
+							barRatio: 0.4,
+							xLabelAngle: 35,
+							hideHover: 'auto',
+							barColors: PixelAdmin.settings.consts.COLORS,
+							gridLineColor: '#cfcfcf',
+							resize: true
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Morris.js Bars</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.oesmith.co.uk/morris.js/" target="_blank">http://www.oesmith.co.uk/morris.js/</a></div>
+
+                <div class="graph-container">
+                    <div id="hero-bar" class="graph"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /7. $MORRISJS_BARS -->
+        <!-- 8. $MORRISJS_DONUT ============================================================================
+
+                        Morris.js Donut
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						Morris.Donut({
+							element: 'hero-donut',
+							data: [
+								{ label: 'Jam', value: 25 },
+								{ label: 'Frosted', value: 40 },
+								{ label: 'Custard', value: 25 },
+								{ label: 'Sugar', value: 10 }
+							],
+							colors: PixelAdmin.settings.consts.COLORS,
+							resize: true,
+							labelColor: '#888',
+							formatter: function (y) { return y + "%" }
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Morris.js Donut</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.oesmith.co.uk/morris.js/" target="_blank">http://www.oesmith.co.uk/morris.js/</a></div>
+
+                <div class="graph-container">
+                    <div id="hero-donut" class="graph"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /8. $MORRISJS_DONUT -->
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- 9. $FLOTJS_GRAPH ==============================================================================
+
+                        Flot.js Graph
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						// Visits Chart Data
+						var visitsChartData = [{
+							label: 'Visits',
+							data: [
+								[6, 1300], [7, 1600], [8, 1900], [9, 2100], [10, 2500], [11, 2200], [12, 2000], [13, 1950], [14, 1900], [15, 2000]
+							]
+						}, {
+							label: 'Returning Visits',
+							data: [
+								[6, 500], [7, 600], [8, 550], [9, 600], [10, 800], [11, 900], [12, 800], [13, 850], [14, 830], [15, 1000]
+							],
+							filledPoints: true // Fill points
+						}];
+
+						// Init Chart
+						$('#jq-flot-graph').pixelPlot(visitsChartData, {
+							series: {
+								points: {
+									show: true
+								},
+								lines: {
+									show: true
+								}
+							},
+							xaxis: {
+								tickDecimals: 2
+							},
+							yaxis: {
+								tickSize: 1000
+							}
+						}, {
+							height: 205,
+							tooltipText: "y + ' visitors at ' + x + ':00'"
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Flot.js Graph</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.flotcharts.org/" target="_blank">http://www.flotcharts.org/</a></div>
+
+                <div class="graph-container">
+                    <div id="jq-flot-graph"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /9. $FLOTJS_GRAPH -->
+        <!-- 10. $FLOTJS_PIE ===============================================================================
+
+                        Flot.js Pie / Doughnut
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						// Doughnut Chart Data
+						var doughnutChartData = [{
+							label: "Series1", data: 50
+						}, {
+							label: "Series2", data: 30
+						}, {
+							label: "Series3", data: 90
+						}, {
+							label: "Series4", data: 70
+						}, {
+							label: "Series5", data: 80
+						}, {
+							label: "Series6", data: 110
+						}, {
+							label: "Series9", data: 90
+						}];
+
+						// Init Chart
+						$('#jq-flot-pie').pixelPlot(doughnutChartData, {
+							series: {
+								pie: {
+									show: true,
+									radius: 1,
+									innerRadius: 0.5,
+									label: {
+										show: true,
+										radius: 3 / 4,
+										formatter: function (label, series) {
+											return '<div style="font-size:14px;text-align:center;padding:2px;color:white;">' + Math.round(series.percent) + '%</div>';
+										},
+										background: { opacity: 0 }
+									}
+								}
+							}
+						}, {
+							height: 205
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Flot.js Pie / Doughnut</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.flotcharts.org/" target="_blank">http://www.flotcharts.org/</a></div>
+
+                <div class="graph-container">
+                    <div id="jq-flot-pie"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /10. $FLOTJS_PIE -->
+
+
+    </div>
+    <div class="col-md-6">
+
+        <!-- 11. $FLOTJS_BARS ==============================================================================
+
+                        Flot.js Bars
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						// Visits Chart Data
+						var visitsChartData = [{
+							label: 'Visits',
+							data: [
+								[6, 1300], [7, 1600], [8, 1900], [9, 2100], [10, 2500], [11, 2200], [12, 2000], [13, 1950], [14, 1900], [15, 2000]
+							]
+						}, {
+							label: 'Returning Visits',
+							data: [
+								[6, 500], [7, 600], [8, 550], [9, 600], [10, 800], [11, 900], [12, 800], [13, 850], [14, 830], [15, 1000]
+							],
+							filledPoints: true // Fill points
+						}];
+
+						// Init Chart
+						$('#jq-flot-bars').pixelPlot(visitsChartData, {
+							series: {
+								bars: {
+									show: true,
+									barWidth: .9,
+									align: 'center'
+								}
+							},
+							xaxis: { tickDecimals: 2 },
+							yaxis: { tickSize: 1000 }
+						}, {
+							height: 205,
+							tooltipText: "y + ' visitors at ' + x + '.00h'"
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Flot.js Bars</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://www.flotcharts.org/" target="_blank">http://www.flotcharts.org/</a></div>
+
+                <div class="graph-container">
+                    <div id="jq-flot-bars"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /11. $FLOTJS_BARS -->
+        <!-- 12. $JQUERY_SPARKLINES ========================================================================
+
+                        jQuery Sparklines
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						$('#sparkline-line').sparkline();
+
+						// Bar charts using inline values
+						$('.sparkline-bar').sparkline('html', {
+							type: 'bar'
+						});
+
+						// Composite line charts, the second using values supplied via javascript
+						$('#sparkline-compositeline').sparkline('html', {
+							fillColor: false,
+							changeRangeMin: 0,
+							chartRangeMax: 10
+						});
+						$('#sparkline-compositeline').sparkline([4,1,5,7,9,9,8,7,6,6,4,7,8,4,3,2,2,5,6,7], {
+							composite: true,
+							fillColor: false,
+							lineColor: 'red',
+							changeRangeMin: 0,
+							chartRangeMax: 10
+						});
+
+						// Discrete charts
+						$('#sparkline-discrete').sparkline('html', {
+							type: 'discrete',
+							lineColor: 'blue',
+							thresholdColor: 'red',
+							thresholdValue: 4
+						});
+
+						// Tri-state charts using inline values
+						$('#sparkline-tristate').sparkline('html', {
+							type: 'tristate'
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">jQuery Sparklines</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://omnipotent.net/jquery.sparkline/" target="_blank">http://omnipotent.net/jquery.sparkline/</a></div>
+
+                <span id="sparkline-line">8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10</span>&nbsp;&nbsp;&nbsp;
+                <span class="sparkline-bar">-3,1,2,0,3,-1</span>&nbsp;&nbsp;&nbsp;
+                <span class="sparkline-bar">0:2,2:4,4:2,4:1</span>&nbsp;&nbsp;&nbsp;
+                <span id="sparkline-compositeline">8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10</span>&nbsp;&nbsp;&nbsp;
+                <span id="sparkline-discrete">4,6,7,7,4,3,2,1,4,4,5,6,7,6,6,2,4,5</span>&nbsp;&nbsp;&nbsp;
+                <span id="sparkline-tristate">1,1,0,1,-1,-1,1,-1,0,0,1,1</span>
+            </div>
+        </div>
+        <!-- /12. $JQUERY_SPARKLINES -->
+        <!-- 13. $JQUERY_EASY_PIE_CHART ====================================================================
+
+                        jQuery Easy Pie Chart
+        -->
+        <!-- Javascript -->
+        <script>
+					init.push(function () {
+						$('#jq-epie-chart').easyPieChart({
+							easing: 'easeOutBounce',
+							onStep: function(from, to, percent) {
+								$(this.el).find('.pie-chart-label').text(Math.round(percent) + '%');
+							}
+						});
+					});
+        </script>
+        <!-- / Javascript -->
+
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">jQuery Easy Pie Chart</span>
+            </div>
+            <div class="panel-body">
+                <div class="note note-info">More info and examples at <a href="http://rendro.github.io/easy-pie-chart/" target="_blank">http://rendro.github.io/easy-pie-chart/</a></div>
+
+                <span class="pie-chart" data-percent="86" id="jq-epie-chart">
+                    <span class="pie-chart-label"></span>
+                </span>
+            </div>
+        </div>
+        <!-- /13. $JQUERY_EASY_PIE_CHART -->
+
+    </div>
+</div>

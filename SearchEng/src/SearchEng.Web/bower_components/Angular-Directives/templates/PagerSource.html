@@ -1,0 +1,91 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">PagerSource</div>
+        </div>
+        <div class="panel-body">
+                <!--#region PagerSource  -->
+                <div id="PagerSource" class="tab-pane">
+                    <div class="note note-info">
+                        <h2>restrict: 'A'</h2>
+                        <table class="table table-bordered">
+                            <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                            <tbody>
+                                <tr><td>pagerSource</td><td>no parameter</td><td></td></tr>
+                                <tr><td>itemssource</td><td>object</td><td>item source which will use for pagination</td></tr>
+                                <tr><td>results</td><td>object</td><td>after pagination results returns current paged items</td></tr>
+                                <tr><td>filter</td><td>object</td><td>filter to filter itemssource </td></tr>
+                                <tr><td>ng-model</td><td></td><td>current page number</td></tr>
+                                <tr><td>items-per-page</td><td>number</td><td>how many items on each page</td></tr>
+                                <tr><td>sort</td><td>number</td><td>sorted column name </td></tr>
+                                <tr><td>descending</td><td>bool</td><td>sort descending</td></tr>
+                                <tr>
+                                    <td>class</td>
+                                    <td>string</td>
+                                    <td>
+                                        pagination-lg
+                                        pagination
+                                        pagination-sm
+                                        pagination-xs
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="panel widget-comments">
+                        <div class="panel-heading">
+                            <span class="panel-title"><i class="panel-title-icon fa fa-comment-o"></i>In Theaters {{currentPage}}</span>
+                            <div class="panel-heading-controls pull-right">
+                                <ul pager-source itemssource='moviesInTheaters' results="pagedmoviesInTheaters" filter="moviesInTheatersfilter" class="pagination-xs pagination" ng-model="currentPage" items-per-page="5"></ul>
+                                <form action="" style="width:200px">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" ng-model="moviesInTheatersfilter.title" placeholder="Search..." name="s">
+                                        <span class="input-group-btn"><button class="btn" type="submit"><span class="fa fa-search"></span></button></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="comment" style="clear:both" ng-repeat="item in pagedmoviesInTheaters">
+                                <div style="float:left"><img alt="" ng-src="{{item.posters.detailed}}"></div>
+                                <div style="margin-left:80px" class="comment-body">
+                                    <div class="comment-by"><h4><a title="" href="#">{{item.title}}</a></h4></div>
+                                    <div class="comment-text" mm-scroll="75">{{item.synopsis}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre>&lt;ul pager-source itemssource='moviesInTheaters' results="pagedmoviesInTheaters" filter="moviesInTheatersfilter" class="pagination-xs pagination" ng-model="currentPage" items-per-page="5"&gt;&lt;/ul&gt;</pre>
+                    <hr />
+                    <pre>&lt;div class="panel widget-comments"&gt;<br />&nbsp; &lt;div class="panel-heading"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;span class="panel-title"&gt;&lt;i class="panel-title-icon fa fa-comment-o"&gt;&lt;/i&gt;In Theaters&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-heading-controls pull-right"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:navy"> &lt;ul pager-source itemssource='moviesInTheaters' results="pagedmoviesInTheaters" filter="moviesInTheatersfilter" class="pagination-xs pagination" ng-model="currentPage" items-per-page="5"&gt;&lt;/ul&gt;</b> <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;form action="" style="width:200px"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="input-group input-group-sm"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="text" class="form-control" ng-model="moviesInTheatersfilter.title" placeholder="Search..." name="s"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span class="input-group-btn"&gt;&lt;button class="btn" type="submit"&gt;&lt;span class="fa fa-search"&gt;&lt;/span&gt;&lt;/button&gt;&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-body"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="comment" style="clear:both" ng-repeat="item in pagedmoviesInTheaters"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style="float:left"&gt;&lt;img alt="" ng-src="{{item.posters.detailed}}"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style="margin-left:80px" class="comment-body"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="comment-by"&gt;&lt;h4&gt;&lt;a title="" href="#"&gt;{{item.title}}&lt;/a&gt;&lt;/h4&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="comment-text" mm-scroll="75"&gt;{{item.synopsis}}&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&lt;/div&gt;</pre>
+
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title">Pagination</span>
+                        </div>
+                        <div class="panel-body no-padding-t">
+                            <div>
+                                <h6 class="text-light-gray text-semibold text-xs" style="margin: 20px 0 10px;">pagination pagination-lg</h6>
+                                <ul class="pagination pagination-lg"><li><a href="#">«</a></li><li><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li><a href="#">»</a></li></ul>
+                            </div>
+                            <div>
+                                <h6 class="text-light-gray text-semibold text-xs" style="margin: 20px 0 10px;">pagination</h6>
+                                <ul class="pagination"><li><a href="#">«</a></li><li><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li><a href="#">»</a></li></ul>
+                            </div>
+                            <div>
+                                <h6 class="text-light-gray text-semibold text-xs" style="margin: 20px 0 10px;">pagination pagination-sm</h6>
+                                <ul class="pagination pagination-sm"><li><a href="#">«</a></li><li><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li><a href="#">»</a></li></ul>
+                            </div>
+                            <div>
+                                <h6 class="text-light-gray text-semibold text-xs" style="margin: 20px 0 10px;">pagination pagination-xs</h6>
+                                <ul class="pagination pagination-xs"><li><a href="#">«</a></li><li><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li><a href="#">»</a></li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion -->
+        </div>
+    </div>
+</div>

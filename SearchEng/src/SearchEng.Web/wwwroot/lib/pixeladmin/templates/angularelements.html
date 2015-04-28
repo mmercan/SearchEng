@@ -1,0 +1,785 @@
+﻿<div class="col-sm-10">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">Element Examples</div>
+        </div>
+        <div class="panel-body">
+            <div class="tab-content">
+                <div class="tab-pane" id="panelexamples">
+                    <div class="page-header">
+                        <h1><span class="text-light-gray">UI Elements / </span>Panels</h1>
+                        <div class="pull-right">
+                            <div class="text-semibold text-light-gray text-sm">DARK PANELS&nbsp;&nbsp;&nbsp;</div>
+                            <input type="checkbox" data-class="switcher-success" id="panel-color-switcher">
+                        </div>
+                    </div> <!-- / .page-header -->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel colourable">
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                            <div class="panel colourable">
+                                <div class="panel-heading"><span class="panel-title">Simple header</span></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                            <div class="panel colourable">
+                                <div class="panel-heading"><span class="panel-title">With table</span></div>
+                                <table class="table">
+                                    <thead><tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>Mark</td><td>Otto</td><td>@@mdo</td></tr>
+                                        <tr><td>2</td><td>Jacob</td><td>Thornton</td><td>@@fat</td></tr>
+                                        <tr><td>3</td><td>Larry</td><td>the Bird</td><td>@@twitter</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">Panel body content</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                            <div class="panel colourable">
+                                <div class="panel-heading"><span class="panel-title">With list groups</span></div>
+                                <div class="panel-body">Panel body content</div>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Morbi leo risus</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With tabs</span>
+                                    <ul class="nav nav-tabs nav-tabs-xs">
+                                        <li class="active"><a data-target="#home" data-toggle="tab">Home</a></li>
+                                        <li><a data-target="#profile" data-toggle="tab">Profile</a></li>
+                                        <li><a data-target="#messages" data-toggle="tab">Messages</a></li>
+                                        <li><a data-target="#settings" data-toggle="tab">Settings</a></li>
+                                    </ul>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="home"> Panel body content</div>
+                                        <div class="tab-pane" id="profile">..profile.</div>
+                                        <div class="tab-pane" id="messages">..messages.</div>
+                                        <div class="tab-pane" id="settings">...</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With progress bar</span>
+                                    <div class="panel-heading-controls" style="width: 30%">
+                                        <div class="progress progress-striped active" style="width: 100%"><div class="progress-bar progress-bar-danger" style="width: 60%;"></div></div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With pagination</span>
+                                    <div class="panel-heading-controls">
+                                        <ul class="pagination pagination-xs">
+                                            <li><a href="#">«</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">»</a></li>
+                                        </ul> 
+                                    </div>
+                                </div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With text</span>
+                                    <div class="panel-heading-controls">
+                                        <span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;<span style="color: #ccc">|</span>&nbsp;&nbsp;</span>
+                                        <button class="btn btn-xs">Button</button>
+                                    </div>
+                                </div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With input group</span>
+                                    <div class="panel-heading-controls" style="width:30%">
+                                        <form action="">
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" class="form-control" placeholder="Search..." name="s">
+                                                <span class="input-group-btn"><button class="btn" type="submit"><span class="fa fa-search"></span></button></span>
+                                            </div> <!-- / .input-group -->
+                                        </form>
+                                    </div> <!-- / .panel-heading-controls -->
+                                </div> <!-- / .panel-heading -->
+                                <div class="panel-body">
+                                    Panel body content
+                                </div>
+                            </div> <!-- / .panel -->
+                            <!-- /14. $PANEL_WITH_INPUT_GROUP -->
+                            <!-- 15. $PANEL_WITH_SWITCHER ======================================================================
+
+                                            Panel with switcher
+                            -->
+                            <!-- Javascript -->
+                            <!--<script>
+                                init.push(function () { $('#panel-switcher').switcher(); });
+                            </script>-->
+                            <!-- / Javascript -->
+
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With switcher</span>
+                                    <div class="panel-heading-controls">
+                                        <input class="mmSwitcher" ng-model="switchhy" type="checkbox" data-class="switcher-sm switcher-primary" id="panel-switcher" checked="checked">
+                                    </div> <!-- / .panel-heading-controls -->
+                                </div> <!-- / .panel-heading -->
+                                <div class="panel-body">
+                                    Panel body content
+                                </div>
+                            </div> <!-- / .panel -->
+                            <!-- /15. $PANEL_WITH_SWITCHER -->
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <!-- 16. $PANEL_WITH_BUTTONS =======================================================================
+
+                                            Panel with buttons
+                            -->
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With buttons</span>
+                                    <div class="panel-heading-controls">
+                                        <button class="btn btn-xs btn-warning btn-outline"><span class="fa fa-refresh"></span>&nbsp;&nbsp;Refresh</button>
+                                        <button class="btn btn-xs btn-danger btn-outline"><span class="fa fa-paperclip"></span></button>
+                                        <div class="btn-group btn-group-xs">
+                                            <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-cog"></span>&nbsp;<span class="fa fa-caret-down"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li class="dropdown-header">Some header</li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul> <!-- / .dropdown-menu -->
+                                        </div> <!-- / .btn-group -->
+                                    </div> <!-- / .panel-heading-controls -->
+                                </div> <!-- / .panel-heading -->
+                                <div class="panel-body">
+                                    Panel body content
+                                </div>
+                            </div> <!-- / .panel -->
+                            <!-- /16. $PANEL_WITH_BUTTONS -->
+                            <!-- 17. $PANEL_WITH_LABELS_AND_BADGES =============================================================
+
+                                            Panel with labels and badges
+                            -->
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With labels and badges</span>
+                                    <div class="panel-heading-controls">
+                                        <span class="label label-tag label-warning">Tag</span>
+                                        <span class="label label-danger">Label</span>
+                                        <span class="badge badge-info">Badge</span>
+                                    </div>
+                                </div> <!-- / .panel-heading -->
+                                <div class="alert alert-page alert-danger alert-dark">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Well done!</strong> You successfully read this important alert message.
+                                </div> <!-- / .alert -->
+                                <div class="panel-body">
+                                    Panel body content
+                                </div>
+                            </div> <!-- / .panel -->
+                            <!-- /17. $PANEL_WITH_LABELS_AND_BADGES -->
+                            <!-- 18. $PANEL_WITH_PAGER =========================================================================
+
+                                            Panel with pager
+                            -->
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With pager</span>
+                                    <div class="panel-heading-controls">
+                                        <ul class="pager pager-xs">
+                                            <li class="disabled"><a href="#">← Older</a></li>
+                                            <li><a href="#">Newer →</a></li>
+                                        </ul>
+                                    </div>
+                                </div> <!-- / .panel-heading -->
+                                <div class="panel-body">
+                                    Panel body content
+                                </div>
+                            </div> <!-- / .panel -->
+                            <!-- /18. $PANEL_WITH_PAGER -->
+                            <!-- 19. $PANEL_WITH_SELECT_BOX ====================================================================
+
+                                            Panel with select box
+                            -->
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With select box</span>
+                                    <div class="panel-heading-controls">
+                                        <select class="form-control input-sm">
+                                            <option value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                            <option value="3">Option 3</option>
+                                        </select>
+                                    </div> <!-- / .panel-heading-controls -->
+                                </div> <!-- / .panel-heading -->
+                                <div class="panel-body">
+                                    Panel body content
+                                </div>
+                            </div> <!-- / .panel -->
+                            <!-- /19. $PANEL_WITH_SELECT_BOX -->
+                            <!-- 20. $PANEL_WITH_ICON ==========================================================================
+
+                                            Panel with icon
+                            -->
+                            <div class="panel colourable">
+                                <div class="panel-heading">
+                                    <span class="panel-title">With icon</span>
+                                    <div class="panel-heading-controls">
+                                        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+                                    </div>
+                                </div> <!-- / .panel-heading -->
+                                <div class="panel-body">
+                                    Panel body content
+                                </div>
+                            </div> <!-- / .panel -->
+                            <!-- /20. $PANEL_WITH_ICON -->
+
+                        </div>
+                    </div>
+
+                    <div class="panel colourable">
+                        <div class="panel-heading">
+                            <span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span>
+                        </div>
+                        <div class="panel-body">
+                            Panel body content
+                        </div>
+                        <div class="panel-footer">Panel footer</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading"><span class="panel-title">Panel - Danger</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-danger panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Danger</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="panel panel-danger panel-dark">
+                                <div class="panel-heading"><span class="panel-title">Panel - Danger</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-danger panel-dark panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Danger</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-success">
+                                <div class="panel-heading"><span class="panel-title">Panel - Success</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Success</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="panel panel-success panel-dark">
+                                <div class="panel-heading"><span class="panel-title">Panel - Success</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-success panel-dark panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Success</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="panel panel-warning">
+                                <div class="panel-heading"><span class="panel-title">Panel - Warning</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-warning panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Warning</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-warning panel-dark">
+                                <div class="panel-heading"><span class="panel-title">Panel - Warning</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-warning panel-dark panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Warning</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-info">
+                                <div class="panel-heading"><span class="panel-title">Panel - Info</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Info</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info panel-dark">
+                                <div class="panel-heading"><span class="panel-title">Panel - Info</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-info panel-dark panel-body-colorful">
+                                <div class="panel-heading"><span class="panel-title">Panel - Info</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="panel panel-transparent">
+                                <div class="panel-heading"><span class="panel-title">Panel - Transparent</span><div class="panel-heading-controls"><div class="panel-heading-icon"><i class="fa fa-inbox"></i></div></div></div>
+                                <div class="panel-body">Panel body content</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-bluejeans colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bluejeans</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="panel panel-bluejeans-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bluejeans-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-aqua colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-aqua</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-aqua-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-aqua-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-bluejeans colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bluejeans</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-bluejeans-dark colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bluejeans-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-aqua colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-aqua</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-aqua-dark colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-aqua-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-mint colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mint</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-mint-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mint-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-grass colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grass</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-grass-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grass-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-mint  colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mint</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-mint-dark colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mint-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-grass colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grass</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-grass-dark colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grass-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-sunflower  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-sunflower</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-sunflower-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-sunflower-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-bittersweet colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bittersweet</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-bittersweet-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bittersweet-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-sunflower  colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-sunflower</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-sunflower-dark colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-sunflower-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-bittersweet colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bittersweet</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-bittersweet-dark colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-bittersweet-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-grapefruit colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grapefruit</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-grapefruit-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grapefruit-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lavender colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lavender</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lavender-dark  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lavender-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-grapefruit  colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grapefruit</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-grapefruit-dark colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-grapefruit-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lavender colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lavender</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lavender-dark colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lavender-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-pinkrose colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-pinkrose</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-pinkrose-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-pinkrose-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lightgray colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lightgray</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lightgray-dar colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lightgray-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-pinkrose colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-pinkrose</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-pinkrose-dark colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-pinkrose-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lightgray colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lightgray</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-lightgray-dark colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-lightgray-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-mediumgray colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mediumgray</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-mediumgray-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mediumgray-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-darkgray colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-darkgray</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-darkgray-dark colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-darkgray-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-mediumgray  colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mediumgray</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-mediumgray-dark colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-mediumgray-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-darkgray colored-body colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-darkgray</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-darkgray-dark colored-body  colourable">
+                                <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>With icon</span></div>
+                                <div class="panel-body">class : panel-darkgray-dark</div>
+                                <div class="panel-footer">Panel footer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-2">
+    <ul class="nav-tabs nav nav-stacked">
+
+        <li><a data-target="#mmHttpGet" data-toggle="tab">Time Picker</a></li>
+        <li><a data-target="#mmHttpGet" data-toggle="tab">Wizard</a></li>
+        <li><a data-target="#mmHttpGet" data-toggle="tab">Bootstrap X-Editable http://vitalets.github.io/x-editable/ </a></li>
+        <li><a data-target="#mmHttpGet" data-toggle="tab">Main Menu commands</a></li>
+        <li><a data-target="#mmHttpGet" data-toggle="tab">Modals</a></li>
+        <li><a data-target="#mmHttpGet" data-toggle="tab">Page Alerts</a></li>
+        <li><a data-target="#mmHttpGet" data-toggle="tab">Toastr Alerts</a></li>
+
+        <li><a data-target="#mmHttpGet" data-toggle="tab">List Examples </a></li>
+        <li><a data-target="#panelexamples" data-toggle="tab">Panel Examples </a></li>
+    </ul>
+</div>

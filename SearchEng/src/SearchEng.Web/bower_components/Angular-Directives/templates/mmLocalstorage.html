@@ -1,0 +1,41 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmLocalstorage</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmLocalstorage  -->
+            <div id="mmLocalstorage" class="tab-pane">
+                <div class="note note-info">
+                    <h2>restrict: 'A'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td> mmLocalstorage</td>
+                                <td>no parameters</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>uniqueid</td>
+                                <td>string</td>
+                                <td>uniqueID to get/set specific part of LocalStorage</td>
+                            </tr>
+                            <tr>
+                                <td>value</td>
+                                <td>object</td>
+                                <td>scope object you want to get/set from LocalStorage</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <pre ng-non-bindable>&lt;div mm-localstorage value="cache" uniqueid="ProductsView"&gt;&lt;/div&gt;</pre>
+                in Controller
+                <pre> $scope.cache={}</pre>
+                You can use it in html or in Controller
+                <pre><p>&lt;div class="btn-toolbar" style="margin-top: 5px"&gt;<br />&nbsp;&nbsp;&lt;div class="btn-group"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="btn btn-default" data-ng-click="cache.viewMode='table'" data-ng-class="{active: cache.viewMode == 'table'}"&gt;&lt;i class="fa fa-table"&gt;&lt;/i&gt;&lt;/a&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="btn btn-default" data-ng-click="cache.viewMode='gridLarge'" data-ng-class="{active: cache.viewMode == 'gridLarge'}"&gt;&lt;i class="fa fa-th-large"&gt;&lt;/i&gt;&lt;/a&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="btn btn-default" data-ng-click="cache.viewMode='grid'" data-ng-class="{active: cache.viewMode == 'grid'}"&gt;&lt;i class="fa fa-th"&gt;&lt;/i&gt;&lt;/a&gt;<br />&nbsp;&nbsp;&lt;/div&gt;<br />&lt;/div&gt;</p> </pre>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

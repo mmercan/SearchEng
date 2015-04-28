@@ -1,0 +1,131 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmswitcher</div>
+        </div>
+        <div class="panel-body">
+                <!--#region mmswitcher  -->
+                <div class="tab-pane" id="mmswitcher">
+                    <div class="note note-info">
+                        <h2>restrict: 'A'</h2>
+                        <table class="table table-bordered">
+                            <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>mm-switcher</td>
+                                    <td>Class</td>
+                                    <td>no parameters</td>
+                                </tr>
+                                <tr>
+                                    <td>ng-model</td>
+                                    <td>object</td>
+                                    <td>itemsource for selection Modal</td>
+                                </tr>
+
+                                <tr>
+                                    <td>theme</td>
+                                    <td></td>
+                                    <td>Column name to Order</td>
+                                </tr>
+                                <tr>
+                                    <td>data-class</td>
+                                    <td></td>
+                                    <td>Choosing an element to move them will be next target</td>
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td></td>
+                                    <td>options.theme, options.on_state_content, options.off_state_content, </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title"><input class="mmSwitcher" ng-model="isSelected" type="checkbox" data-class="switcher-sm switcher-primary" id="panel-switcher" checked="checked"> Switchers</span>
+                        </div>
+                        <div class="panel-body" id="switcher-examples">
+                            <div>
+                                <input type="checkbox" ng-model="isSelected" mm-switcher />&nbsp;&nbsp;
+                                <input type="checkbox" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                                <input type="checkbox" ng-model="isSelected" mm-switcher theme="modern">
+                            </div>
+
+                            <hr class="panel-wide">
+
+                            <!-- Colors -->
+                            <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">COLORS</h6>
+
+                            <div id="switchers-colors-default" class="form-group-margin">
+                                <input type="checkbox" data-class="switcher-primary" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-success" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-danger" checked="checked" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-info" checked="checked" ng-model="isSelected" mm-switcher>
+                            </div>
+                            <div id="switchers-colors-square" class="form-group-margin">
+                                <input type="checkbox" data-class="switcher-primary" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-success" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-danger" checked="checked" ng-model="isSelected" mm-switcher theme="square">&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-info" checked="checked" ng-model="isSelected" mm-switcher theme="square">
+                            </div>
+                            <div id="switchers-colors-modern">
+                                <input type="checkbox" data-class="switcher-primary" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-success" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-warning" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-danger" checked="checked" ng-model="isSelected" mm-switcher theme="modern">&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" data-class="switcher-info" checked="checked" ng-model="isSelected" mm-switcher theme="modern">
+                            </div>
+
+                            <hr class="panel-wide">
+
+                            <!-- Sizes -->
+                            <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">SIZES</h6>
+
+                            <div id="switchers-sizes">
+                                <div class="form-group-margin">
+                                    <input type="checkbox" data-class="switcher-lg" class="switcher-example-default" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                    <input type="checkbox" data-class="switcher-lg" class="switcher-example-square" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                                    <input type="checkbox" data-class="switcher-lg" class="switcher-example-modern" ng-model="isSelected" mm-switcher theme="modern">
+                                </div>
+                                <div class="form-group-margin">
+                                    <input type="checkbox" class="switcher-example-default" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                    <input type="checkbox" class="switcher-example-square" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                                    <input type="checkbox" class="switcher-example-modern" ng-model="isSelected" mm-switcher theme="modern">
+                                </div>
+                                <div>
+                                    <input type="checkbox" data-class="switcher-sm" class="switcher-example-default" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                    <input type="checkbox" data-class="switcher-sm" class="switcher-example-square" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                                    <input type="checkbox" data-class="switcher-sm" class="switcher-example-modern" ng-model="isSelected" mm-switcher theme="modern">
+                                </div>
+                            </div>
+
+                            <hr class="panel-wide">
+
+                            <!-- Disabled state -->
+                            <h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">DISABLED STATE</h6>
+
+                            <div id="switchers-disabled">
+                                <div class="form-group-margin">
+                                    <input type="checkbox" id="switcher-disabled-default" disabled="disabled" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;
+                                    <input type="checkbox" id="switcher-disabled-square" checked="checked" disabled="disabled" ng-model="isSelected" mm-switcher>&nbsp;&nbsp;&nbsp;
+                                    <input type="checkbox" id="switcher-disabled-modern" disabled="disabled" ng-model="isSelected" mm-switcher>
+                                </div>
+                                <div>
+                                    <button class="btn btn-success btn-sm" id="switcher-enable-all">Enable</button>&nbsp;&nbsp;
+                                    <button class="btn btn-danger btn-sm" id="switcher-disable-all">Disable</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--#endregion -->
+        </div>
+    </div>
+</div>

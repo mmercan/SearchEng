@@ -1,0 +1,95 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmFullcalendar</div>
+        </div>
+        <div class="panel-body">
+
+            <!--#region mmFullcalendar  -->
+            <div class="tab-pane" id="mmFullcalendar">
+                <div class="note note-info">
+                    <h2>restrict: 'A'</h2>
+                    <h2>JqueryUI required</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmFullcalendar</td>
+                                <td>attribute</td>
+                                <td>enables full calendar directive</td>
+                            </tr>
+                            <tr>
+                                <td>itemssource</td>
+                                <td>object '='</td>
+                                <td>array of items to show in calendar must have <b style="color:navy">'start'</b> and <b style="color:navy">'end'</b></td>
+                            </tr>
+                            <tr>
+                                <td>selectedday</td>
+                                <td>object</td>
+                                <td>it return if you select a day (not an event)</td>
+                            </tr>
+                            <tr>
+                                <td>day-selected</td>
+                                <td>event | function</td>
+                                <td>function will call if you select a day (not an event)</td>
+                            </tr>
+                            <tr>
+                                <td>selectedevent</td>
+                                <td>object</td>
+                                <td>returns selected event</td>
+                            </tr>
+                            <tr>
+                                <td>eventSelected</td>
+                                <td>event | function</td>
+                                <td>function will call if you select an event</td>
+                            </tr>
+                            <tr>
+                                <td>viewChanged</td>
+                                <td>event | function</td>
+                                <td>function will call if you change mode (month,week,day)</td>
+                            </tr>
+                            <tr>
+                                <td>fetchItems</td>
+                                <td>function</td>
+                                <td>function for sending events base on start-end dates 2 parameters will receive from fuction start and end date, expect (return) array of events </td>
+                            </tr>
+                            <tr>
+                                <td>start-param</td>
+                                <td>Not working</td>
+                                <td> it is for start date column from Json</td>
+                            </tr>
+                            <tr>
+                                <td>end-param</td>
+                                <td>Not working</td>
+                                <td>it is for end date column from Json</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="well">
+                    Selected Day :{{selectedDay}}
+                </div>
+                <div class="well well-lg">
+                    <div class="row">
+
+                        <div class=" col-sm-1"><img style="width:100%" ng-src="{{selectedevent.posters.detailed}}" /></div>
+                        <div class="col-sm-11" ng-show="selectedevent">
+                            {{selectedevent.title }} -- {{selectedevent.runtime}} minutes<span class="badge pull-right">{{selectedevent.mpaa_rating}}</span><br />
+                            {{selectedevent.synopsis }}
+                        </div>
+                        {{selecteddate}}
+                    </div>
+                </div>
+                <input type="button" ng-click="CalendarRerender=true" class="btn" value="refresh View" />
+                <div mm-fullcalendar selectedday="selectedDay" rerender="CalendarRerender" itemssource="events" selectedday="selectedDate" day-selected="calendarDayselected" selectedevent="selectedevent" start-param="release_dates" end-param="release_dates"></div>
+
+                <h4>Html</h4>
+                <pre ng-non-bindable><p>&lt;div class="well well-lg"&gt;<br />&nbsp; &lt;div class="row"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class=" col-sm-1"&gt;&lt;img style="width:100%" ng-src="{{selectedevent.posters.detailed}}" /&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="col-sm-11" ng-show="selectedevent"&gt;<br />&nbsp;&nbsp;&nbsp; {{selectedevent.title }} -- {{selectedevent.runtime}} minutes&lt;span class="badge pull-right"&gt;{{selectedevent.mpaa_rating}}&lt;/span&gt;&lt;br /&gt;<br />&nbsp;&nbsp;&nbsp; {{selectedevent.synopsis }}<br />&nbsp; &lt;/div&gt;{{selecteddate}}&lt;/div&gt;<br />&lt;/div&gt;<br />&lt;input type="button" ng-click="refreshrender=true" class="btn" value="refresh View"/&gt;<br />&lt;div mm-fullcalendar selectedday="selectedDay" refreshrender="refreshrender" itemssource="events" selectedday="selectedDate" day-selected="calendarDayselected" selectedevent="selectedevent" start-param="release_dates" end-param="release_dates"&gt;&lt;/div&gt;</p> </pre>
+                <h4>Javascript</h4>
+                <pre><p>$scope.events = [];<br />rottentService.moviesUpcomingCall().then(function (data) {<br />&nbsp;&nbsp;&nbsp; angular.forEach(data.movies, function (value, index) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value.start = value.release_dates.theater;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value.end = value.release_dates.theater;<br />});<br />$scope.events = data.movies;<br />});</p> </pre>
+
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,217 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">validationText</div>
+        </div>
+        <div class="panel-body">
+            <div class="tab-content">
+                <!--#region validationText  -->
+                <div id="validationText" class="tab-pane">
+                    <div class="note note-info">
+                        <h2>restrict: ''</h2>
+                        <table class="table table-bordered">
+                            <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>mm-validator</td>
+                                    <td>A</td>
+                                    <td>
+                                        Enables the directive Has to use on <b style="color:red"> input's parent object, input must to have form level unique name and must use ngModel </b> <br />
+                                        can take string or JSONString parameter <br />
+                                        if there is only one message you can write it as a string <b style="color:brown"> mm-validator="please use a valid email" </b><br />
+                                        if there are multiple validation like required and email <b style="color:brown"> mm-validator="{'required':'can not be empty','email':'requires valid email'}" </b><br />
+                                        for multiple validation you can check
+                                        <ul>
+                                            <li>email</li>
+                                            <li>max</li>
+                                            <li>maxlength</li>
+                                            <li>min</li>
+                                            <li>minlength</li>
+                                            <li>number</li>
+                                            <li>pattern</li>
+                                            <li>required</li>
+                                            <li>url</li>
+                                            <li>date</li>
+                                            <li>datetimelocal</li>
+                                            <li>time</li>
+                                            <li>week</li>
+                                            <li>month<month />li>
+
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>class</td>
+                                    <td></td>
+                                    <td>dark >darker border color,  simple > no border</td>
+                                </tr>
+                                <tr>
+                                    <td>Know Bugs</td>
+                                    <td></td>
+                                    <td>older IOS devices don't fire invalid event when click to submit it doesn't show validations , Select doesn't fire invalid event</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title">Contact Info </span>
+                        </div>
+                        <div class="panel-body">
+                            <form name="validateForm">
+                                <div class="form-group dark has-feedback" mm-validator="{'required':'can not be empty'}">
+                                    <label class="control-label">Name</label> <input type="text" class="form-control" name="username" ng-model="name" required />
+                                    <span class="fa fa-times-circle form-control-feedback"></span>
+                                </div>
+                                <div class="form-group simple" mm-validator>
+                                    <label class="control-label">phone</label> <input type="date" class="form-control" name="userphone" ng-model="userphone" />
+                                </div>
+                                <div class="form-group simple" mm-validator="Select user Gender">
+                                    <label class="control-label">Gender</label> <select class="form-control" ng-model="userGender" name="userGender" required><option value="M">Male</option> <option value="F">Female</option></select>
+                                </div>
+                                <div class="form-group" mm-validator="{'required':'can not be empty','email':'requires valid email'}">
+                                    <label class="control-label">e-mail</label> <input type="email" class="form-control" name="useremail" ng-model="emailuser" required />
+                                </div>
+                                <input type="submit" value="submit" />
+                            </form>
+                        </div>
+                    </div>
+                    <pre>&lt;form name="validateForm"&gt;<br />&nbsp; &lt;div class="form-group dark" <strong>mm-validator="{'required':'can not be empty'}"</strong>&gt;<br />&nbsp;&nbsp;&nbsp; &lt;label class="control-label"&gt;Name&lt;/label&gt; &lt;input type="text" <strong>class="form-control"</strong> <strong>name="username"</strong> <strong>ng-model="name"</strong> required /&gt;<br />&nbsp; &lt;/div&gt;<br />&nbsp; &lt;div class="form-group simple" mm-validator&gt;<br />&nbsp;&nbsp;&nbsp; &lt;label class="control-label"&gt;phone&lt;/label&gt; &lt;input type="date" <strong>class="form-control"</strong> <strong>name="userphone"</strong> <strong>ng-model="userphone"</strong> /&gt;<br />&nbsp; &lt;/div&gt;<br />&nbsp; &lt;div class="form-group" <strong>mm-validator="{'required':'can not be empty','email':'requires valid email'}"</strong>&gt;<br />&nbsp;&nbsp;&nbsp; &lt;label class="control-label"&gt;e-mail&lt;/label&gt; &lt;input type="email" <strong>class="form-control"</strong> <strong>name="useremail"</strong> <strong>ng-model="emailuser"</strong> required /&gt;<br />&nbsp; &lt;/div&gt;<br />&nbsp; &lt;input type="submit" value="submit" /&gt;<br />&lt;/form&gt;</pre>
+
+
+                    </hr>
+
+
+                    <select class="form-control" ng-model="validationText">
+                        <option value="">None</option>
+                        <option value="has-warning">has-warning</option>
+                        <option value="has-error">has-error</option>
+                        <option value="has-success">has-success</option>
+                    </select>
+
+                    <div class="checkbox"><label><input class="checkbox" type="checkbox" ng-model="validationDark" />Dark</label></div>
+                    <div class="checkbox"><label><input class="checkbox" type="checkbox" ng-model="ValidationSimple" />Simple</label></div>
+                    <div class="checkbox"><label><input class="checkbox" type="checkbox" ng-model="ValidationNone" />Hide the Message</label></div>
+                    <div class="form-group" ng-class="{'has-warning': validationText=='has-warning', 'has-error': validationText=='has-error', 'has-success': validationText=='has-success', 'dark':validationDark==true, 'simple':ValidationSimple==true,'has-none':ValidationNone==true}">
+                        <label class="control-label" for="inputWarning-4">Input with warning</label>
+                        <input class="form-control" id="inputWarning-4" type="text">
+                        <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                    <pre><p>&lt;select class="form-control" ng-model="validationText"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;option value=""&gt;None&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp; &lt;option value="has-warning"&gt;has-warning&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp; &lt;option value="has-error"&gt;has-error&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp; &lt;option value="has-success"&gt;has-success&lt;/option&gt;<br />&lt;/select&gt;</p> <p>&lt;div class="checkbox"&gt;&lt;label&gt;&lt;input class="checkbox" type="checkbox" ng-model="validationDark" /&gt;Dark&lt;/label&gt;&lt;/div&gt;<br />&lt;div class="checkbox"&gt;&lt;label&gt;&lt;input class="checkbox" type="checkbox" ng-model="ValidationSimple" /&gt;Simple&lt;/label&gt;&lt;/div&gt;<br />&lt;div class="checkbox"&gt;&lt;label&gt;&lt;input class="checkbox" type="checkbox" ng-model="ValidationNone" /&gt;Hide the Message&lt;/label&gt;&lt;/div&gt;<br />&lt;div class="form-group" ng-class="{'has-warning': validationText=='has-warning', 'has-error': validationText=='has-error', 'has-success': validationText=='has-success', 'dark':validationDark==true, 'simple':ValidationSimple==true,'has-none':ValidationNone==true}"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;label class="control-label" for="inputWarning-4"&gt;Input with warning&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp; &lt;input class="form-control" id="inputWarning-4" type="text"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;p class="help-block"&gt;Example block-level help text here.&lt;/p&gt;<br />&lt;/div&gt;</p> </pre>
+
+                    <pre>for adding manual Validation/Notification functionality  
+                    you can pick "None"> Message will be hidden, 
+                    has-warning > yellow border on input and yellow background on  help-block 
+                    has-error > red border on input and red background on  help-block 
+                    has-success > green border on input and green background on  help-block 
+                    dark > can work with has-warning, has-error, has-success and make colors darker
+                    simple > can work with has-warning, has-error, has-success and hide  help-block's background
+                    </pre>
+                    <hr />
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title">Default form states</span>
+                        </div>
+                        <div class="panel-body">
+                            <form name="seconduserForm">
+                                <div class="form-group has-warning">
+                                    <label class="control-label">Input with warning</label>
+                                    <input class="form-control" name="surname" type="text" ng-model="surname">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                            </form>
+                            <div class="form-group has-error">
+                                <label class="control-label">Input with error</label>
+                                <input class="form-control" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess-4">Input with success</label>
+                                <input class="form-control" id="inputSuccess-4" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title">Dark form states</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group has-warning dark">
+                                <label class="control-label" for="inputWarning-41">Input with warning</label>
+                                <input class="form-control" id="inputWarning-41" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="form-group has-error dark">
+                                <label class="control-label" for="inputError-41">Input with error</label>
+                                <input class="form-control" id="inputError-41" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="form-group has-success dark">
+                                <label class="control-label" for="inputSuccess-41">Input with success</label>
+                                <input class="form-control" id="inputSuccess-41" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title">Simple form states</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group has-warning simple">
+                                <label class="control-label" for="inputWarning-42">Input with warning</label>
+                                <input class="form-control" id="inputWarning-42" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="form-group has-error simple">
+                                <label class="control-label" for="inputError-42">Input with error</label>
+                                <input class="form-control" id="inputError-42" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="form-group has-success simple">
+                                <label class="control-label" for="inputSuccess-42">Input with success</label>
+                                <input class="form-control" id="inputSuccess-42" type="text">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title">Optional icons</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group has-feedback">
+                                <label class="control-label" for="inputDefault25">Default input</label>
+                                <input class="form-control" id="inputDefault25" type="text">
+                                <span class="fa fa-comments form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-success has-feedback">
+                                <label class="control-label" for="inputSuccess25">Input with success</label>
+                                <input class="form-control" id="inputSuccess25" type="text">
+                                <span class="fa fa-check-circle form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-warning has-feedback">
+                                <label class="control-label" for="inputWarning25">Input with warning</label>
+                                <input class="form-control" id="inputWarning25" type="text">
+                                <span class="fa fa-warning form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-error has-feedback">
+                                <label class="control-label" for="inputError25">Input with error</label>
+                                <input class="form-control" id="inputError25" type="text">
+                                <span class="fa fa-times-circle form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion -->
+            </div>
+        </div>
+    </div>
+</div>

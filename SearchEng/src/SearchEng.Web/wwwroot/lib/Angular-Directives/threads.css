@@ -1,0 +1,43 @@
+.widget-threads .thread {
+  padding: 0 0 14px 0;
+}
+.widget-threads .thread + .thread {
+  padding-top: 13px;
+  border-top: 1px solid;
+  border-top-color: #e4e4e4;
+}
+.widget-threads .thread:last-child {
+  padding-bottom: 0;
+}
+.widget-threads .thread-avatar {
+  display: block;
+  float: left;
+  height: 32px;
+  margin-top: 2px;
+  width: 32px;
+  border-radius: 999999px;
+}
+.widget-threads .thread-body {
+  margin-left: 42px;
+}
+.widget-threads .thread-time {
+  float: right;
+  font-size: 12px;
+  color: #aaa;
+}
+.widget-threads .thread-info {
+  color: #aaa;
+  font-size: 12px;
+}
+.widget-threads .thread-info a {
+  color: #555555;
+}
+.widget-threads .thread-info a:hover {
+  color: #888;
+}
+.panel.widget-threads .thread,
+.panel .widget-threads .thread {
+  margin: 0 -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

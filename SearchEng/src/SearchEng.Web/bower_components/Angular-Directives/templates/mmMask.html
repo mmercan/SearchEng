@@ -1,0 +1,42 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmMask</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmMask  -->
+            <div class="tab-pane" id="mmMask">
+                <div class="note note-info">
+                    <h2>restrict: 'A'</h2>
+                    <h2>jquery.maskedinput Required</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmMask</td>
+                                <td>string</td>
+                                <td>
+                                    mmMask define the mask <br />  '9': [0-9], 'a': [A-Za-z], '*': [A-Za-z0-9] <br /> like : mm-mask="a*-999-a999"
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <input type="text" placeholder="Date: 99/99/9999" mm-mask="99/99/9999" ng-model="mydate  " class="form-control form-group-margin" id="masked-inputs-examples-date" />
+                <pre>&lt;input type="text" placeholder="Date: 99/99/9999" mm-mask="99/99/9999" ng-model="mydate&nbsp; | date:'dd/MM/yyyy'" class="form-control form-group-margin" id="masked-inputs-examples-date"&gt;</pre>
+                <br />
+                <input type="text" placeholder="SSN: 999-99-9999" mm-mask="999-99-9999" ng-model="mydate1" class=" form-control form-group-margin" id="masked-inputs-examples-ssn" />
+                <pre>&lt;input type="text" placeholder="SSN: 999-99-9999" mm-mask="999-99-9999" ng-model="mydate1" class=" form-control form-group-margin" id="masked-inputs-examples-ssn"&gt;</pre>
+                <br />
+                <input type="text" placeholder="Phone: (999) 999-9999" mm-mask="(999) 999-9999" ng-model="mydate2" class=" form-control form-group-margin" id="masked-inputs-examples-phone" />
+                <pre>&lt;input type="text" placeholder="Phone: (999) 999-9999" mm-mask="(999) 999-9999" ng-model="mydate2" class=" form-control form-group-margin" id="masked-inputs-examples-phone"&gt;</pre>
+                <br />
+                <input type="text" placeholder="Product Key: a*-999-a999" mm-mask="a*-999-a999" ng-model="mydate3" class=" form-control" id="masked-inputs-examples-product-key" />
+                <pre>&lt;input type="text" placeholder="Product Key: a*-999-a999" mm-mask="a*-999-a999" ng-model="mydate3" class=" form-control" id="masked-inputs-examples-product-key"&gt;</pre>
+            </div>
+            <!--#endregion -->
+
+        </div>
+    </div>
+</div>

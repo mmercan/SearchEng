@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Directives Application</title>
+ <script src="/lib/tinymce/tinymce.min.js"></script>
+
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/lib/toastr/toastr.css" rel="stylesheet" />
+    <link href="/lib/Angular-Directives/directivestyles.css" rel="stylesheet" />
+    <link href="/lib/Angular-Directives/site.css" rel="stylesheet"/>
+
+
+     <link href="/lib/jquery-ui/jquery-ui.css" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/lib/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="/lib/select2/select2.css" rel="stylesheet" />
+   
+
+  <link href="/lib/Angular-Directives/mmswitcher.css" rel="stylesheet" />
+    <link href="/lib/Angular-Directives/widgetrating.css" rel="stylesheet" />
+<link href="/lib/Angular-Directives/PanelsAndColors.css" rel="stylesheet" />
+
+
+<link href="/content/PixelAdmin/libs/animate.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/popovers.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/tooltips.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/plugins/bootstrap-timepicker.css" rel="stylesheet" />
+
+    
+    <link href="/content/pixeladmin/pixel-admin-less/panels.css" rel="stylesheet" />
+
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/messages.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/messages-alt.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/support-tickets.css" rel="stylesheet" />
+
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/threads.css" rel="stylesheet" />
+
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/notifications.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/tasks.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/comments.css" rel="stylesheet" />
+    <link href="/content/pixeladmin/pixel-admin-less/widgets/followers.css" rel="stylesheet" />
+
+    <link href="/content/pixeladmin/pixel-admin-less/pages/mail.css" rel="stylesheet" />
+
+
+
+
+  <link href="/content/kendo/kendo.common.min.css" rel="stylesheet" />
+<link href="/content/themes/base/datepicker.css" rel="stylesheet" />
+    <link href="/content/themes/base/theme.css" rel="stylesheet" />
+    <style>
+        html, body {
+    height: 100%;
+}
+
+        .body-content { 
+    min-height: 100%;
+    height: 100%;
+}
+        .view-animate-container{
+            height: 100%;
+            box-sizing:border-box;
+        }
+         .view-animate{
+              height: 100%;
+              box-sizing:border-box;
+         }
+
+
+        .fill {
+            min-height: 100%;
+            height: 100%;
+            box-sizing:border-box;
+        }
+
+        .customScrollBar::-webkit-scrollbar {
+            height: 18px;
+            width: 18px;
+        }
+
+        .customScrollBar::-webkit-scrollbar-thumb {
+            -moz-border-radius: 9px;
+            -webkit-border-radius: 9px;
+            border-radius: 9px;
+            border: solid 6px #fff;
+            background-color: #c8c8c8;
+        }
+
+        .customScrollBar::-webkit-scrollbar-button {
+            background-color: #fff;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .customScrollBar::-webkit-scrollbar-track {
+            background-color: #fff;
+        }
+
+        .customScrollBar::-webkit-scrollbar-corner {
+            background-color: #fff;
+        }
+
+        .container {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+    </style>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANVOJwdi05pBunlJZs6KkN84uoLwNiy_Y&sensor=SET_TO_TRUE_OR_FALSE">
+    </script>
+</head>
+<body ng-app="app">
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                   
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Modals Notifications<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#mmActionModal" data-toggle="tab">mmActionModal</a></li>
+                            <li><a href="#mmScroll" data-toggle="tab">mmScroll</a></li>
+                            <li><a href="#mmSelectionModal" data-toggle="tab">mmSelectionModal</a></li>
+                            <li><a href="#mmSelectionModalAjax" data-toggle="tab">mmSelectionModalAjax</a></li>
+                            <li><a href="#popover" data-toggle="tab">popover</a></li>
+                            <li><a href="#tooltip" data-toggle="tab">tooltip</a></li>
+                            <li><a href="#validationText" data-toggle="tab">validationText</a></li>
+                            <li><a href="#mmwizard" data-toggle="tab">Wizard</a></li>
+                            <li><a href="#mainMenuCommands" data-toggle="tab">Main Menu commands</a></li>
+                            <li><a href="#pageAlerts" data-toggle="tab">Page Alerts</a></li>
+                            <li><a href="#toastrAlerts" data-toggle="tab">Toastr Alerts</a></li>
+                            <li><a href="#modals" data-toggle="tab">Modals</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">List <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#mmChart" data-toggle="tab">mmChart</a></li>
+                            <li><a href="#mmDropZone" data-toggle="tab">mmDropZone</a></li>
+                            <li><a href="#mmFileRead" data-toggle="tab">mmFileUploader</a></li>
+                            <li><a href="#mmFullcalendar" data-toggle="tab">mmFullcalendar</a></li>
+                            <li><a href="#mmMap" data-toggle="tab">mmMap</a></li>
+                            <li><a href="#mmSortable" data-toggle="tab">mmSortable</a></li>
+                            <li><a href="#mmswitcher" data-toggle="tab">mmswitcher</a></li>
+                            <li><a href="#mmTableSorter" data-toggle="tab">mmTableSorter</a></li>
+                            <li><a href="#mmtable" data-toggle="tab">mmtable</a></li>
+                            <li><a href="#mmTimeline" data-toggle="tab">mmTimeline</a></li>
+                            <li><a href="#mmTreeview" data-toggle="tab">mmTreeview</a></li>
+                            <li><a href="#PagerSource" data-toggle="tab">PagerSource</a></li>
+                            <li><a href="#mmlist" data-toggle="tab">mmList</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">inputs <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#knob" data-toggle="tab">knob</a></li>
+                            <li><a href="#mmDatepicker" data-toggle="tab">mmDatepicker</a></li>
+                            <li><a href="#mmHtml" data-toggle="tab">mmHtml</a></li>
+                            <li><a href="#mmLimiter" data-toggle="tab">maxlength</a></li>
+                            <li><a href="#mmMask" data-toggle="tab">mmMask</a></li>
+                            <li><a href="#mmRating" data-toggle="tab">mmRating</a></li>
+                            <li><a href="#mmSelect2" data-toggle="tab">mmSelect2</a></li>
+                            <li><a href="#mmswitcher" data-toggle="tab">mmswitcher</a></li>
+                            <li><a href="#mmTinymce" data-toggle="tab">mmTinymce</a></li>
+                            <li><a href="#timePicker" data-toggle="tab">Time Picker</a></li>
+                            <li><a href="#mmHttpGet" data-toggle="tab">Bootstrap X-Editable http://vitalets.github.io/x-editable/ </a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">others <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#mmLocalstorage" data-toggle="tab">mmLocalstorage</a></li>
+                            <li><a href="#mmHttpGet" data-toggle="tab">mmHttpGet</a></li>
+                        </ul>
+                    </li>
+
+
+
+
+
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#knob" data-toggle="tab">knob</a></li>
+                            <li><a href="#mmActionModal" data-toggle="tab">mmActionModal</a></li>
+                            <li><a href="#mmChart" data-toggle="tab">mmChart</a></li>
+                            <li><a href="#mmDatepicker" data-toggle="tab">mmDatepicker</a></li>
+                            <li><a href="#mmDropZone" data-toggle="tab">mmDropZone</a></li>
+                            <li><a href="#mmFileRead" data-toggle="tab">mmFileUploader</a></li>
+                            <li><a href="#mmFullcalendar" data-toggle="tab">mmFullcalendar</a></li>
+                            <li><a href="#mmHtml" data-toggle="tab">mmFullcalendar</a></li>
+                            <li><a href="#mmLimiter" data-toggle="tab">maxlength</a></li>
+                            <li><a href="#mmMap" data-toggle="tab">mmMap</a></li>
+                            <li><a href="#mmMask" data-toggle="tab">mmMask</a></li>
+                            <li><a href="#mmRating" data-toggle="tab">mmRating</a></li>
+                            <li><a href="#mmScroll" data-toggle="tab">mmScroll</a></li>
+                            <li><a href="#mmSelect2" data-toggle="tab">mmSelect2</a></li>
+                            <li><a href="#mmSelectionModal" data-toggle="tab">mmSelectionModal</a></li>
+                            <li><a href="#mmSelectionModalAjax" data-toggle="tab">mmSelectionModalAjax</a></li>
+                            <li><a href="#mmSortable" data-toggle="tab">mmSortable</a></li>
+                            <li><a href="#mmswitcher" data-toggle="tab">mmswitcher</a></li>
+                            <li><a href="#mmTableSorter" data-toggle="tab">mmTableSorter</a></li>
+                            <li><a href="#mmtable" data-toggle="tab">mmtable</a></li>
+                            <li><a href="#mmTimeline" data-toggle="tab">mmTimeline</a></li>
+                            <li><a href="#mmTinymce" data-toggle="tab">mmTinymce</a></li>
+                            <li><a href="#mmTreeview" data-toggle="tab">mmTreeview</a></li>
+                            <li><a href="#PagerSource" data-toggle="tab">PagerSource</a></li>
+                            <li><a href="#popover" data-toggle="tab">popover</a></li>
+                            <li><a href="#tooltip" data-toggle="tab">tooltip</a></li>
+                            <li><a href="#validationText" data-toggle="tab">validationText</a></li>
+                            <li><a href="#mmLocalstorage" data-toggle="tab">mmLocalstorage</a></li>
+                            <li><a href="#mmHttpGet" data-toggle="tab">mmHttpGet</a></li>
+                            <li><a href="#timePicker" data-toggle="tab">Time Picker</a></li>
+                            <li><a href="#mmwizard" data-toggle="tab">Wizard</a></li>
+                            <li><a href="#mmHttpGet" data-toggle="tab">Bootstrap X-Editable http://vitalets.github.io/x-editable/ </a></li>
+                            <li><a href="#mainMenuCommands" data-toggle="tab">Main Menu commands</a></li>
+                            <li><a href="#pageAlerts" data-toggle="tab">Page Alerts</a></li>
+                            <li><a href="#toastrAlerts" data-toggle="tab">Toastr Alerts</a></li>
+                            <li><a href="#modals" data-toggle="tab">Modals</a></li>
+                            <li><a href="#mmlist" data-toggle="tab">mmList</a></li>
+                        </ul>
+                    </li>
+                </ul>
+             
+            </div>
+        </div>
+    </div>
+<div class="container body-content">
+    <div id="pa-page-alerts-box"></div>
+    <div class="view-animate-container">
+        <div ng-view="" class="view-animate"></div>
+    </div>
+</div>
+
+    <script src="/lib/jquery/jquery.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/lib/jquery-ui/jquery-ui.js"></script>
+
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/angular-animate/angular-animate.js"></script>
+    <script src="/lib/angular-cookies/angular-cookies.js"></script>
+    <script src="/lib/angular-resource/angular-resource.js"></script>
+    <script src="/lib/angular-route/angular-route.js"></script>
+    <script src="/lib/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="/lib/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+    <script src="/lib/respond/respond.src.js"></script>
+    <script src="/lib/toastr/toastr.js"></script>
+    <script src="/lib/nprogress/nprogress.js"></script>
+    <script src="/lib/lodash/lodash.js"></script>
+    <script src="/lib/moment/moment.js"></script>
+    <script src="/lib/fullcalendar/fullcalendar.js"></script>
+    <script src="/lib/jquery-knob/jquery.knob.js"></script>
+    <script src="/lib/select2/select2.js"></script>
+    <script src="/lib/jquery.maskedinput/jquery.maskedinput.js"></script>
+    <script src="/lib/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="/lib/tinymce/tinymce.min.js"></script>
+
+
+ <script src="/lib/jquery.barcode/jquery-barcode.min.js"></script>
+<script src="/lib/kendo/kendo.dataviz.min.js"></script>
+<script src="/lib/Dialog/dialog.js"></script>
+<script src="/lib/bootstrap-datepicker.js"></script>
+
+
+
+<script src="/lib/Angular-Directives/components.js"></script>
+<script src="/lib/Angular-Directives/directives.js"></script>
+<script src="/lib/Angular-Directives/Controller/angularcomp.js"></script>
+
+</body>
+</html>

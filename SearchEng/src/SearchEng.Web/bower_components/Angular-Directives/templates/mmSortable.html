@@ -1,0 +1,106 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmSortable</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmSortable  -->
+            <div class="tab-pane" id="mmSortable">
+                <div class="note note-info">
+                    <h2>restrict: 'C'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmSortable</td>
+                                <td>Class</td>
+                                <td>no parameters</td>
+                            </tr>
+                            <tr>
+                                <td>itemssource</td>
+                                <td>object</td>
+                                <td>itemsource for selection Modal</td>
+                            </tr>
+
+                            <tr>
+                                <td>orderfield</td>
+                                <td></td>
+                                <td>Column name to Order</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>Choosing an element to move them will be next target</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel widget-tasks">
+                    <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-tasks"></i>Move From Arrow</span>                        </div>
+                    <div class="panel-body mmSortable" itemssource="tasks" orderfield="order" handle=".fa-arrows-v">
+                        <div ng-repeat=" item in tasks" class="task" ng-class="{completed:item.completed}">
+
+                            <span ng-show="item.priority=='high'" class="label label-warning pull-right">High - {{item.order}}</span>
+                            <span ng-show="item.priority=='low'" class="label pull-right">Low - {{item.order}}</span>
+                            <span class="pull-right">{{item.order}}</span>
+                            <div class="fa fa-arrows-v task-sort-icon"></div>
+                            <div class="action-checkbox">
+                                <label class="px-single"><input type="checkbox" ng-model="item.completed" name="" value="" class="px"><span class="lbl"></span></label>
+                            </div>
+                            <a  class="task-title">{{item.title}} <span>{{item.due}}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <pre><p>&lt;div<b style="color:navy"> class="panel-body mmSortable" itemssource="tasks" orderfield="order" handle=".fa-arrows-v"</b> &gt;<br />&nbsp; &lt;div ng-repeat=" item in tasks" class="task" ng-class="{completed:item.completed}"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;span ng-show="item.priority=='high'" class="label label-warning pull-right"&gt;High&lt;/span&gt;&lt;span ng-show="item.priority=='low'" class="label pull-right"&gt;Low&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="fa fa-arrows-v task-sort-icon"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="action-checkbox"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label class="px-single"&gt;&lt;input type="checkbox" ng-model="item.completed" name="" value="" class="px"&gt;&lt;span class="lbl"&gt;&lt;/span&gt;&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;a class="task-title"&gt;{{item.title}} {{item.order}}&lt;span&gt;{{item.due}}&lt;/span&gt;&lt;/a&gt;<br />&nbsp; &lt;/div&gt;<br />&lt;/div&gt;</p> </pre>
+
+
+                <hr />
+                <div class="panel widget-tasks">
+                    <div class="panel-heading"><span class="panel-title"><i class="panel-title-icon fa fa-tasks"></i>Tasks order the Column</span>                        </div>
+                    <div class="panel-body mmSortable" itemssource="tasks" orderfield="order">
+                        <div ng-repeat=" item in tasks" class="task" ng-class="{completed:item.completed}">
+
+                            <span ng-show="item.priority=='high'" class="label label-warning pull-right">High - {{item.order}}</span>
+                            <span ng-show="item.priority=='low'" class="label pull-right">Low - {{item.order}}</span>
+                            <span class="pull-right">{{item.order}}</span>
+                            <div class="fa fa-arrows-v task-sort-icon"></div>
+                            <div class="action-checkbox">
+                                <label class="px-single"><input type="checkbox" ng-model="item.completed" name="" value="" class="px"><span class="lbl"></span></label>
+                            </div>
+                            <a  class="task-title">{{item.title}} <span>{{item.due}}</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <pre><p>&lt;div<b style="color:navy"> class="panel-body mmSortable" itemssource="tasks" orderfield="order"</b> &gt;<br />&nbsp; &lt;div ng-repeat=" item in tasks" class="task" ng-class="{completed:item.completed}"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;span ng-show="item.priority=='high'" class="label label-warning pull-right"&gt;High&lt;/span&gt;&lt;span ng-show="item.priority=='low'" class="label pull-right"&gt;Low&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="fa fa-arrows-v task-sort-icon"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="action-checkbox"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label class="px-single"&gt;&lt;input type="checkbox" ng-model="item.completed" name="" value="" class="px"&gt;&lt;span class="lbl"&gt;&lt;/span&gt;&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;a class="task-title"&gt;{{item.title}} {{item.order}}&lt;span&gt;{{item.due}}&lt;/span&gt;&lt;/a&gt;<br />&nbsp; &lt;/div&gt;<br />&lt;/div&gt;</p> </pre>
+
+
+                <div class="panel widget-tasks">
+                    <div class="panel-heading">
+                        <span class="panel-title"><i class="panel-title-icon fa fa-tasks"></i>Tasks order list position</span>
+                    </div>
+                    <div class="panel-body mmSortable" itemssource="tasks">
+                        <div ng-repeat=" item in tasks" class="task" ng-class="{completed:item.completed}">
+                            <span ng-show="item.priority=='high'" class="label label-warning pull-right">High</span><span ng-show="item.priority=='low'" class="label pull-right">Low</span>
+                            <div class="fa fa-arrows-v task-sort-icon"></div>
+                            <div class="action-checkbox">
+                                <label class="px-single"><input type="checkbox" ng-model="item.completed" name="" value="" class="px"><span class="lbl"></span></label>
+                            </div>
+                            <a class="task-title">{{item.title}}  {{item.order}}<span>{{item.due}}</span></a>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer clearfix">
+                        <div class="pull-right">
+                            <button class="btn btn-xs" id="clear-completed-tasks"><i class="fa fa-eraser text-success"></i> Clear completed tasks</button>
+                        </div>
+                    </div>
+                </div>
+                <pre><p>&lt;div<b style="color:navy"> class="panel-body mmSortable" itemssource="tasks"</b> &gt;<br />&nbsp; &lt;div ng-repeat=" item in tasks" class="task" ng-class="{completed:item.completed}"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;span ng-show="item.priority=='high'" class="label label-warning pull-right"&gt;High&lt;/span&gt;&lt;span ng-show="item.priority=='low'" class="label pull-right"&gt;Low&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="fa fa-arrows-v task-sort-icon"&gt;&lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="action-checkbox"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label class="px-single"&gt;&lt;input type="checkbox" ng-model="item.completed" name="" value="" class="px"&gt;&lt;span class="lbl"&gt;&lt;/span&gt;&lt;/label&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;a class="task-title"&gt;{{item.title}} {{item.order}}&lt;span&gt;{{item.due}}&lt;/span&gt;&lt;/a&gt;<br />&nbsp; &lt;/div&gt;<br />&lt;/div&gt;</p> </pre>
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

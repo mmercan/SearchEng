@@ -1,0 +1,64 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading" style="padding-top: 5px;padding-bottom: 5px">
+        <div class="row"><h3 style="color:white;padding-left:20px">Preferences</h3></div>
+    </div>
+    <div class="panel-body">
+        <ul id="myTab" class="nav nav-tabs nav-pills nav-stacked col-sm-2">
+            <li class="active"><a data-target="#products" data-toggle="tab">Products</a></li>
+            <li class=""><a data-target="#profile" data-toggle="tab">Profile</a></li>
+            <li class="dropdown">
+                <a data-target="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                    <li><a data-target="#dropdown1" tabindex="-1" data-toggle="tab">@fat</a></li>
+                    <li><a data-target="#dropdown2" tabindex="-1" data-toggle="tab">@mdo</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content col-sm-10">
+            <div class="tab-pane fade active in" id="products">
+                <div class="input-group">
+                    <span class="input-group-addon control-label">{{ProductStorage.result.filter}} </span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" ng-click="ProductStorage.resetFilter()">Clear</button>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="well">
+                            <ul class="list-unstyled">
+                                <li class=" well-sm" ng-repeat="column in pro.showedAvailableColumns">
+                                    <div class="input-group">
+                                        <span class="form-control" style="background-color: #e6e9ed;border-color: #e6e9ed">{{column}} </span>
+                                        <div class="input-group-addon" style="padding: 0;border: 0"><input type="button" value="Add" class="form-control" ng-click="ProductStorage.Addcolumns(column)" style="border-radius:0 5px  5px 0" /></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="well">
+
+                            <ul class="list-unstyled mm-sortable" itemssource="ProductStorage.result.listcolumns" sorted="ProductStorage.Columnssorted">
+                                <li class=" well-sm" ng-repeat="column in ProductStorage.result.listcolumns"><div class="form-inline"><input type="button" value="Remove" class="form-control" ng-click="ProductStorage.Removecolumns(column)" /> {{column}}</div></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+             
+                <input class="btn btn-danger" type="button" value="Reset All Product Cache" ng-click="ProductStorage.resetAll()" />
+
+            </div>
+            <div class="tab-pane fade" id="profile">
+                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+            </div>
+            <div class="tab-pane fade" id="dropdown1">
+                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+            </div>
+            <div class="tab-pane fade" id="dropdown2">
+                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmMap</div>
+        </div>
+        <div class="panel-body">
+                <!--#region mmMap  -->
+                <div class="tab-pane" id="mmMap">
+                    <div class="note note-info">
+                        <h2>restrict: 'A'</h2>
+                        <table class="table table-bordered">
+                            <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>itemssource</td>
+                                    <td>object</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>latitudefield</td>
+                                    <td>string</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>longitudefield</td>
+                                    <td>string</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>center</td>
+                                    <td>object</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>isgeojson</td>
+                                    <td>bool</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>itemselected</td>
+                                    <td>event/ function</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>selecteditem</td>
+                                    <td>object</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>rerender</td>
+                                    <td>bool</td>
+                                    <td>assign true to rerender to rerender the map (when Map loaded while UI is hidden render isn't work well, rerender helps map to fix)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="well">
+                            <span mm-html="mapselected.html"></span> <br />
+                            lat : {{mapselected.lat}}<br />
+                            lng : {{mapselected.lng}}
+                        </div>
+                        <div rerender="maprerender" mm-map itemssource="locations" latitudefield="lat" longitudefield="lng" selecteditem="mapselected" style="height: 500px; width: 100%"> </div>
+                    </div>
+                </div>
+                <!--#endregion -->
+        </div>
+    </div>
+</div>

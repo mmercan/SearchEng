@@ -1,0 +1,47 @@
+.widget-followers .follower {
+  padding: 0 0 10px 0;
+  position: relative;
+}
+.widget-followers .follower + .follower {
+  border-top: 1px solid;
+  border-top-color: #e4e4e4;
+  padding-top: 10px;
+}
+.widget-followers .follower:last-child {
+  padding-bottom: 0;
+}
+.widget-followers .follower-avatar {
+  border-radius: 99999px;
+  display: block;
+  float: left;
+  height: 32px;
+  margin-right: 10px;
+  margin-top: 2px;
+  width: 32px;
+}
+.widget-followers .follower-controls {
+  float: right;
+  margin-top: 4px;
+}
+.widget-followers .follower-controls .btn > i {
+  font-size: 14px;
+  position: relative;
+  top: 1px;
+}
+.widget-followers .body {
+  line-height: 17px;
+}
+.widget-followers .follower-name {
+  color: #333;
+  font-size: 13px;
+}
+.widget-followers .follower-username {
+  color: #aaa;
+  font-size: 12px;
+}
+.panel.widget-followers .follower,
+.panel .widget-followers .follower {
+  margin: 0 -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

@@ -1,0 +1,175 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmActionModal</div>
+        </div>
+        <div class="panel-body">
+                <!--#region mmActionModal  -->
+                <div class="tab-pane" id="mmActionModal" ng-init="selecteditem={};">
+                    <div class="note note-info">
+                        <h2>restrict: "E"</h2>
+                        <table class="table table-bordered">
+                            <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>mm-action-modal</td>
+                                    <td>Element</td>
+                                    <td>Enables the Action Model Directive</td>
+                                </tr>
+                                <tr>
+                                    <td>selecteditem ngModel</td>
+                                    <td>2 way object</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>create-template</td>
+                                    <td>child element</td>
+                                    <td>&lt;div class="create-template"&gt;&lt;/div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>edit-template</td>
+                                    <td>child element</td>
+                                    <td>&lt;div class="edit-template"&gt;&lt;/div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>detail-template</td>
+                                    <td>child element</td>
+                                    <td>&lt;div class="detail-template"&gt;&lt;/div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>delete-template</td>
+                                    <td>child element</td>
+                                    <td>&lt;div class="delete-template"&gt;&lt;/div&gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>saveClicked</td>
+                                    <td>function</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>detailClicked</td>
+                                    <td>function</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>createClicked</td>
+                                    <td>function</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>deleteClicked</td>
+                                    <td>function</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>calldetail</td>
+                                    <td>object | true/false</td>
+                                    <td>calldetail=true to call delete </td>
+                                </tr>
+                                <tr>
+                                    <td>calledit</td>
+                                    <td>object | true/false</td>
+                                    <td>calledit=true to call delete </td>
+                                </tr>
+                                <tr>
+                                    <td>callcreate</td>
+                                    <td>object | true/false</td>
+                                    <td>callcreate=true to call delete </td>
+                                </tr>
+                                <tr>
+                                    <td>calldelete</td>
+                                    <td>object | true/false</td>
+                                    <td>calldelete=true to call delete </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <b style="color:brown">ng-non-bindable</b> some directive will be transform before transclude happens and Directive get the modified html specially if there are some ng-repeat directive can't get it right
+                                        <br /> use ng-non-bindable to prevent those changes
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div>
+                        {{selecteditem.name}}
+                        {{selecteditem.surName}}
+                        <div class="well" ng-repeat="cat in selecteditem.cat">{{cat}}</div>
+                    </div>
+                    <input type="button" value="Show Create" class="btn btn-success" ng-click="callcreate=true" />
+                    <input type="button" value="Show Edit" class="btn btn-warning" ng-click="calledit=true" />
+                    <input type="button" value="Show Detail" class="btn btn-info" ng-click="calldetail=true" />
+                    <input type="button" value="Show Delete" class="btn btn-danger" ng-click="calldelete=true" />
+
+                    <mm-action-modal selecteditem="selecteditem" calldetail="calldetail" detail-clicked="detailClicked"
+                                     callcreate="callcreate" create-clicked="createClicked"
+                                     calledit="calledit" save-clicked="saveClicked"
+                                     calldelete="calldelete" delete-clicked="deleteClicked">
+                        <div class="create-template" ng-non-bindable>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>Surname</label>
+                                    <input type="text" class="form-control" ng-model="item.surName" placeholder="Surname">
+                                </div>
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <select mm-select2="{ allowClear: true}" multiple="multiple" class="form-control" ng-model="item.subcats">
+                                        <option ng-repeat="cat in subCategories" value="{{cat.ProductSubcategoryID}}">{{cat.Name}}</option>
+                                    </select>
+
+                                    {{item.subcats}}
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="edit-template" ng-non-bindable>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>Surname</label>
+                                    <input type="text" class="form-control" ng-model="item.surName" placeholder="ID">
+                                </div>
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="well" ng-repeat="cat in personcategories">{{cat.name}}</div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="detail-template" ng-non-bindable>
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>Surname</label>
+                                    <input type="text" class="form-control" ng-model="item.surName" placeholder="ID" disabled="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-control" ng-model="item.name" placeholder="Name" disabled="">
+                                </div>
+                                <div class="well" ng-repeat="cat in personcategories">{{cat.name}}</div>
+                            </form>
+                        </div>
+                        <div class="delete-template" ng-non-bindable>
+                            <br />
+                            <h4 class="text-center">Are you sure want to delete {{item.name}} {{item.surName}} ?</h4>
+                        </div>
+                    </mm-action-modal>
+                    <pre>&lt;mm-action-modal selecteditem="selecteditem" calldetail="calldetail" detail-clicked="detailClicked" callcreate="callcreate" create-clicked="createClicked" calledit="calledit" save-clicked="saveClicked" calldelete="calldelete" delete-clicked="deleteClicked"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="create-template" <b style="color:navy">ng-non-bindable</b> &gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;form role="form"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="form-group"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Surname&lt;/label&gt;&lt;input type="text" class="form-control" ng-model="item.surName" placeholder="Surname"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="form-group"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Name&lt;/label&gt;&lt;input type="text" class="form-control" ng-model="item.name" placeholder="Name"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt; <p>&nbsp;&nbsp;&nbsp; &lt;div class="edit-template" <b style="color:navy">ng-non-bindable</b> &gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;form role="form"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="form-group"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Surname&lt;/label&gt;&lt;input type="text" class="form-control" ng-model="item.surName" placeholder="ID"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="form-group"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Name&lt;/label&gt;&lt;input type="text" class="form-control" ng-model="item.name" placeholder="Name"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p> &nbsp;&nbsp;&nbsp; &lt;div class="detail-template" <b style="color:navy">ng-non-bindable</b> &gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;form role="form"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="form-group"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Surname&lt;/label&gt;&lt;input type="text" class="form-control" ng-model="item.surName" placeholder="ID" disabled=""&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="form-group"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;label&gt;Name&lt;/label&gt;&lt;input type="text" class="form-control" ng-model="item.name" placeholder="Name" disabled=""&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="delete-template" <b style="color:navy">ng-non-bindable</b> &gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;br /&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 class="text-center"&gt;Are you sure want to delete {{item.name}} {{item.surName}} ?&lt;/h4&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />&lt;/mm-action-modal&gt;</pre>
+                    <div class="well" ng-repeat="cat in personcategories">{{cat.name}}</div>
+                    <select class="form-control">
+                        <option value="all">All</option>
+                        <option ng-repeat="cat in personcategories" value="{{cat.$id}}">{{cat.name}}</option>
+                    </select>
+                </div>
+                <!--#endregion -->
+          </div>
+</div>
+</div>

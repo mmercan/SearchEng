@@ -1,0 +1,142 @@
+﻿<div class="page-search" data-ng-controller="SearchCtrl">
+  
+    <!--<div class="search-text">
+        <strong>{{searchResultTotal}}</strong> results found for: <span class="text-primary">Lorem ipsum</span>
+    </div>-->
+    <div class="search-tabs">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-target="#search-tabs-product" data-toggle="tab" ng-click="tabclicked('Product')">Products <span class="label label-primary">{{ProductsResultsTotal}}</span></a></li>
+            <li><a data-target="#search-tabs-books" data-toggle="tab" ng-click="tabclicked('Books')">Books <span class="label label-success">{{searchBookResultsTotal}}</span></a></li>
+            <li><a data-target="#search-tabs-people" data-toggle="tab" ng-click="tabclicked('People')">People</a></li>
+        </ul>
+    </div>
+    <div class="panel search-panel">
+        <form action="" class="search-form bg-primary">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon no-background"><i class="fa fa-search"></i></span>
+                <input type="text" name="s" class="form-control" placeholder="Type your search here..." data-ng-model="keyword" ng-enter="searchCall()" ng-click="inputClicked()" autocomplete="off" />
+                <span class="input-group-btn">
+                    <button class="btn" type="button" ng-click="searchCall()">
+                        <span ng-hide="suggestionsLoading==true">Go</span>
+                        <i ng-show="suggestionsLoading==true" class="fa fa-spinner fa-spin"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+
+        <ul ng-show="showSuggestion" id="searchsuggest" class="searchsuggest list-unstyled" style="box-sizing:border-box;top: 60px; position: absolute; text-align: left; left: 63px;right:75px; max-height: 550px;overflow-y: auto;overflow-x:hidden">
+            <li ng-repeat="pro in suggestions">
+                <a data-ng-href="{{pro.Url}}" ng-click="itemSelected(pro)">
+                    <div class="search-blocks search-blocks-top-sea" style="padding:0; margin:0">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <h3>{{pro}}</h3>
+                            </div>
+                            <div class="col-xs-3 search-img">
+                                <i ng-show="searchType=='Product'" class="fa fa-shopping-cart fa-3x"></i>
+                                <i ng-show="searchType=='People'" class="fa fa fa-child fa-3x"></i>
+                                <i ng-show="searchType=='Books'" class="fa fa fa-book fa-3x"></i>
+                                <i ng-show="searchType=='Movies'" class="fa fa fa-film fa-3x"></i>
+                                <img class="img-responsive" ng-src="/WebResources/Images/Vendor/AutoComplete/{{pro.VendorName}}.png" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+
+            <li ng-show="nosuggestion==true">
+                <div class="search-blocks search-blocks-top-sea" style="padding:0; margin:0">
+                    <div class="row">
+                        <div class="col-xs-3 search-img">
+                        </div>
+                        <div class="col-xs-9">
+                            <h5>No Suggestion Found</h5>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="panel-body tab-content">
+            <ul class="search-classic tab-pane fade in active" id="search-tabs-product">
+                <!--<div mmm-table="item in products" columns="['ProductID','Name','ProductNumber','Color','StandardCost','ListPrice']" selecteditem="selectedUSR"></div>-->
+                <mm-table itemssource="products" selecteditem="selectedProduct" columns="['ProductID','Name','ProductNumber','Color','StandardCost','ListPrice']">
+                </mm-table>
+
+                <li ng-repeat="item in searchMovieResults">
+                    <img class="thread-avatar" style="vertical-align: middle;float:left" alt="" ng-src="{{item.posters.detailed}}">
+                    <div style="margin-left:75px">
+                        <a href="#" class="search-title">{{item.title}}</a>
+                        <a ng-href="{{item.links.alternate}}" target="_blank" href="#" class="search-url">{{item.links.alternate}}</a>
+                        <div class="search-content" style="min-height:50px">
+                            {{item.synopsis}}
+                        </div> <!-- / .search-content -->
+                        <div class="search-tags">
+                            <span class="search-tags-text">Cast:</span>
+                            <a ng-repeat="cast in item.abridged_cast" href="#" class="label label-success">{{cast.name}}</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- / Classic search -->
+            <!-- Users search -->
+            <div class="search-users tab-pane fade" id="search-tabs-books">
+                <div class="panel-body" style="clear:both">
+                    <div class="col-sm-4 ng-scope" style="padding:5px;" ng-repeat="item in books">
+                        <div class="well" style="height:190px;margin:0;">
+                            <div style="float:left">
+                                <img class="thread-avatar" alt="" ng-src="{{item.Image}}">
+                            </div>
+                            <div style="margin-left:120px;height:100%" class="comment-body">
+                                <div class="comment-by" style="height:100%">
+                                    <h5 class="ng-binding">
+                                        <a ng-hide="item.title[&quot;#cdata-section&quot;]" class="pointer ng-binding ng-hide" title="" ng-click="gotoBookdetail(item.ID)">{{item.Title}}</a>
+                                    </h5>
+                                    <h6 class="bottom" style="bottom:15px; position: absolute;">
+                                        Author :<strong class="ng-binding"> {{item.Author}}</strong>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="search-messages tab-pane fade widget-messages" id="search-tabs-people">
+                <mm-table itemssource="people" selecteditem="selectedProduct" columns="['PersonType','Title','FirstName','MiddleName','LastName']">
+                    <div class="detail-template">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Person Type</label><input type="text" class="form-control" ng-model="item.PersonType" placeholder="No Person Type">
+                            </div>
+                            <div class="form-group">
+                                <label>Title</label><input type="text" class="form-control" ng-model="item.Title" placeholder="No Title">
+                            </div>
+                            <div class="form-group">
+                                <label>First Name</label><input type="text" class="form-control" ng-model="item.FirstName" placeholder="No First Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label><input type="text" class="form-control" ng-model="item.LastName" placeholder="No Last Name">
+                            </div>
+                        </form>
+                    </div>
+                </mm-table>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <!--<ul class="pagination">
+                <li class="disabled"><a href="#">«</a></li>
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>-->
+        </div>
+
+    </div>
+</div>
+          

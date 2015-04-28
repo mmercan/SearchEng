@@ -1,0 +1,65 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmTableSorter</div>
+        </div>
+        <div class="panel-body">
+            <!--#region mmTableSorter  -->
+            <div class="tab-pane" id="mmTableSorter">
+                <div class="note note-info">
+                    <h2>restrict: 'A'</h2>
+                    <table class="table table-bordered">
+                        <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td>mmTableSorter</td>
+                                <td></td>
+                                <td>no parameters</td>
+                            </tr>
+                            <tr>
+                                <td>columns</td>
+                                <td>Array</td>
+                                <td>Column names as Array of strings to show user to select the Column to sort</td>
+                            </tr>
+
+                            <tr>
+                                <td>sort</td>
+                                <td>Object</td>
+                                <td>Returns Column name selected by user to soft</td>
+                            </tr>
+                            <tr>
+                                <td>descending</td>
+                                <td>Object</td>
+                                <td>Returns true/false on users descending selection</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="table" mm-table-sorter columns="['title', 'due', 'completed', 'order', 'priority']" sort="sort" descending="descending"></table>
+                <ul class="list-unstyled">
+                    <li class="col-sm-4" data-ng-repeat="task in tasks | filter:cache.filter |orderBy:sort:descending">
+                        <a>
+                            <div style="position: relative; height: 80px" class="alert alert-success">
+                                <i class="fa fa-tasks fa-2x" style="color: #428bca"></i>
+                                <span class="badge pull-right" data-ng-bind="task.priority"></span>
+
+                                &nbsp;&nbsp; <span style="vertical-align: bottom; font-size: 1.8em" data-ng-bind="task.order"></span> -
+                                <span style="vertical-align: bottom; font-size: 1.2em" data-ng-bind="task.title"></span>
+
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <pre>&lt;table class="table" <b style="color:navy"> mm-table-sorter columns="['title', 'due', 'completed', 'order', 'priority']" sort="sort" descending="descending"</b>&gt;&lt;/table&gt;<br />&lt;ul class="list-unstyled"&gt;<br />&nbsp; &lt;li class="col-sm-4" data-ng-repeat="task in tasks | filter:cache.filter |<b style="color:navy"> orderBy:sort:descending</b>"&gt;&lt;a&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div style="position: relative; height: 80px" class="alert alert-success"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fa fa-tasks fa-2x" style="color: #428bca"&gt;&lt;/i&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span class="badge pull-right" data-ng-bind="task.priority"&gt;&lt;/span&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp;nbsp;&amp;nbsp; &lt;span style="vertical-align: bottom; font-size: 1.8em" data-ng-bind="task.order"&gt;&lt;/span&gt; - <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span style="vertical-align: bottom; font-size: 1.2em" data-ng-bind="task.title"&gt;&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt;&lt;/a&gt;<br />&nbsp; &lt;/li&gt;<br />&lt;/ul&gt;</pre>
+
+            </div>
+            <!--#endregion -->
+        </div>
+    </div>
+</div>

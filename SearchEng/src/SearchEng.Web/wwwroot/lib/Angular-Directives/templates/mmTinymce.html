@@ -1,0 +1,59 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">mmTinymce</div>
+        </div>
+        <div class="panel-body">
+            <div class="tab-content">
+                <!--#region mmTinymce  -->
+                <div id="mmTinymce" class="tab-pane">
+                    <div class="note note-info">
+                        <h2>restrict: ''</h2>
+                        <table class="table table-bordered">
+                            <thead><tr><td>Name</td><td>Type</td><td>Desciption</td></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page-header">
+                        <h1><span class="text-light-gray">Form components / </span>Editors</h1>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title"><a>Linked Editor<i class="fa fa-link"></i></a></span>
+                        </div>
+                        <div class="panel-body">
+                            <textarea mm-tinymce ng-model="htmlcontent"></textarea>
+                        </div>
+                    </div>
+
+                    <pre>&lt;div class="panel"&gt;<br />&nbsp; &lt;div class="panel-heading"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;span class="panel-title"&gt;&lt;a href="<a></a>" &gt;Linked Editor&lt;i class="fa fa-link"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp; &lt;div class="panel-heading-controls"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span class="panel-heading-text" style="font-size:11px;font-weight:600;"&gt;BOXED&amp;nbsp;&amp;nbsp;&lt;/span&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="checkbox" data-class="switcher-sm" id="markdown-boxed"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/div&gt; &lt;!-- / .panel-heading-controls --&gt;<br />&nbsp; &lt;/div&gt;<br />&nbsp; &lt;div class="panel-body"&gt;<br />&nbsp;&nbsp;&nbsp; &lt;textarea mm-tinymce ng-model="htmlcontent"&gt;&lt;/textarea&gt;<br />&nbsp; &lt;/div&gt;<br />&lt;/div&gt;</pre>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title"><a>Rendered Html <i class="fa fa-link"></i></a></span>
+                        </div>
+                        <div class="panel-body">
+                            <span mm-html="htmlcontent"></span>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-title"><a>Html<i class="fa fa-link"></i></a></span>
+                        </div>
+                        <div class="panel-body">
+                            {{htmlcontent}}
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+{
+	"name": "WebApplication",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "3.0.0",
+		"jquery": "1.10.2",
+		"jquery-validation": "1.11.1",
+		"jquery-validation-unobtrusive": "3.2.2",
+		"hammer.js": "2.0.4",
+		"bootstrap-touch-carousel": "0.8.0",
+		"pixeladmin": "https://github.com/mmercan/pixeladmin.git"
+	},
+	"exportsOverride": {
+		"bootstrap": {
+			"js": "dist/js/*.*",
+			"css": "dist/css/*.*",
+			"fonts": "dist/fonts/*.*"
+		},
+		"bootstrap-touch-carousel": {
+			"js": "dist/js/*.*",
+			"css": "dist/css/*.*"
+		},
+		"jquery": {
+			"": "jquery.{js,min.js,min.map}"
+		},
+		"jquery-validation": {
+			"": "jquery.validate.js"
+		},
+		"jquery-validation-unobtrusive": {
+			"": "jquery.validate.unobtrusive.{js,min.js}"
+		},
+		"simple-line-icons": {
+			"css": "css/*.*",
+			"fonts": "fonts/*.*"
+		},
+		"hammer": {
+			"": "hammer.{js,min.js}"
+		},
+		"font-awesome": {
+			"fonts": "fonts/*.*",
+			"css": "css/*.*"
+		},
+		"jquery-ui": {
+			"": [ "jquery-ui.js", "./themes/base/jquery-ui.css" ]
+		},
+		"toastr": {
+			"": [ "./toastr.js", "./toastr.css", "./toastr.less" ]
+		},
+		"modernizr": {
+			"": "./modernizr.js"
+		},
+		"Angular-Directives": {
+			"": [ "./components*.js", "./directives*.js", "./css/*.css", "./css/*.less", "./directives.html" ],
+			"templates": "./templates/*.*",
+			"Controller": "./Controller/*.*"
+		},
+		"pixeladmin": {
+			"": [ "./PixelAdmin/**/*.*", "./gulpfile.js", "./index.html", "./app.init.js", "./Productsjson.txt" ],
+			"templates": "./templates/*.*",
+			"Controller": "./Controller/*.*"
+		}
+	},
+	"devDependencies": { },
+	"license": [ "OFL-1.1", "MIT", "CC-BY-3.0" ],
+
+	"ignore": [
+		"*/.*",
+		"*.json",
+		"src",
+		"*.yml",
+		"Gemfile",
+		"Gemfile.lock",
+		"*.md"
+	]
+}

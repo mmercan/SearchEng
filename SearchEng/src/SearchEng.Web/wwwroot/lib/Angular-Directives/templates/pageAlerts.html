@@ -1,0 +1,176 @@
+﻿<div class="col-sm-12" ng-controller="angularcomp">
+    <div class=" panel panel-primary">
+        <div class=" panel-heading">
+            <div class="panel-heading-text">Angular Components</div>
+        </div>
+        <div class="panel-body">
+                <!--#region pageAlerts  -->
+                <div id="pageAlerts" class="tab-pane">
+                    <div class="note note-info">
+                        <h2>Service not a directive</h2>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="3">
+                                        Add "alertService" service in to your controller dependencies <br /><br />
+                                        angular.module("app").controller("angularcomp", ["$scope", "$http", "$routeParams", "$location",<b style="color:navy">"alertService"</b>, "notificationService","mainMenuService",  function($scope, $http, $routeParams, $location,  <b style="color:navy"> alertservice</b>, notificationservice,mainMenuService)
+                                        {}
+                                    </td>
+                                </tr>
+                                <tr><td>Name</td><td>Type</td><td>Desciption</td></tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>addMoveTop  </td>
+                                    <td>function (html, options, type, autoClose)</td>
+                                    <td>Alert on Regular colors, alertService.addMoveTop("Warning!  Best check yo self, you're not looking too good.", null, "warning", 30);</td>
+                                </tr>
+                                <tr>
+                                    <td>addMoveTopDark</td>
+                                    <td>function (html, options, type, autoClose)</td>
+                                    <td>Alert on Darker colors, alertService.addMoveTopDark("<strong>Warning! </strong> Best check yo self, you're not looking too good.", null, "warning", 30);</td>
+                                </tr>
+                                <tr>
+                                    <td>MakeSound</td>
+                                    <td>function (sound)</td>
+                                    <td>produce sound for alerting user, available sounds <strong> bell, harp, error, no, notify, success, tick, warning, alien, cricket, echo, knob</strong>, alertService.MakeSound("tick");</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>html</td>
+                                    <td>string</td>
+                                    <td>html or string will shown on alert </td>
+                                </tr>
+                                <tr>
+                                    <td>options</td>
+                                    <td></td>
+                                    <td>
+                                        type: 'warning', <br />
+                                        close_btn: true,<br />
+                                        classes: false,<br />
+                                        namespace: 'pa_page_alerts',<br />
+                                        animate: true,<br />
+                                        auto_close: false
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>type</td>
+                                    <td>"warning", "error", "success","info"</td>
+                                    <td> default is warning</td>
+                                </tr>
+                                <tr>
+                                    <td>autoClose</td>
+                                    <td>optional / integer (second)</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <span class="panel-title">Alerts</span>
+                                </div>
+                                <div class="panel-body">
+
+
+                                    <input class="btn  btn-block btn-warning" type="button" value="Alert Warning for 30 Seconds" ng-click="addwarining()" />
+                                    <div style="margin-bottom:0" class="alert"><button type="button" class="close" data-dismiss="alert">×</button><strong>Warning!</strong> Best check yo self, you're not looking too good.</div>
+                                    <pre>alertService.addMoveTop("<strong>Warning! </strong> Best check yo self, you're not looking too good.", null, "warning", 30);</pre>
+
+                                    <input class="btn btn-danger btn-block" type="button" value="Alert Error for 15 Seconds" ng-click="adderror()" />
+                                    <div style="margin-bottom:0" class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">×</button><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>
+                                    <pre>alertService.addMoveTop("<strong>Oh snap! </strong> Change a few things up and try submitting again.", null, "danger", 15);</pre>
+
+                                    <input class="btn btn-success btn-block" type="button" value="Alert Success till user close" ng-click="addsuccess()" />
+                                    <div style="margin-bottom:0" class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button><strong>Well done!</strong> You successfully read this important alert message.</div>
+                                    <pre>alertService.addMoveTop("<strong>Well done! </strong> You successfully read this important alert message.", null, "success");</pre>
+
+                                    <input class="btn btn-info btn-block" type="button" value="Alert Primary till user close" ng-click="addprimary()" />
+                                    <div style="margin-bottom:0" class="alert alert-info"><button type="button" class="close" data-dismiss="alert">×</button><strong>Heads up!</strong> This alert needs your attention, but it's not super important.</div>
+                                    <pre>alertService.addMoveTop("<strong>Heads up! </strong> This alert needs your attention, but it's not super important.", null, "info");</pre>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <span class="panel-title">Dark alerts</span>
+                                </div>
+                                <div class="panel-body">
+                                    <input class="btn  btn-block btn-warning" type="button" value="Dark Alert Warning for 30 Seconds" ng-click="addwariningDark()" />
+                                    <div style="margin-bottom:0" class="alert alert-dark"><button type="button" class="close" data-dismiss="alert">×</button><strong>Warning!</strong> Best check yo self, you're not looking too good.</div>
+                                    <pre>alertService.addMoveTopDark("<strong>Warning! </strong> Best check yo self, you're not looking too good.", null, "warning", 30);</pre>
+
+                                    <input class="btn btn-danger btn-block" type="button" value="Dark Alert Error for 15 Seconds" ng-click="adderrorDark()" />
+                                    <div style="margin-bottom:0" class="alert alert-danger alert-dark"><button type="button" class="close" data-dismiss="alert">×</button><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>
+                                    <pre>alertService.addMoveTopDark("<strong>Oh snap! </strong> Change a few things up and try submitting again.", null, "danger", 15);</pre>
+
+                                    <input class="btn btn-success btn-block" type="button" value="Dark Alert Success till user close" ng-click="addsuccessDark()" />
+                                    <div style="margin-bottom:0" class="alert alert-success alert-dark"><button type="button" class="close" data-dismiss="alert">×</button><strong>Well done!</strong> You successfully read this important alert message.</div>
+                                    <pre>alertService.addMoveTopDark("<strong>Well done! </strong> You successfully read this important alert message.", null, "success");</pre>
+
+                                    <input class="btn btn-info btn-block" type="button" value="Dark Alert Primary till user close" ng-click="addprimaryDark()" />
+                                    <div style="margin-bottom:0" class="alert alert-info alert-dark"><button type="button" class="close" data-dismiss="alert">×</button><strong>Heads up! </strong>  This alert needs your attention, but it's not super important.</div>
+                                    <pre>alertService.addMoveTopDark("<strong>Heads up! </strong> This alert needs your attention, but it's not super important.", null, "info");</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input class="btn  btn-block btn-info" type="button" value="error Sound" ng-click="makeSound('error')" />
+                            <pre> alertService.MakeSound('error');</pre>
+
+                            <input class="btn  btn-block btn-info" type="button" value="success Sound" ng-click="makeSound('success')" />
+                            <pre> alertService.MakeSound('success');</pre>
+
+
+                            <input class="btn  btn-block btn-info" type="button" value="warning Sound" ng-click="makeSound('warning')" />
+                            <pre> alertService.MakeSound('warning');</pre>
+
+                            <input class="btn  btn-block btn-info" type="button" value="notify Sound" ng-click="makeSound('notify')" />
+                            <pre> alertService.MakeSound('notify');</pre>
+
+
+
+
+                        </div>
+                        <div class="col-sm-4">
+                            <input class="btn  btn-block btn-info" type="button" value="tick Sound" ng-click="makeSound('tick')" />
+                            <pre> alertService.MakeSound('tick');</pre>
+
+                            <input class="btn  btn-block btn-info" type="button" value="bell Sound" ng-click="makeSound('bell')" />
+                            <pre> alertService.MakeSound('bell');</pre>
+
+
+                            <input class="btn  btn-block btn-info" type="button" value="harp Sound" ng-click="makeSound('harp')" />
+                            <pre> alertService.MakeSound('harp');</pre>
+
+                            <input class="btn  btn-block btn-info" type="button" value="no Sound" ng-click="makeSound('no')" />
+                            <pre> alertService.MakeSound('no');</pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <input class="btn  btn-block btn-info" type="button" value="alien Sound" ng-click="makeSound('alien')" />
+                            <pre> alertService.MakeSound('alien');</pre>
+
+                            <input class="btn  btn-block btn-info" type="button" value="cricket Sound" ng-click="makeSound('cricket')" />
+                            <pre> alertService.MakeSound('cricket');</pre>
+
+
+                            <input class="btn  btn-block btn-info" type="button" value="echo Sound" ng-click="makeSound('echo')" />
+                            <pre> alertService.MakeSound('echo');</pre>
+
+                            <input class="btn  btn-block btn-info" type="button" value="knob Sound" ng-click="makeSound('knob')" />
+                            <pre> alertService.MakeSound('knob');</pre>
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion -->
+        </div>
+    </div>
+</div>

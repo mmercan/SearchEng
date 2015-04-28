@@ -1,0 +1,213 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading" style="padding-top: 5px;padding-bottom: 5px">
+        <div class="row">
+            <div class="col-sm-8 form-inline">
+                <h4>
+                    <i class="fa fa-chevron-circle-left  fa-2x" navigate-back="" data-bind="navigate: 'back'" style="margin-left: 10px; margin-right: 20px;"></i>
+
+                    <select class="form-control" ng-model="cache.filter.ProductSubcategoryID" style="color:black">
+                        <option value="">All Selables</option>
+                        <option value="!">All Non Selables</option>
+                        <option ng-repeat="cat in subCategories" value="{{cat.ProductSubcategoryID}}">{{cat.Name}}</option>
+                    </select>
+                    <!--<select style="width:150px" ng-model="filter.TechnologyID">
+                        <option value="">All Technologies</option>
+                        <option ng-repeat="tech in technologies| filter: filter.VendorID" value="{{tech.ID}}">{{tech.Text}}</option>
+                    </select>-->
+                    Name : <input class="form-control" type="text" ng-model="cache.filter.Name" class="search-query" placeholder="Search" style="color:black">
+                    <!--Code : <input type="text" ng-model="filter.ProductNumber" class="search-query" placeholder="Search">-->
+                    <!--<span>Sort : </span>
+                    <select ng-model="sort">
+                        <option value="Text">Name</option>
+                        <option value="ID">Date</option>
+                    </select>-->
+                </h4>
+                <!--<div mm-localstorage value="viewMode" domain="viewMode" uniqueid="ProductsView"></div>
+                <div mm-localstorage value="filter"  domain="filter" uniqueid="ProductsView"></div>-->
+
+                <div mm-localstorage value="cache" uniqueid="ProductsView"></div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="pull-right">
+                    <div class="btn-toolbar" style="margin-top: 5px">
+                        <div class="btn-group">
+
+
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='images'" data-ng-class="{active: cache.viewMode =='images'}"><i class="fa fa-file-image-o"></i></a>
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='timelinecol'" data-ng-class="{active: cache.viewMode =='timelinecol'}"><i class="fa fa-circle-o-notch"></i></a>
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='timeline'" data-ng-class="{active: cache.viewMode == 'timeline'}"><i class="fa  fa-circle"></i></a>
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='calendar'" data-ng-class="{active: cache.viewMode == 'calendar'}"><i class="fa fa-calendar"></i></a>
+
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='map'" data-ng-class="{active: cache.viewMode == 'map'}"><i class="fa fa-map-marker"></i></a>
+
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='list'" data-ng-class="{active: cache.viewMode == 'list'}"><i class="fa fa-table"></i></a>
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='gridLarge'" data-ng-class="{active: cache.viewMode == 'gridLarge'}"><i class="fa fa-th-large"></i></a>
+                            <a class="btn btn-default" data-ng-click="cache.viewMode='grid'" data-ng-class="{active: cache.viewMode == 'grid'}"><i class="fa fa-th"></i></a>
+                            <a href="#/Categories/new" class="btn btn-warning">New</a>
+
+                            <!--<input type="button" class="btn" ng-click="test()" value="test"/>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+
+        <div class="row" ng-if="cache.viewMode == 'images'">
+            <div class="dropzone" file-dropzone="[image/png, image/jpeg, image/gif]"
+                 file="image" file-name="imageFileName" data-max-file-size="3" file-selected="fileSelected">
+                <span>Drop Image Here</span>
+            </div>
+
+            <div class="col-sm-3 thumbnail" style="position:relative;height:200px" ng-repeat="img in images">
+                <img class="img-responsive" style="position:absolute;top:auto;bottom:auto;vertical-align:middle" ng-src={{img.file}} />
+            </div>
+        </div>
+
+        <div class="row" ng-if="cache.viewMode == 'timelinecol'">
+            <mm-timeline-col itemssource="images">
+                <div class="panel">
+                    <div class="panel-heading"><img class="img-responsive" ng-src="{{item.file}}" alt=""></div>
+                    <div class="panel-body text-justify">
+                        <h2><a href="#">{{item.fileName}}</a></h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="btn-u btn-u-sm" href="#">Read More</a>
+                    </div>
+                    <div class="panel-footer">
+                        <ul class="list-unstyled list-inline blog-info">
+                            <li><i class="fa fa-clock-o"></i> March 28, 2014</li>
+                            <li><i class="fa fa-comments-o"></i> <a href="#">7 Comments</a></li>
+                        </ul>
+                        <a class="likes" href="#"><i class="fa fa-heart"></i>239</a>
+                    </div>
+                </div>
+            </mm-timeline-col>
+        </div>
+        <div class="row" ng-if="cache.viewMode == 'timeline'">
+            <mm-timeline itemssource="images">
+                <time datetime=""><span>4/1/08</span> <span>January</span></time>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h2>{{item.fileName}}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <img class="img-responsive" src="{{item.file}}" alt="">
+                            <div class="md-margin-bottom-20"></div>
+                        </div>
+                        <div class="col-md-8">
+                            <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape.</p>
+                            <p>Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </mm-timeline>
+        </div>
+        <div class="row" ng-if="cache.viewMode == 'calendar'">
+            <div class="well">{{selectedDate}} - {{selectedevent.title}}</div>
+            <div mm-fullcalendar itemssource="events" selectedday="selectedDate" day-selected="calendarDayselected" selectedevent="selectedevent"></div>
+        </div>
+        <div class="row" ng-if="cache.viewMode == 'map'">
+            <div class="well">{{mapselected.html}}</div>
+            <div mm-map itemssource="locations" latitudefield="lat" longitudefield="lng" selecteditem="mapselected" style="height: 500px; width: 100%"> </div>
+        </div>
+
+        <div class="row" ng-if="cache.viewMode == 'grid'">
+            <ul class="list-unstyled">
+                <li class="col-sm-3" data-ng-repeat="product in products | filter:cache.filter |orderBy:sort">
+                    <a ng-href="#/test/{{product.ProductID}}">
+                        <div style="position: relative; height: 80px" ng-class="{'alert-error':product.UnitsInStock - product.ReorderLevel < 0}" class="alert alert-success">
+                            <i class="fa fa-shopping-cart fa-2x" style="color: #428bca"></i>
+                            <span ng-class="{'text-muted' : product.Discontinued==true}" style="vertical-align: bottom; font-size: 1.2em" data-ng-bind="product.Name"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" ng-if="cache.viewMode == 'gridLarge'">
+
+            <table class="table" mm-table-sorter columns="['Name', 'ProductNumber', 'ListPrice', 'ProductLine', 'Color']" sort="sort" descending="descending"></table>
+            <ul class="list-unstyled">
+                <li class="col-sm-4" data-ng-repeat="product in products | filter:cache.filter |orderBy:sort:descending">
+                    <a ng-href="#/test/{{product.ProductID}}">
+                        <div style="position: relative; height: 80px" ng-class="{'alert-error':product.UnitsInStock - product.ReorderLevel < 0}" class="alert alert-success">
+                            <i class="fa fa-shopping-cart fa-2x" style="color: #428bca"></i>
+                            <span ng-class="{'text-muted' : product.Discontinued==true}" style="vertical-align: bottom; font-size: 1.2em" data-ng-bind="product.Name"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" ng-if="cache.viewMode == 'list'">
+            <!--<mm-table filter="cache.filter" itemssource="products" idfield="ProductID" columns="cache.listcolumns"></mm-table>-->
+            <!--<div  mm-table="item in products |orderBy:mmtableSort:descending | filter : mmtableFilter" idfield="ProductID" columns="cache.listcolumns"></div>-->
+            <!--<div mm-list="item in products |orderBy:mmtableSort:descending | filter : cache.filter">
+                <div class="data-template">{{item.Name}}</div>
+            </div>-->
+
+
+            <div  mmm-table="item in products | filter : cache.filter|orderBy:sorter:descending" selecteditem="selectedUser" idfield="ProductNumber" columns="['ProductNumber','Name','ProductLine','Color']" detail-clicked="detailClicked" save-clicked="saveClicked" delete-clicked="deleteClicked">
+
+                <table class="data-template">
+                    <td>{{item.ProductNumber}}</td>
+                    <td>{{item.Name}} Blah</td>
+                    <td>{{item.ProductLine}}</td>
+                    <td>{{item.Color}}</td>
+                </table>
+
+                <div class="detail-template">
+                    <form role="form" ng-non-bindable>
+                        <div class="form-group">
+                            <label>username</label><input type="text" class="form-control" ng-model="item.username" placeholder="username">
+                        </div>
+                        <div class="form-group">
+                            <label>fullname</label><input type="text" class="form-control" ng-model="item.fullname" placeholder="fullname">
+                        </div>
+                        <div class="form-group">
+                            <label>email</label><input type="text" class="form-control" ng-model="item.email" placeholder="fullname">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="edit-template">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>username</label><input type="text" class="form-control" ng-model="item.username" placeholder="username">
+                        </div>
+                        <div class="form-group">
+                            <label>fullname</label><input type="text" class="form-control" ng-model="item.fullname" placeholder="fullname">
+                        </div>
+                        <div class="form-group">
+                            <label>email</label><input type="text" class="form-control" ng-model="item.email" placeholder="fullname">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="delete-template">
+                    <form role="form">
+                        <div class="form-group">
+                            <label>username</label><input type="text" class="form-control" ng-model="item.username" placeholder="username">
+                        </div>
+                        <div class="form-group">
+                            <label>fullname</label><input type="text" class="form-control" ng-model="item.fullname" placeholder="fullname">
+                        </div>
+                        <div class="form-group">
+                            <label>email</label><input type="text" class="form-control" ng-model="item.email" placeholder="fullname">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
