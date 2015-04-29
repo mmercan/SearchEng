@@ -60,7 +60,7 @@ namespace SearchEng.Extensions.ExtensionConfig
         {
             GetExtensions();
             var e = new ModuleValidationEventAgrs(entity, action);
-            if (_Events.EntityProcessed != null)
+            if (_Events.ValidateEntity != null)
             {
                 _Events.ValidateEntity(e);
                 return e;

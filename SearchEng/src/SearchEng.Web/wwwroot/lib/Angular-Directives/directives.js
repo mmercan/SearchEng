@@ -2740,6 +2740,9 @@ angular.module('directives').directive("mmTable", ["$http", "$compile", function
                     idfieldPropertyName = value;
                 });
 
+                attrs.$observe('linkpath', function (value) {
+                    scope.linkpath = value;
+                });
                 
                 childscope.mmtableSort = "";
                 childscope.descending = false;

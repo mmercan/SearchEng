@@ -60,7 +60,7 @@
         <div class="panel-body tab-content">
             <ul class="search-classic tab-pane fade in active" id="search-tabs-product">
                 <!--<div mmm-table="item in products" columns="['ProductID','Name','ProductNumber','Color','StandardCost','ListPrice']" selecteditem="selectedUSR"></div>-->
-                <mm-table itemssource="products" selecteditem="selectedProduct" columns="['ProductID','Name','ProductNumber','Color','StandardCost','ListPrice']">
+                <mm-table itemssource="products" selecteditem="selectedProduct" idfield="ProductID" linkpath="#/product" columns="['ProductID','Name','ProductNumber','Color','StandardCost','ListPrice']">
                 </mm-table>
 
                 <li ng-repeat="item in searchMovieResults">
@@ -91,7 +91,7 @@
                             <div style="margin-left:120px;height:100%" class="comment-body">
                                 <div class="comment-by" style="height:100%">
                                     <h5 class="ng-binding">
-                                        <a ng-hide="item.title[&quot;#cdata-section&quot;]" class="pointer ng-binding ng-hide" title="" ng-click="gotoBookdetail(item.ID)">{{item.Title}}</a>
+                                        <a ng-href="#/book/{{item.ID}}" class="pointer" >{{item.Title}}</a>
                                     </h5>
                                     <h6 class="bottom" style="bottom:15px; position: absolute;">
                                         Author :<strong class="ng-binding"> {{item.Author}}</strong>

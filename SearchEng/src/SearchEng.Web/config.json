@@ -11,10 +11,10 @@
 	},
 	"myconfig": {
 		"providerSettings": {
-			"logger": { "name": "consoleLogger", "type": "AW.Core.Providers.Components.Logger.LocalLogger, AW.Core" },
+			"logger": { "name": "consoleLogger", "type": "SearchEng.Extensions.Components.Logger.LocalLogger, SearchEng.Extensions" },
 			"mailler": { "Name": "smtpMailler", "Type": "SmtpMailler", "Address": "mmercan@outlook.com", "Password": "Pa$$w0rd", "Username": "mrtmrcn" },
 			"modules": {
-				"consoleLogger": { "name": "consoleLogger", "type": "SearchEng.Extensions.EntityLogger, SearchEng.Extensions" },
+				"consoleLogger": { "name": "consoleLogger", "type": "SearchEng.Extensions.EntityLogger, SearchEng.Extensions" }
 			}
 		}
 
