@@ -10,12 +10,13 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
+using System.Threading.Tasks;
 
 namespace SearchEng.Search.Repository
 {
 
 
-    public class GoodReadSearchRepository
+    public class GoodReadSearchRepository : ISearchRepository<Book>
     {
 
         public IEnumerable<Book> Results(string term)
@@ -56,6 +57,12 @@ namespace SearchEng.Search.Repository
             return books;
         }
 
+        public Task<IEnumerable<Book>> ResultsAsync(string term)
+        {
+            Task<IEnumerable<Book>> resultasync = Task<IEnumerable<Book>>.Factory.StartNew(() => { return Results(term); });
+            return resultasync;
+        }
+
         public virtual IEnumerable<string> Suggestions(string term)
         {
   
@@ -63,6 +70,12 @@ namespace SearchEng.Search.Repository
             var suggests = from el in root.Descendants("best_book") select (string)el.Element("title") ;
             return suggests;
 
+        }
+
+        public Task<IEnumerable<string>> SuggestionsAsync(string term)
+        {
+            Task<IEnumerable<string>> suggestasync = Task<IEnumerable<string>>.Factory.StartNew(() => { return Suggestions(term); });
+            return suggestasync;
         }
     }
 }
