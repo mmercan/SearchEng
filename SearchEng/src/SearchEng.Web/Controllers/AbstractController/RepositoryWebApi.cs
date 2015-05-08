@@ -40,7 +40,7 @@ namespace SearchEng.Extensions.Repository
         protected Repository<T> Repo;
 
         protected readonly RepositoryExtensionFactory events;
-        protected readonly ILogger logger;
+      //  protected readonly ILogger logger;
 
         public RepositoryWebApi(DbContext db)
         {
@@ -48,7 +48,7 @@ namespace SearchEng.Extensions.Repository
             //db.Configuration.ProxyCreationEnabled = false;
             Db = db;
             Repo = new Repository<T>(db);
-            logger = LoggingFactory.GetLogger();
+          //  logger = LoggingFactory.GetLogger();
             // events = RepositoryModuleFactory.GetExtensions();
         }
         public RepositoryWebApi(DbContext db, IValidate<T> validate)
@@ -119,12 +119,12 @@ namespace SearchEng.Extensions.Repository
             }
             catch (DbUpdateConcurrencyException ex)
             {
-                logger.WriteError(ex.Message);
+                //logger.WriteError(ex.Message);
                 return HttpNotFound();
             }
             catch (Exception ex)
             {
-                logger.WriteError(ex.Message);
+                //logger.WriteError(ex.Message);
                 return HttpBadRequest();
             }
             return new HttpStatusCodeResult(201);

@@ -1,8 +1,8 @@
-using Microsoft.Framework.Cache.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using SearchEng.Common.Interfaces;
+using Microsoft.Framework.Caching.Memory;
 
 namespace SearchEng.Extensions.Components.Cache
 {

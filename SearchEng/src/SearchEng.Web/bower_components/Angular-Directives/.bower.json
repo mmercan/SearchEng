@@ -91,11 +91,11 @@
     "Gemfile.lock",
     "*.md"
   ],
-  "_release": "4fb8bcabab",
+  "_release": "892765ab28",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "4fb8bcababe892426171b91be4a8102b4aa47a11"
+    "commit": "892765ab28b4162e8b69e581c3d2383e1afd8ea3"
   },
   "_source": "https://github.com/mmercan/Angular-Directives.git",
   "_target": "*",

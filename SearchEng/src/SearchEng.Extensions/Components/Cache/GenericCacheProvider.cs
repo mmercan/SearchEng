@@ -1,4 +1,4 @@
-﻿using Microsoft.Framework.Cache.Memory;
+﻿using Microsoft.Framework.Caching.Memory;
 using System.Collections.Generic;
 
 namespace SearchEng.Extensions.Components.Cache

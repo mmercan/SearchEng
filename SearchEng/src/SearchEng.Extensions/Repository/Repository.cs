@@ -102,7 +102,7 @@ namespace SearchEng.Extensions.Repository
             {
                 // if (dbEntityEntry.State != EntityState.Detached)
                 {
-                    dbEntityEntry.SetState(EntityState.Added);
+                    dbEntityEntry.State=EntityState.Added;
                 }
                 //  else
                 {
@@ -123,7 +123,7 @@ namespace SearchEng.Extensions.Repository
                 // {
                 dbSet.Attach(item);
                 //}
-                entityEntry.SetState(EntityState.Modified);
+                entityEntry.State= EntityState.Modified;
             }
             else
             {
@@ -136,7 +136,7 @@ namespace SearchEng.Extensions.Repository
             EntityEntry dbEntityEntry = db.Entry(item);
             if (dbEntityEntry.State != EntityState.Deleted)
             {
-                dbEntityEntry.SetState(EntityState.Deleted);
+                dbEntityEntry.State=EntityState.Deleted;
             }
             else
             {
@@ -153,7 +153,7 @@ namespace SearchEng.Extensions.Repository
                 EntityEntry dbEntityEntry = db.Entry(item);
                 if (dbEntityEntry.State != EntityState.Deleted)
                 {
-                    dbEntityEntry.SetState(EntityState.Deleted);
+                    dbEntityEntry.State=EntityState.Deleted;
                 }
                 else
                 {

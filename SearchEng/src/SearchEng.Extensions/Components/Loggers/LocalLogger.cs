@@ -36,5 +36,14 @@ namespace SearchEng.Extensions.Components.Logger
         {
             Console.WriteLine(message);
         }
+
+        public void Log(LogLevel logLevel, int eventId, object state, Exception exception, Func<object, Exception, string> formatter)
+        {
+            if (logLevel == LogLevel.Error)
+            {
+
+            }
+            Trace.TraceError(state.ToString());
+        }
     }
 }

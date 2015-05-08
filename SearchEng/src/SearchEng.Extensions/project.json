@@ -1,18 +1,29 @@
 ﻿{
-	"version": "1.0.0-*",
-	"dependencies": {
-		"FluentValidation": "5.5.0",
-		"EntityFramework.Core": "7.0.0-beta3",
-		"SearchEng.Common": "1.0.0-*",
-		"Microsoft.Framework.Cache.Memory": "1.0.0-beta3",
-		"Microsoft.Framework.ConfigurationModel": "1.0.0-beta3",
-		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3"
-	},
+  "version": "1.0.0-*",
+  "description": "",
+  "authors": [ "" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
 
-	"frameworks": {
-		"aspnet50": {
-			"dependencies": {
-			}
-		}
-	}
+  "dependencies": {
+    "SearchEng.Common": "1.0.0-*",
+    "EntityFramework.Core": "7.0.0-beta4",
+    "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+    "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4",
+    "FluentValidation": "5.5.0",
+    "EntityFramework.Cache": "1.0.0"
+  },
+
+  "frameworks": {
+    "dnx451": { }
+    //"dnxcore50" : {
+    //  "dependencies": {
+    //    "System.Collections": "4.0.10-beta-22816",
+    //    "System.Linq": "4.0.0-beta-22816",
+    //    "System.Threading": "4.0.10-beta-22816",
+    //    "Microsoft.CSharp": "4.0.0-beta-22816"
+    //  }
+    //}
+  }
 }
