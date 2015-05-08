@@ -1,0 +1,63 @@
+{
+  "locked": false,
+  "version": -9998,
+  "projectFileDependencyGroups": {
+    "": [
+      "FluentValidation >= 5.5.0"
+    ],
+    "DNX,Version=v4.5.1": []
+  },
+  "libraries": {
+    "FluentValidation/5.5.0.0": {
+      "serviceable": false,
+      "sha": "W+fa5MzrvAgWLgzMujcRRsx65KtPCUW+E6pr6kQPhixP7LEylq//oP9QpKWpAnAj8lasUTOBp58YJxzduF8EHA==",
+      "frameworks": {
+        "DNX,Version=v4.5.1": {
+          "dependencies": {},
+          "frameworkAssemblies": [],
+          "runtimeAssemblies": [
+            "lib/Net40/FluentValidation.dll"
+          ],
+          "compileAssemblies": [
+            "lib/Net40/FluentValidation.dll"
+          ]
+        }
+      },
+      "files": [
+        "FluentValidation.5.5.0.0.nupkg",
+        "FluentValidation.5.5.0.0.nupkg.sha512",
+        "FluentValidation.nuspec",
+        "lib/Net40/FluentValidation.dll",
+        "lib/Net40/FluentValidation.pdb",
+        "lib/Net40/FluentValidation.XML",
+        "lib/Net40/da/FluentValidation.resources.dll",
+        "lib/Net40/de/FluentValidation.resources.dll",
+        "lib/Net40/es/FluentValidation.resources.dll",
+        "lib/Net40/fi/FluentValidation.resources.dll",
+        "lib/Net40/fr/FluentValidation.resources.dll",
+        "lib/Net40/it/FluentValidation.resources.dll",
+        "lib/Net40/ko/FluentValidation.resources.dll",
+        "lib/Net40/nl/FluentValidation.resources.dll",
+        "lib/Net40/pl/FluentValidation.resources.dll",
+        "lib/Net40/pt/FluentValidation.resources.dll",
+        "lib/Net40/ru/FluentValidation.resources.dll",
+        "lib/Net40/sv/FluentValidation.resources.dll",
+        "lib/Net40/tr/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/FluentValidation.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/FluentValidation.pdb",
+        "lib/portable-win+net40+sl50+wp80+wpa81/FluentValidation.XML",
+        "lib/portable-win+net40+sl50+wp80+wpa81/da/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/de/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/es/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/fi/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/fr/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/it/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/nl/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/pl/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/pt/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/ru/FluentValidation.resources.dll",
+        "lib/portable-win+net40+sl50+wp80+wpa81/sv/FluentValidation.resources.dll"
+      ]
+    }
+  }
+}
